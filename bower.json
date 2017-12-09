@@ -1,0 +1,17 @@
+{
+  "name": "dsny",
+  "description": "",
+  "main": "dsny.js",
+  "authors": [
+    "TMele54 <TonyMele.Rutgers@Gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/TMele54/dsny",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

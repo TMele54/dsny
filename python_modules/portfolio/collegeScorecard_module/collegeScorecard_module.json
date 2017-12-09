@@ -1,0 +1,8 @@
+{
+  "moduleName": "collegeScorecard_module",
+  "dataSource":"https://collegescorecard.ed.gov/data/",
+  "endPoint": "www.DataScienceNewYork.com/portfolio/college_scorecard",
+  "analysisKeywords": ["Filtering",""],
+  "technologyKeywords": ["Python2","Pandas","JSON"],
+  "description": "For this module I will just be showing filtered data in the UI and not performing any kind of special analysis"
+}
