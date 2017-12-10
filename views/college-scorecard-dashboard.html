@@ -22,6 +22,7 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/leaflet/dist/leaflet.css">
     <link rel="stylesheet" type="text/css" href="/public/business/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/public/business/css/owl.carousel.min.css">
     <link rel="stylesheet" type="text/css" href="/public/business/css/owl.theme.default.min.css">
@@ -62,6 +63,47 @@
         ::-webkit-scrollbar {
             display: none;
         }
+        .legend rect {
+            fill:white;
+            opacity:0.4;
+        }
+        #ChartAccessAgesByCountD3 svg {
+            height:500px;
+            padding-top:50px;
+        }
+        .legend-items text {
+            cursor: default;
+        }  body {
+               font-size: 12px;
+           }
+
+        text {
+            fill: #b70917;
+        }
+
+        svg {
+            position: relative;
+        }
+
+        path {
+            fill: #ffd800;
+            fill-opacity: .2;
+        }
+
+        path:hover {
+            fill: brown;
+            fill-opacity: .7;
+        }
+
+        #map {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: #333;
+
+        }
+
+
     </style>
 </head>
 
@@ -108,10 +150,20 @@
             <div class="row">
 
                 <div class="col-md-4">
-                    <div id="chartPie"></div>
+                    <div id="chartPie" style="display:inline-block"></div>
                 </div>
 
+                <div class="col-md-4">
+                    <div id="map" style="height:300px;display:inline-block"></div>
+                    <div id="tooltip">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="chart"></div>
+                </div>
             </div>
+            <div class="row"></div>
 
         </div>
     </section>
@@ -219,8 +271,16 @@
 
 <!-- Script -->
 <script src="/public/business/js/jquery.min.js"></script>
-<!-- Data Driven Documents D3 -->
+<!-- Data Driven Documents D3 - Version 4 as d3_4-->
+<script src="/bower_components/d3_4/d3.min.js"></script>
+<script>d3_4 = d3;window.d3 = null;</script>
+<!-- Data Driven Documents D3 - Version 3-->
 <script src="/bower_components/d3/d3.min.js"></script>
+
+<!-- Data Driven Documents D3 - Version 3-->
+<script src="/bower_components/leaflet/dist/leaflet.js"></script>
+
+
 <!-- Visualization Script -->
 <script src="/public/portfolio/collegeScorecardDashboard/dashboard.js"></script>
 <!-- Bootstrap JS -->
