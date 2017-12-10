@@ -1,76 +1,44 @@
-var example= {
-"ADM_RATE": 0.6538,
-"AGE_ENTRY": "20.277133825",
-"ALIAS": "AAMU",
-"AVGFACSAL": 7017.0,
-"CITY": "Normal",
-"COSTT4_A": 20809.0,
-"COSTT4_P": "",
-"CURROPER": 1,
-"GRADS": 1123.0,
-"INSTNM": "Alabama A & M University",
-"INSTURL": "www.aamu.edu/",
-"LATITUDE": 34.783367999999996,
-"LOAN_EVER": "0.8963821567",
-"LONGITUDE": -86.568502,
-"MAIN": 1,
-"MENONLY": 0.0,
-"NUMBRANCH": 1,
-"PELL_EVER": "0.8609062171",
-"PFTFAC": 0.7096,
-"REGION": 5,
-"SAT_AVG": 850.0,
-"SCH_DEG": 3.0,
-"STABBR": "AL",
-"TUITFTE": 9657.0,
-"TUITIONFEE_IN": 9366.0,
-"TUITIONFEE_OUT": 17136.0,
-"UNITID": 100654,
-"WOMENONLY": 0.0,
-"ZIP": "35762"
-};
-var definitions = {
-"ADM_RATE": "Admission rate",
-"AGE_ENTRY": "Average age of entry",
-"ALIAS": "Institution name aliases",
-"AVGFACSAL": "Average faculty salary",
-"CITY": "City",
-"COSTT4_A": "Average cost of attendance (academic year institutions)",
-"COSTT4_P": "Average cost of attendance (program-year institutions)",
-"CURROPER": "Flag for currently operating institution, 0=closed, 1=operating",
-"GRADS": "Number of graduate students",
-"INSTNM": "Institution name",
-"INSTURL": "URL for institution's homepage",
-"LATITUDE": "Latitude",
-"LOAN_EVER": "Share of students who received a federal loan while in school",
-"LONGITUDE": "Longitude",
-"MAIN": "Flag for main campus",
-"MENONLY": "Flag for men-only college",
-"NUMBRANCH": "Number of branch campuses",
-"PELL_EVER": "Share of students who received a Pell Grant while in school",
-"PFTFAC": "Proportion of faculty that is full-time",
-"REGION": "Region (IPEDS)",
-"SAT_AVG": "Average SAT equivalent score of students admitted",
-"SCH_DEG": "Predominant degree awarded (recoded 0s and 4s)",
-"STABBR": "State postcode",
-"TUITFTE": "Net tuition revenue per full-time equivalent student",
-"TUITIONFEE_IN": "In-state tuition and fees",
-"TUITIONFEE_OUT": "Out-of-state tuition and fees",
-"UNITID": "Unit ID for institution",
-"WOMENONLY": "Flag for women-only college",
-"ZIP": "ZIP code"
-};
-
+var dictionarySample = {
+"ADM_RATE": 0.6538,                   // "Admission rate"
+"AGE_ENTRY": "20.277133825",          // "Average age of entry"
+"ALIAS": "AAMU",                      // "Institution name aliases"
+"AVGFACSAL": 7017.0,                  // "Average faculty salary"
+"CITY": "Normal",                     // "City"
+"COSTT4_A": 20809.0,                  // "Average cost of attendance (academic year institutions)"
+"COSTT4_P": "",                       // "Average cost of attendance (program-year institutions)"
+"CURROPER": 1,                        // "Flag for currently operating institution, 0=closed, 1=operating"
+"GRADS": 1123.0,                      // "Number of graduate students"
+"INSTNM": "Alabama A & M University", // "Institution name"
+"INSTURL": "www.aamu.edu/",           // "URL for institution's homepage"
+"LATITUDE": 34.783367999999996,       // "Latitude"
+"LOAN_EVER": "0.8963821567",          // "Share of students who received a federal loan while in school"
+"LONGITUDE": -86.568502,              // "Longitude"
+"MAIN": 1,                            // "Flag for main campus"
+"MENONLY": 0.0,                       // "Flag for men-only college"
+"NUMBRANCH": 1,                       // "Number of branch campuses"
+"PELL_EVER": "0.8609062171",          // "Share of students who received a Pell Grant while in school"
+"PFTFAC": 0.7096,                     // "Proportion of faculty that is full-time"
+"REGION": 5,                          // "Region (IPEDS)"
+"SAT_AVG": 850.0,                     // "Average SAT equivalent score of students admitted"
+"SCH_DEG": 3.0,                       // "Predominant degree awarded (recoded 0s and 4s)"
+"STABBR": "AL",                       // "State postcode"
+"TUITFTE": 9657.0,                    // "Net tuition revenue per full-time equivalent student"
+"TUITIONFEE_IN": 9366.0,              // "In-state tuition and fees"
+"TUITIONFEE_OUT": 17136.0,            // "Out-of-state tuition and fees"
+"UNITID": 100654,                     // "Unit ID for institution"
+"WOMENONLY": 0.0,                     // "Flag for women-only college"
+"ZIP": "35762"                        // "ZIP code"
+}; 
 
 function formatData(data){
     data.forEach(function(d){
 
         //Gender
         if(d["MENONLY"] == 1.0)[
-            d["Gender"] = "Male"
+            d["Gender"] = "Male or Female"
         ]
         else if(d["WOMENONLY"] == 1.0){
-            d["Gender"] = "Female"
+            d["Gender"] = "Male or Female"
 
         }
         else{
@@ -94,11 +62,18 @@ function piechart(data){
         d.values = d.values / counter
     }  );
 
-    var width_pie = 500, height_pie = 300, radius_pie = Math.min(width_pie, height_pie) / 2;
+    var margin = {top: 20, right: 0, bottom: 20, left: 0};
+    var width_pie = 500 - margin.left - margin.right,
+        height_pie = 300 - margin.top - margin.bottom,
+        radius_pie = Math.min(width_pie, height_pie) / 2;
 
     var svg_pie = d3.select("#chartPie").append("svg")
-        .attr('width',width_pie).attr('height', height_pie).append("g")
-        .attr("transform", "translate(" + width_pie / 2 + "," + height_pie / 2 + ")");
+                                            .attr('width',width_pie)
+                                            .attr('height', height_pie)
+                                                .append("g")
+                                                .attr("transform",
+                                                        "translate(" + width_pie / 2 + "," + height_pie / 2 + ")"
+                                                );
 
     svg_pie.append("g").attr("class", "slices");
     svg_pie.append("g").attr("class", "labels");
@@ -141,7 +116,7 @@ function piechart(data){
 
         text_pie.enter().append("text").attr("dy", ".35em").text(function(d) {return d.data.key;});
 
-        function midAngle(d){ return d.startAngle + (d.endAngle - d.startAngle)/2;}
+        function midAngle(d){ return d.startAngle + (d.endAngle - d.startAngle)/1;}
 
         text_pie.transition().duration(1000)
             .attrTween("transform", function(d) {

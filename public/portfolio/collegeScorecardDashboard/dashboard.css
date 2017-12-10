@@ -21,7 +21,7 @@
 }
 
 label {
-    position: absolute;
+    position: relative;
     top: 10px;
     right: 10px;
 }
@@ -38,6 +38,7 @@ polyline{
 }
 .pie {
     margin: 20px;
+    display: block;
 }
 
 svg {
@@ -62,3 +63,44 @@ svg {
 .pie .value-text{
     font-size: 3em;
 }
+
+.legend rect {
+    fill:white;
+    opacity:0.4;
+}
+#ChartAccessAgesByCountD3 svg {
+    height:500px;
+    padding-top:50px;
+}
+.legend-items text {
+    cursor: default;
+}  body {
+       font-size: 12px;
+   }
+
+text {
+    fill: #000000;
+}
+
+svg {
+    position: relative;
+}
+
+path {
+    fill: #ffd800;
+    fill-opacity: .2;
+}
+
+path:hover {
+    fill: brown;
+    fill-opacity: .7;
+}
+
+#map {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #333;
+
+}
+

@@ -61,48 +61,18 @@
             overflow-x: hidden !important;
         }
         ::-webkit-scrollbar {
-            display: none;
-        }
-        .legend rect {
-            fill:white;
-            opacity:0.4;
-        }
-        #ChartAccessAgesByCountD3 svg {
-            height:500px;
-            padding-top:50px;
-        }
-        .legend-items text {
-            cursor: default;
-        }  body {
-               font-size: 12px;
-           }
-
-        text {
-            fill: #b70917;
+            width: 12px;
         }
 
-        svg {
-            position: relative;
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            border-radius: 10px;
         }
 
-        path {
-            fill: #ffd800;
-            fill-opacity: .2;
+        ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
         }
-
-        path:hover {
-            fill: brown;
-            fill-opacity: .7;
-        }
-
-        #map {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            background-color: #333;
-
-        }
-
 
     </style>
 </head>
@@ -147,23 +117,33 @@
 <!--Our Portfolio-->
     <section id="our-portfolio" class="portfolio section-padding">
         <div class="content-fluid">
+            <hr>
             <div class="row">
 
                 <div class="col-md-4">
+                    <h3 class="widget-title" style="margin-left:10px;vertical-align: center" align="left">Gender Distribution</h3>
                     <div id="chartPie" style="display:inline-block"></div>
                 </div>
 
                 <div class="col-md-4">
+                    <h3 class="widget-title" style="margin-left:10px;vertical-align: center" align="left">School Locations</h3>
                     <div id="map" style="height:300px;display:inline-block"></div>
                     <div id="tooltip">
                         <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px" />
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div id="chart"></div>
+                    <h3 class="widget-title" style="margin-left:10px;vertical-align: center" align="left">Average:</h3>
+                    <div class="row" id="A"></div>
+                    <div class="row" id="B"></div>
+                    <div class="row" id="C"></div>
                 </div>
             </div>
-            <div class="row"></div>
+            <hr>
+            <div class="row">
+
+                <h3 class="widget-title" style="margin-left:10px;vertical-align: center" align="left">Averages</h3>
+            </div>
 
         </div>
     </section>
