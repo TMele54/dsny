@@ -34,23 +34,28 @@ function formatData(data){
     data.forEach(function(d){
 
         //Gender
-        if(d["MENONLY"] == 1.0)[
-            d["Gender"] = "Male or Female"
-        ]
+        if(d["MENONLY"] == 1.0) {
+            d["Gender"] = "Male or Female";
+            d["MENONLY"] = "True";
+            d["WOMENONLY"] = "False";
+        }
         else if(d["WOMENONLY"] == 1.0){
             d["Gender"] = "Male or Female"
-
+            d["WOMENONLY"] = "True";
+            d["MENONLY"] = "False";
         }
         else{
-            d["Gender"] = "Male & Female"
+            d["Gender"] = "Coed";
+            d["MENONLY"] = "False";
+            d["WOMENONLY"] = "False";
         }
-
+        d["FILTER"] = '<input type="checkbox"'+' data="'+ d["UNITID"]+ '" name="name1" />&nbsp;'
 
     });
     return data
 
 }
-function piechart(data){
+function piechart(data, selector){
 
     data_pie = d3.nest().key(function(d) { return d["Gender"]; }).sortKeys(d3.ascending)
         .rollup(function(leaves) { return leaves.length; })
@@ -67,7 +72,7 @@ function piechart(data){
         height_pie = 300 - margin.top - margin.bottom,
         radius_pie = Math.min(width_pie, height_pie) / 2;
 
-    var svg_pie = d3.select("#chartPie").append("svg")
+    var svg_pie = d3.select(selector).append("svg")
                                             .attr('width',width_pie)
                                             .attr('height', height_pie)
                                                 .append("g")
@@ -85,7 +90,7 @@ function piechart(data){
     var key_pie = function(d){ return d.data.key; };
 
     var color_pie = d3.scale.ordinal()
-        .domain(["Male", "Female", "Male & Female"])
+        .domain(["Male or Female", "Coed"])
         .range(["#0059b3", "#3399ff", "#99ccff"]);
 
     change_pie(data_pie);
@@ -164,7 +169,7 @@ function piechart(data){
         polyline_pie.exit().remove();
     };
 }
-function piechart2(){
+function piechart2(data, selector){
     var st = {};
     st.data = [
         {
@@ -198,7 +203,7 @@ function piechart2(){
             "pos": 5
         }
     ];
-    drawD3PieChart("#chartPie", st.data);
+    drawD3PieChart(selector, st.data);
     //http://jsfiddle.net/RodEsp/fdzbv6vg/4/
     function drawD3PieChart(sel, data) {
         // clear any previously rendered svg
@@ -305,8 +310,7 @@ function piechart2(){
     }
 
 }
-
-function mapchart(mapData){
+function mapchart(mapData, selector){
 
 
         function reformat(array) {
@@ -342,7 +346,7 @@ function mapchart(mapData){
             var subPixel = false;
             var subPts = [];
             var scale = getZoomScale();
-            console.log(" scale: " + scale);
+
             var counter = 0;
             quadtree.visit(function (node, x1, y1, x2, y2) {
                 var p = node.point;
@@ -383,7 +387,7 @@ function mapchart(mapData){
                 // if quad rect is outside of the search rect do nto search in sub nodes (returns true)
                 return x1 >= x3 || y1 >= y3 || x2 < x0 || y2 < y0;
             });
-            console.log(" Number of removed  points: " + counter);
+
             return pts;
 
         }
@@ -403,7 +407,7 @@ function mapchart(mapData){
                 node.height = (nodeRect.top - nodeRect.bottom);
 
                 if (node.depth == 0) {
-                    console.log(" width: " + node.width + "height: " + node.height);
+                    //console.log(" width: " + node.width + "height: " + node.height);
                 }
                 nodes.push(node);
                 for (var i = 0; i < 4; i++) {
@@ -423,7 +427,7 @@ function mapchart(mapData){
 
         var cscale = d3.scale.linear().domain([1, 3]).range(["#ff0000", "#ff6a00", "#ffd800", "#b6ff00", "#00ffff", "#0094ff"]);//"#00FF00","#FFA500"
 
-        var leafletMap = L.map('map').setView([25, 0], 1);
+        var leafletMap = L.map(selector).setView([25, 0], 1);
 
         L.tileLayer("http://{s}.sm.mapstack.stamen.com/(toner-lite,$fff[difference],$fff[@23],$fff[hsl-saturation@20])/{z}/{x}/{y}.png").addTo(leafletMap);
 
@@ -501,37 +505,140 @@ function mapchart(mapData){
                 });
 
 
-            console.log("updated at  " + new Date().setTime(new Date().getTime() - start.getTime()) + " ms ");
+          //  console.log("updated at  " + new Date().setTime(new Date().getTime() - start.getTime()) + " ms ");
 
         }
         function mapmove(e) {
             var mapBounds = leafletMap.getBounds();
             var subset = search(qtree, mapBounds.getWest(), mapBounds.getSouth(), mapBounds.getEast(), mapBounds.getNorth());
 
-            console.log("subset: " + subset.length);
+            //console.log("subset: " + subset.length);
 
             redrawSubset(subset);
 
         }
 
 }
+function table(data, selector){
+
+    var columnsData = [
+     // "FILTER",
+        "INSTNM",
+        "CURROPER",
+        "MAIN",
+        "NUMBRANCH",
+        "TUITIONFEE_IN",
+        "TUITIONFEE_OUT",
+        "LOAN_EVER",
+        "ADM_RATE",
+        "SAT_AVG",
+        "AGE_ENTRY",
+        "MENONLY",
+        "WOMENONLY",
+        "INSTURL"
+    ]
+    var columnsHead = [
+     // "Filter Dashboard",
+        "Institution Name",
+        "Operating",
+        "Main Campus",
+        "Brances",
+        "In State Tuition",
+        "Out of State Tuition",
+        "% of Students w/ Loans",
+        "Admission Rate",
+        "Average Admitted SAT Score",
+        "Average Age of Entry",
+        "Men Only",
+        "Women Only",
+        "URL"
+    ]
+
+    function tabulate(data, columnsHead, columnsData) {
+        var table = d3.select(selector)//.append('table').attr("class", 'tableClass');
+        var thead = table.append('thead');
+        var	tbody = table.append('tbody');
+
+        // append the header row
+        thead.append('tr')
+            .selectAll('th')
+            .data(columnsHead)
+            .enter()
+            .append('th')
+            .text(function (column) { return column; });
+
+        // create a row for each object in the data
+        var rows = tbody.selectAll('tr')
+            .data(data)
+            .enter()
+            .append('tr');
+
+        // create a cell in each row for each column
+        var cells = rows.selectAll('td')
+            .data(function (row) {
+                return columnsData.map(function (column) {
+                    return {column: column, value: row[column]};
+                });
+            })
+            .enter()
+            .append('td')
+            .text(function (d) {
+                if(d.value == ""){
+                    return "Data not reported"
+                }else{
+                    return d.value
+                }
+
+            });
+        $('.tableClass').DataTable();
+        return table;
+    }
+    tabulate(data, columnsHead, columnsData)
+}
+function histogram(data, selector){
+    var _data = [];
 
 
+    data.forEach(function(d,i){
+        if(d["SAT_AVG"] != ""){
+            _data.push(parseFloat(d["SAT_AVG"])/1600.)
+        }
+    });
+    // console.log("My Data:")
+    // console.log(_data)
 
+    var formatCount = d3_4.format(",.0f");
 
+    var svg = d3_4.select(selector).append("svg").attr('width', "450").attr('height', "300");
+    var margin = {top: 10, right: 15, bottom: 30, left: 15};
+    var width = 450 - margin.left - margin.right;
+    var height = 300 - margin.top - margin.bottom;
+    var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+    var x = d3_4.scaleLinear().rangeRound([0, width]);
+    var bins = d3_4.histogram().domain(x.domain()).thresholds(x.ticks(20))(_data);
 
+    var y = d3_4.scaleLinear().domain([0, d3_4.max(bins, function(d) { return d.length; })]).range([height, 0]);
+    var bar = g.selectAll(".bar").data(bins).enter().append("g").attr("class", "bar")
+        .attr("transform", function(d) { return "translate(" + x(d.x0) + "," + y(d.length) + ")"; });
 
+    bar.append("rect").attr("x", 1).attr("width", x(bins[0].x1) - x(bins[0].x0) - 1)
+        .attr("height", function(d) { return height - y(d.length); });
 
+    bar.append("text").attr("dy", ".75em").attr("y", 6).attr("x", (x(bins[0].x1) - x(bins[0].x0)) / 2)
+        .attr("text-anchor", "middle").text(function(d) { return formatCount(d.length); });
 
-
+    g.append("g").attr("class", "axis axis--x").attr("transform", "translate(0," + height + ")").call(d3_4.axisBottom(x));
+}
 
 
 
 function draw(data){
-    mapchart(data)
+    table(data, "#tableID");
     var piechartData = formatData(data);
-    piechart(piechartData)
+    piechart(piechartData, "#chartPie");
+    mapchart(data, "mapID");
+    histogram(data, "#chartHisto")
 }
 
 
