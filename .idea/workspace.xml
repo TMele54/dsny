@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c4a06bca-a1a7-4992-a9b3-781de57732c5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/public/business/images/portfolio/collegeScorecardScreenShot.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/views/portfolio.html" afterPath="$PROJECT_DIR$/views/portfolio.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -94,8 +94,8 @@
       <file leaf-file-name="portfolio.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/portfolio.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="148" column="128" lean-forward="true" selection-start-line="148" selection-start-column="128" selection-end-line="148" selection-end-column="128" />
+            <state relative-caret-position="528">
+              <caret line="214" column="34" lean-forward="false" selection-start-line="214" selection-start-column="34" selection-end-line="214" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -114,7 +114,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>point</find>
       <find>scli</find>
       <find>widget-title</find>
       <find>label</find>
@@ -144,6 +143,7 @@
       <find>&lt;hr&gt;</find>
       <find>console</find>
       <find>colle</find>
+      <find>business/images/portfolio/portfolio-</find>
     </findStrings>
     <replaceStrings>
       <replace>/public/business</replace>
@@ -178,7 +178,6 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/modules/college.py" />
         <option value="$PROJECT_DIR$/views/index.html" />
-        <option value="$PROJECT_DIR$/views/portfolio.html" />
         <option value="$PROJECT_DIR$/dsny.js" />
         <option value="$PROJECT_DIR$/python_modules/data/collegeScorecard/filteredData.json" />
         <option value="$PROJECT_DIR$/bower.json" />
@@ -194,6 +193,7 @@
         <option value="$PROJECT_DIR$/bower_components/dataTableSpecifics/responsive.bootstrap.min.css" />
         <option value="$PROJECT_DIR$/views/college-scorecard-dashboard.html" />
         <option value="$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboard.js" />
+        <option value="$PROJECT_DIR$/views/portfolio.html" />
       </list>
     </option>
   </component>
@@ -213,9 +213,9 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1088" />
-    <option name="y" value="114" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1377" />
+    <option name="y" value="443" />
     <option name="width" value="1522" />
     <option name="height" value="1931" />
   </component>
@@ -302,10 +302,10 @@
       <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\public\business\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\public\business\images\portfolio" />
       <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\python_modules\data\collegeScorecard" />
       <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\bower_components\d3" />
       <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\public\business\js" />
-      <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\public\business\images\portfolio" />
       <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\public\business\images\logo" />
     </key>
   </component>
@@ -358,17 +358,18 @@
       <workItem from="1512869493068" duration="670000" />
       <workItem from="1512909453138" duration="12226000" />
       <workItem from="1512946146959" duration="2473000" />
-      <workItem from="1512954543707" duration="9023000" />
+      <workItem from="1512954543707" duration="9335000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70183000" />
+    <option name="totallyTimeSpent" value="70495000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1088" y="114" width="1522" height="1931" extended-state="0" />
+    <frame x="-13" y="-13" width="3026" height="1946" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.488292" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23985115" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -376,7 +377,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13903743" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32134292" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3184789" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -776,8 +777,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/portfolio.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="148" column="128" lean-forward="true" selection-start-line="148" selection-start-column="128" selection-end-line="148" selection-end-column="128" />
+        <state relative-caret-position="528">
+          <caret line="214" column="34" lean-forward="false" selection-start-line="214" selection-start-column="34" selection-end-line="214" selection-end-column="34" />
           <folding />
         </state>
       </provider>
