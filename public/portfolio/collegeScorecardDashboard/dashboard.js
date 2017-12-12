@@ -767,12 +767,13 @@ function scatterChart(data, selector, home, resize, scatterSvgID){
         .style("text-anchor", "end")
         .text("Average Revenue");
 
-
-    var inst = function(d){return "<strong>Institution:</strong> <span style='color:red'>" + d["INSTNM"] + "</span>"}
-
     tipBox = d3.tip().attr('class', 'd3-tip').offset([-10, 0])
-        .html("<strong>Institution:</strong> <span style='color:red'>" + inst + "</span>")
-
+    .html(function(d)
+        {
+            return "<strong>Institution:</strong> <span style='color:red'>" +" "+ d["INSTNM"]  + "</span><br>" +
+                   "<strong>Tuition FTE:</strong> <span style='color:red'>" +" $"+ moneyFormat(scatter_xValue(d))  + "</span><br>" +
+                   "<strong>Revenue:</strong> <span style='color:red'>" +" $"+ moneyFormat(scatter_yValue(d))  + "</span>"
+        })
     scatter_svg.call(tipBox);
 
     scatter_svg.selectAll(".dot")
@@ -783,9 +784,10 @@ function scatterChart(data, selector, home, resize, scatterSvgID){
         .attr("cx", scatter_xMap)
         .attr("cy", scatter_yMap)
         .style("fill", function(d) { return scatter_color(scatter_cValue(d));})
-        .style("stroke", function(d) { return scatter_color(scatter_cValue(d));})
-        .on("mouseover", function(d) {tipBox.show()})
-        .on("mouseout",  function(d) {tipBox.hide()});
+        .style("stroke", function(d) { return "black";})
+        .style("stroke-width", 1)
+        .on("mouseover", tipBox.show)
+        .on("mouseout", tipBox.hide);
 
     function resizeScatter(){
         scatter_fullHeight = 300;
@@ -846,10 +848,6 @@ function scatterChart(data, selector, home, resize, scatterSvgID){
             .append("g")
             .attr("transform", "translate(" + scatter_margin.left + "," + scatter_margin.top + ")");
 
-        scatter_tooltip = d3.select("#"+scatterSvgID).append("div")
-            .attr("class", "tooltip")
-            .style("opacity", 0);
-
         scatter_svg.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + scatter_height + ")")
@@ -873,15 +871,14 @@ function scatterChart(data, selector, home, resize, scatterSvgID){
             .text("Average Revenue");
 
 
-        tipBox = d3.tip()
-            .attr('class', 'd3-tip')
-            .offset([-10, 0])
-            .html(function(d,i){
-                return "<strong>Institution:</strong> <span style='color:red'>" + d["INSTNM"] + "</span>";
+        tipBox = d3.tip().attr('class', 'd3-tip').offset([-10, 0])
+            .html(function(d)
+            {
+                return "<strong>Institution:</strong> <span style='color:red'>" +" "+ d["INSTNM"]  + "</span><br>" +
+                    "<strong>Tuition FTE:</strong> <span style='color:red'>" +" $"+ moneyFormat(scatter_xValue(d))  + "</span><br>" +
+                    "<strong>Revenue:</strong> <span style='color:red'>" +" $"+ moneyFormat(scatter_yValue(d))  + "</span>"
             })
-
-        scatter_svg.call(tipBox);
-
+        scatter_svg.call(tipBox)
         scatter_svg.selectAll(".dot")
             .data(_data)
             .enter().append("circle")
@@ -890,9 +887,11 @@ function scatterChart(data, selector, home, resize, scatterSvgID){
             .attr("cx", scatter_xMap)
             .attr("cy", scatter_yMap)
             .style("fill", function(d) { return scatter_color(scatter_cValue(d));})
-            .style("stroke", function(d) { return scatter_color(scatter_cValue(d));})
-            .on("mouseover", function(d) {tipBox.show()})
-            .on("mouseout",  function(d) {tipBox.hide()});
+            .style("stroke", function(d) { return "black";})
+            .style("stroke-width", 1)
+            .on("mouseover", tipBox.show)
+            .on("mouseout", tipBox.hide)
+
     }
     //window.onresize = function(svgID) {        resizeScatter()    };
 
