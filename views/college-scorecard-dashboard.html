@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="/public/business/css/magnific-popup.css">
     <link rel="stylesheet" type="text/css" href="/public/business/css/YTPlayer.css">
     <link rel="stylesheet" type="text/css" href="/public/business/css/animated-headlines.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/d3-slider/d3.slider.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="/public/business/css/style.css">
@@ -121,7 +122,9 @@
             left: 0;
         }
 
-
+        #sliderHisto{
+            width:100%;
+        }
         .dataTables_length select {
             background-color: #fafafa !important;
         }
@@ -185,16 +188,33 @@
                 <div id="tooltip"> <!--<svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px" />-->  </div>
             </div>
             <div class="col-md-4">
-                <h3 class="widget-title" style="vertical-align: center;" align="left">Accepted SAT Scores</h3>
-                <h5 style="vertical-align: center;" align="left">Percentage of 1600</h5>
-                <div id="chartHisto" style="margin-left:auto;margin-right:auto;display:block;"></div>
+                <div class="row">
+                    <h3 class="widget-title" style="vertical-align: center;" align="left">Accepted SAT Scores</h3>
+                    <h5 style="vertical-align: center;" align="left">Percentage of 1600</h5>
+                    <div id="chartHisto" style="margin-left:auto;margin-right:auto;display:block;height:200px"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <strong>Bins:</strong>
+                    </div>
+                    <div class="col-md-10">
+                        <div id="sliderHisto" style="margin-left:auto;margin-right:auto;margin-top:10px;display:block;width:250px"></div>
+                    </div>
+                </div>
             </div>
         </div>
         <hr>
         <div class="row">
             <div class="col-md-6">
-                <h3 class="widget-title" style="vertical-align: center;" align="left">In State Tuition</h3>
-                <h5 style="vertical-align: center;" align="left">Cost vs. Revenue -</h5><h6>Certain Data Excluded</h6>
+                <div class="row">
+                    <div class="col-md-5">
+                        <h3 class="widget-title" style="vertical-align: center;" align="left">In State Tuition</h3>
+                        <h5 style="vertical-align: center;" align="left">Cost vs. Revenue -</h5><h6>Certain Data Excluded</h6>
+                    </div>
+                    <div class="col-md-7" style="height:50px">
+                        <div id="scatterGradient" style="width:300px" align="center"></div>
+                    </div>
+                </div>
                 <div id="scatterChartA" style="height:300px"></div>
             </div>
             <div class="col-md-6">
@@ -332,6 +352,8 @@
 <script src="/bower_components/d3/d3.min.js"></script>
 <!-- D3 Tooltip-->
 <script src="/bower_components/d3-tip/index.js"></script>
+<!-- D3 Slider-->
+<script src="/bower_components/d3-slider/d3.slider.js"></script>
 <!-- Leaflet maps-->
 <script src="/bower_components/leaflet/dist/leaflet.js"></script>
 <!-- Visualization Script -->
