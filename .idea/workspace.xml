@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c4a06bca-a1a7-4992-a9b3-781de57732c5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/public/business/images/header/favicon-16x16.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/business/images/header/favicon-32x32.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/business/images/header/favicon.ico" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/business/images/portfolio/collegeScorecardScreenShot.jpg" afterPath="" />
       <change beforePath="$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboard.js" afterPath="$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboard.js" />
       <change beforePath="$PROJECT_DIR$/views/college-scorecard-dashboard.html" afterPath="$PROJECT_DIR$/views/college-scorecard-dashboard.html" />
+      <change beforePath="$PROJECT_DIR$/views/index.html" afterPath="$PROJECT_DIR$/views/index.html" />
       <change beforePath="$PROJECT_DIR$/views/portfolio.html" afterPath="$PROJECT_DIR$/views/portfolio.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,7 +27,7 @@
       <file leaf-file-name="dsny.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dsny.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="1749">
               <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
               <folding>
                 <element signature="e#1386#1544#0" expanded="false" />
@@ -39,33 +44,41 @@
       <file leaf-file-name="dashboard.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="670" column="25" lean-forward="false" selection-start-line="670" selection-start-column="25" selection-end-line="670" selection-end-column="25" />
+            <state relative-caret-position="957">
+              <caret line="639" column="112" lean-forward="false" selection-start-line="639" selection-start-column="112" selection-end-line="639" selection-end-column="112" />
               <folding>
                 <element signature="n#!!block;n#formatData#0" expanded="false" />
                 <element signature="n#!!block;n#piechart#0" expanded="false" />
-                <element signature="n#!!block;n#change_pie#0;n#!!block;n#piechart#0" expanded="false" />
                 <element signature="n#!!block;n#piechart2#0" expanded="false" />
-                <element signature="e#7603#8252#0" expanded="false" />
+                <element signature="e#7605#8254#0" expanded="false" />
+                <element signature="e#10397#10940#0" expanded="false" />
                 <element signature="n#!!block;n#mapchart#0" expanded="false" />
                 <element signature="n#!!block;n#reformat#0;n#!!block;n#mapchart#0" expanded="false" />
-                <element signature="e#13263#13458#0" expanded="false" />
+                <element signature="e#13266#13461#0" expanded="false" />
                 <element signature="n#!!block;n#search#0;n#!!block;n#mapchart#0" expanded="false" />
                 <element signature="n#!!block;n#updateNodes#0;n#!!block;n#mapchart#0" expanded="false" />
-                <element signature="e#16414#16469#0" expanded="false" />
-                <element signature="e#16516#16634#0" expanded="false" />
+                <element signature="e#16417#16472#0" expanded="false" />
+                <element signature="e#16519#16637#0" expanded="false" />
                 <element signature="n#!!block;n#projectPoint#0;n#!!block;n#mapchart#0" expanded="false" />
                 <element signature="n#!!block;n#getZoomScale#0;n#!!block;n#mapchart#0" expanded="false" />
                 <element signature="n#!!block;n#mapmove#0;n#!!block;n#mapchart#0" expanded="false" />
                 <element signature="n#!!block;n#table#0" expanded="false" />
-                <element signature="e#19922#20212#0" expanded="false" />
-                <element signature="e#20235#20607#0" expanded="false" />
-                <element signature="n#!!block;n#histogramChart#0" expanded="false" />
-                <element signature="e#26520#26858#0" expanded="false" />
-                <element signature="e#26896#27009#0" expanded="false" />
-                <element signature="e#27012#27648#0" expanded="false" />
-                <element signature="e#28076#28121#0" expanded="false" />
-                <marker date="1512970869445" expanded="true" signature="2791:2797" ph=" " />
+                <element signature="e#19926#20216#0" expanded="false" />
+                <element signature="e#20239#20611#0" expanded="false" />
+                <element signature="e#22001#22105#0" expanded="false" />
+                <element signature="n#!!block;n#scatterChart#0" expanded="false" />
+                <element signature="e#26539#26618#0" expanded="false" />
+                <element signature="e#26627#26707#0" expanded="false" />
+                <element signature="e#26796#26997#0" expanded="false" />
+                <element signature="e#30114#30517#0" expanded="false" />
+                <element signature="e#30555#30642#0" expanded="false" />
+                <element signature="n#!!block;n#resizeScatter#0;n#!!block;n#scatterChart#0" expanded="false" />
+                <element signature="e#30754#30841#0" expanded="false" />
+                <element signature="e#30854#30942#0" expanded="false" />
+                <element signature="e#35172#35267#0" expanded="false" />
+                <element signature="e#35398#36034#0" expanded="false" />
+                <element signature="e#36548#36593#0" expanded="false" />
+                <marker date="1513043950859" expanded="true" signature="2791:2797" ph=" " />
               </folding>
             </state>
           </provider>
@@ -74,8 +87,8 @@
       <file leaf-file-name="college-scorecard-dashboard.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/college-scorecard-dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="179" column="118" lean-forward="false" selection-start-line="179" selection-start-column="118" selection-end-line="179" selection-end-column="118" />
+            <state relative-caret-position="990">
+              <caret line="51" column="104" lean-forward="false" selection-start-line="51" selection-start-column="104" selection-end-line="51" selection-end-column="104" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -102,12 +115,25 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="portfolio.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/portfolio.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1056">
-              <caret line="149" column="59" lean-forward="false" selection-start-line="149" selection-start-column="59" selection-end-line="149" selection-end-column="59" />
-              <folding />
+            <state relative-caret-position="434">
+              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="45" selection-end-column="104" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,20 +151,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>key_pie</find>
-      <find>midAngle</find>
-      <find>lab</find>
-      <find>red</find>
-      <find>tuit</find>
-      <find>align</find>
-      <find>,</find>
-      <find>//</find>
-      <find>averages</find>
-      <find>average</find>
-      <find>boot</find>
-      <find>map</find>
-      <find>chartPie</find>
-      <find>d3d3</find>
       <find>d3.</find>
       <find>svg</find>
       <find>formatCount</find>
@@ -155,9 +167,22 @@
       <find>INSTNM</find>
       <find>data</find>
       <find>colle</find>
+      <find>size</find>
+      <find>scatter</find>
+      <find>range</find>
+      <find>margin</find>
+      <find>ckSubd</find>
+      <find>kSubdivid</find>
+      <find>tag line</find>
+      <find>mouso</find>
+      <find>resize.three</find>
+      <find>.on</find>
+      <find>svgID</find>
+      <find>console.log</find>
+      <find>business</find>
+      <find>tooltip</find>
     </findStrings>
     <replaceStrings>
-      <replace>/public/business</replace>
       <replace>pub</replace>
       <replace>datascience</replace>
       <replace>visualization</replace>
@@ -169,6 +194,7 @@
       <replace>data</replace>
       <replace>, //</replace>
       <replace>Coed</replace>
+      <replace>/public/business</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -188,7 +214,6 @@
         <option value="$PROJECT_DIR$/public/business/mail/mail.php" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/modules/college.py" />
-        <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/dsny.js" />
         <option value="$PROJECT_DIR$/python_modules/data/collegeScorecard/filteredData.json" />
         <option value="$PROJECT_DIR$/bower.json" />
@@ -202,9 +227,10 @@
         <option value="$PROJECT_DIR$/bower_components/dataTableSpecifics/responsive.bootstrap.min.js" />
         <option value="$PROJECT_DIR$/bower_components/dataTableSpecifics/dataTables.bootstrap.min.css" />
         <option value="$PROJECT_DIR$/bower_components/dataTableSpecifics/responsive.bootstrap.min.css" />
-        <option value="$PROJECT_DIR$/views/portfolio.html" />
         <option value="$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/data.csv" />
+        <option value="$PROJECT_DIR$/views/portfolio.html" />
         <option value="$PROJECT_DIR$/views/college-scorecard-dashboard.html" />
+        <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboard.js" />
       </list>
     </option>
@@ -226,8 +252,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1177" />
-    <option name="y" value="-37" />
+    <option name="x" value="716" />
+    <option name="y" value="-31" />
     <option name="width" value="1522" />
     <option name="height" value="1931" />
   </component>
@@ -249,6 +275,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -265,14 +292,28 @@
               <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
               <item name="dsny" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dsny" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dsny" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="header" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
               <item name="dsny" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="portfolio" type="462c0819:PsiDirectoryNode" />
-              <item name="collegeScorecardDashboard" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
@@ -284,7 +325,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -298,19 +338,19 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\public\business\images\header" />
+      <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\public\business\images\portfolio" />
+      <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\python_modules\data\collegeScorecard" />
+      <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\bower_components\d3" />
+      <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\public\business\js" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\bower_components\dataTableSpecifics" />
       <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\python_modules\data\collegeScorecard" />
       <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\python_modules" />
       <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\python_modules\portfolio" />
       <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\public\business\js" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\public\business\images\portfolio" />
-      <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\python_modules\data\collegeScorecard" />
-      <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\bower_components\d3" />
-      <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\public\business\js" />
-      <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\public\business\images\logo" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -362,26 +402,28 @@
       <workItem from="1512869493068" duration="670000" />
       <workItem from="1512909453138" duration="12226000" />
       <workItem from="1512946146959" duration="2473000" />
-      <workItem from="1512954543707" duration="16254000" />
+      <workItem from="1512954543707" duration="16359000" />
+      <workItem from="1513001081371" duration="5127000" />
+      <workItem from="1513034005841" duration="8716000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77414000" />
+    <option name="totallyTimeSpent" value="91362000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3026" height="1946" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28179973" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18843031" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13903743" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14022578" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3184789" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3184789" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -401,7 +443,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -560,13 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="85" column="38" lean-forward="false" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/business/images/portfolio/portfolio-6.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -606,13 +641,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
           <caret line="1228" column="12" lean-forward="false" selection-start-line="1228" selection-start-column="12" selection-end-line="1228" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dsny.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="1749">
           <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding>
             <element signature="e#1386#1544#0" expanded="false" />
@@ -629,7 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="81" column="18" lean-forward="false" selection-start-line="81" selection-start-column="18" selection-end-line="81" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -637,7 +670,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -645,7 +677,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="148" column="23" lean-forward="true" selection-start-line="148" selection-start-column="23" selection-end-line="148" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -653,7 +684,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4107">
           <caret line="11007" column="4" lean-forward="false" selection-start-line="11007" selection-start-column="4" selection-end-line="11007" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -661,9 +691,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="7" column="343" lean-forward="false" selection-start-line="7" selection-start-column="343" selection-end-line="7" selection-end-column="343" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -671,9 +698,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="924">
           <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -681,9 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="5" column="333" lean-forward="false" selection-start-line="5" selection-start-column="333" selection-end-line="5" selection-end-column="333" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -691,7 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1244">
           <caret line="163" column="385" lean-forward="true" selection-start-line="163" selection-start-column="385" selection-end-line="163" selection-end-column="385" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -699,7 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
           <caret line="31" column="7" lean-forward="false" selection-start-line="1" selection-start-column="3" selection-end-line="31" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -707,7 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="4292" lean-forward="false" selection-start-line="0" selection-start-column="4292" selection-end-line="0" selection-end-column="4292" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -715,15 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="3991" lean-forward="false" selection-start-line="0" selection-start-column="3991" selection-end-line="0" selection-end-column="3991" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/portfolio.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="149" column="59" lean-forward="false" selection-start-line="149" selection-start-column="59" selection-end-line="149" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -731,14 +740,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2442">
           <caret line="74" column="69" lean-forward="false" selection-start-line="74" selection-start-column="69" selection-end-line="74" selection-end-column="69" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/portfolio.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="45" selection-end-column="104" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/college-scorecard-dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="179" column="118" lean-forward="false" selection-start-line="179" selection-start-column="118" selection-end-line="179" selection-end-column="118" />
+        <state relative-caret-position="990">
+          <caret line="51" column="104" lean-forward="false" selection-start-line="51" selection-start-column="104" selection-end-line="51" selection-end-column="104" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -764,35 +783,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="670" column="25" lean-forward="false" selection-start-line="670" selection-start-column="25" selection-end-line="670" selection-end-column="25" />
+        <state relative-caret-position="957">
+          <caret line="639" column="112" lean-forward="false" selection-start-line="639" selection-start-column="112" selection-end-line="639" selection-end-column="112" />
           <folding>
             <element signature="n#!!block;n#formatData#0" expanded="false" />
             <element signature="n#!!block;n#piechart#0" expanded="false" />
-            <element signature="n#!!block;n#change_pie#0;n#!!block;n#piechart#0" expanded="false" />
             <element signature="n#!!block;n#piechart2#0" expanded="false" />
-            <element signature="e#7603#8252#0" expanded="false" />
+            <element signature="e#7605#8254#0" expanded="false" />
+            <element signature="e#10397#10940#0" expanded="false" />
             <element signature="n#!!block;n#mapchart#0" expanded="false" />
             <element signature="n#!!block;n#reformat#0;n#!!block;n#mapchart#0" expanded="false" />
-            <element signature="e#13263#13458#0" expanded="false" />
+            <element signature="e#13266#13461#0" expanded="false" />
             <element signature="n#!!block;n#search#0;n#!!block;n#mapchart#0" expanded="false" />
             <element signature="n#!!block;n#updateNodes#0;n#!!block;n#mapchart#0" expanded="false" />
-            <element signature="e#16414#16469#0" expanded="false" />
-            <element signature="e#16516#16634#0" expanded="false" />
+            <element signature="e#16417#16472#0" expanded="false" />
+            <element signature="e#16519#16637#0" expanded="false" />
             <element signature="n#!!block;n#projectPoint#0;n#!!block;n#mapchart#0" expanded="false" />
             <element signature="n#!!block;n#getZoomScale#0;n#!!block;n#mapchart#0" expanded="false" />
             <element signature="n#!!block;n#mapmove#0;n#!!block;n#mapchart#0" expanded="false" />
             <element signature="n#!!block;n#table#0" expanded="false" />
-            <element signature="e#19922#20212#0" expanded="false" />
-            <element signature="e#20235#20607#0" expanded="false" />
-            <element signature="n#!!block;n#histogramChart#0" expanded="false" />
-            <element signature="e#26520#26858#0" expanded="false" />
-            <element signature="e#26896#27009#0" expanded="false" />
-            <element signature="e#27012#27648#0" expanded="false" />
-            <element signature="e#28076#28121#0" expanded="false" />
-            <marker date="1512970869445" expanded="true" signature="2791:2797" ph=" " />
+            <element signature="e#19926#20216#0" expanded="false" />
+            <element signature="e#20239#20611#0" expanded="false" />
+            <element signature="e#22001#22105#0" expanded="false" />
+            <element signature="n#!!block;n#scatterChart#0" expanded="false" />
+            <element signature="e#26539#26618#0" expanded="false" />
+            <element signature="e#26627#26707#0" expanded="false" />
+            <element signature="e#26796#26997#0" expanded="false" />
+            <element signature="e#30114#30517#0" expanded="false" />
+            <element signature="e#30555#30642#0" expanded="false" />
+            <element signature="n#!!block;n#resizeScatter#0;n#!!block;n#scatterChart#0" expanded="false" />
+            <element signature="e#30754#30841#0" expanded="false" />
+            <element signature="e#30854#30942#0" expanded="false" />
+            <element signature="e#35172#35267#0" expanded="false" />
+            <element signature="e#35398#36034#0" expanded="false" />
+            <element signature="e#36548#36593#0" expanded="false" />
+            <marker date="1513043950859" expanded="true" signature="2791:2797" ph=" " />
           </folding>
         </state>
       </provider>

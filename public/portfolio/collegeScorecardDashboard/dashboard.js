@@ -54,7 +54,7 @@ function formatData(data){
     });
     return data
 
-}
+};
 function piechart(data, selector){
 
     data_pie = d3.nest().key(function(d) { return d["Gender"]; }).sortKeys(d3.ascending)
@@ -168,7 +168,7 @@ function piechart(data, selector){
 
         polyline_pie.exit().remove();
     };
-}
+};
 function piechart2(data, selector){
     var st = {};
     st.data = [
@@ -309,7 +309,7 @@ function piechart2(data, selector){
         });
     }
 
-}
+};
 function mapchart(mapData, selector){
 
 
@@ -518,7 +518,7 @@ function mapchart(mapData, selector){
 
         }
 
-}
+};
 function table(data, selector){
 
     var columnsData = [
@@ -594,44 +594,108 @@ function table(data, selector){
         return table;
     }
     tabulate(data, columnsHead, columnsData)
-}
-function histogramChart(data, selector){
+};
+function histogramChart(data, selector, resize, histSvgID){
     var _data = [];
-
-
     data.forEach(function(d,i){
         if(d["SAT_AVG"] != ""){
             _data.push(parseFloat(d["SAT_AVG"])/1600.)
         }
     });
-    // console.log("My Data:")
-    // console.log(_data)
-
     var formatCount = d3_4.format(",.0f");
 
-    var svg = d3_4.select(selector).append("svg").attr('width', "100%").attr('height', "300");
-    var margin = {top: 10, right: 15, bottom: 30, left: 15};
-    var width = 400 - margin.left - margin.right;
-    var height = 300 - margin.top - margin.bottom;
-    var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    hist_svg = d3_4.select(selector).append("svg").attr("id", histSvgID).attr('width', "100%").attr('height', "300");
+    hist_margin = {top: 10, right: 15, bottom: 30, left: 15};
+    hist_width = parseInt(d3.select(selector).style("width"), 10) - hist_margin.left - hist_margin.right;
+    hist_height = 300 - hist_margin.top - hist_margin.bottom;
+    hist_g = hist_svg.append("g").attr("transform", "translate(" + hist_margin.left + "," + hist_margin.top + ")");
 
-    var x = d3_4.scaleLinear().rangeRound([0, width]);
-    var bins = d3_4.histogram().domain(x.domain()).thresholds(x.ticks(20))(_data);
+    hist_x = d3_4.scaleLinear().rangeRound([0, hist_width]);
+    hist_bins = d3_4.histogram().domain(hist_x.domain()).thresholds(hist_x.ticks(15))(_data);
 
-    var y = d3_4.scaleLinear().domain([0, d3_4.max(bins, function(d) { return d.length; })]).range([height, 0]);
-    var bar = g.selectAll(".bar").data(bins).enter().append("g").attr("class", "bar")
-        .attr("transform", function(d) { return "translate(" + x(d.x0) + "," + y(d.length) + ")"; });
+    hist_y = d3_4.scaleLinear().domain([0, d3_4.max(hist_bins, function(d) { return d.length; })]).range([hist_height, 0]);
+    hist_bar = hist_g.selectAll(".bar").data(hist_bins).enter().append("g").attr("class", "bar")
+        .attr("transform", function(d) { return "translate(" + hist_x(d.x0) + "," + hist_y(d.length) + ")"; });
 
-    bar.append("rect").attr("x", 1).attr("width", x(bins[0].x1) - x(bins[0].x0) - 1)
-        .attr("height", function(d) { return height - y(d.length); });
+    hist_bar.append("rect")
+        .attr("x", function(d,i){
+            return 2
+        })
+        .attr("width", hist_x(hist_bins[0].x1) - hist_x(hist_bins[0].x0) - 2).style("margin-top", "10px")
+        .attr("height", function(d) { return hist_height - hist_y(d.length); })
+        .on("mouseover",function(d,i){
+            d3.select(this)
+                .attr("fill-opacity", ".5")
+                .transition()
+                .duration(500)
+            })
+        .on("mouseout", function(d,i){
+            d3.select(this)
+                .attr("fill-opacity", "1")
+                .transition()
+                .duration(500)
+        });
 
-    bar.append("text").attr("dy", ".75em").attr("y", 6).attr("x", (x(bins[0].x1) - x(bins[0].x0)) / 2)
-        .attr("text-anchor", "middle").text(function(d) { return formatCount(d.length); });
+    hist_bar.append("text").attr("dy", ".75em").attr("y", 6).attr("x", (hist_x(hist_bins[0].x1) - hist_x(hist_bins[0].x0)) / 2)
+        .attr("text-anchor", "middle").text(function(d) { return formatCount(d.length); }).style("color", "black");
 
-    g.append("g").attr("class", "axis axis--x").attr("transform", "translate(0," + height + ")").call(d3_4.axisBottom(x));
-}
-function scatterChart(data, selector, home){
-    //remove outliers
+    hist_g.append("g").attr("class", "axis axis--x").attr("transform", "translate(0," + hist_height + ")").call(d3_4.axisBottom(hist_x));
+
+    function resizeHisto() {
+        d3_4.select("#"+histSvgID).selectAll("*").remove();
+        hist_svg = d3_4.select("#"+histSvgID).attr("id", histSvgID).attr('width', "100%").attr('height', "300");
+        hist_margin = {top: 10, right: 15, bottom: 30, left: 15};
+        hist_width = parseInt(d3.select(selector).style("width"), 10) - hist_margin.left - hist_margin.right;
+        hist_height = 300 - hist_margin.top - hist_margin.bottom;
+        hist_g = hist_svg.append("g").attr("transform", "translate(" + hist_margin.left + "," + hist_margin.top + ")");
+
+        hist_x = d3_4.scaleLinear().rangeRound([0, hist_width]);
+        hist_bins = d3_4.histogram().domain(hist_x.domain()).thresholds(hist_x.ticks(15))(_data);
+
+        hist_y = d3_4.scaleLinear().domain([0, d3_4.max(hist_bins, function(d) { return d.length; })]).range([hist_height, 0]);
+        hist_bar = hist_g.selectAll(".bar").data(hist_bins).enter().append("g").attr("class", "bar")
+            .attr("transform", function(d) { return "translate(" + hist_x(d.x0) + "," + hist_y(d.length) + ")"; });
+
+        hist_bar.append("rect")
+            .attr("x", function(d,i){
+                return 2
+            })
+            .attr("width", hist_x(hist_bins[0].x1) - hist_x(hist_bins[0].x0) - 2).style("margin-top", "10px")
+            .attr("height", function(d) { return hist_height - hist_y(d.length); })
+            .on("mouseover",function(d,i){
+                d3.select(this)
+                    .attr("fill-opacity", ".5")
+                    .transition()
+                    .duration(500)
+            })
+            .on("mouseout", function(d,i){
+                d3.select(this)
+                    .attr("fill-opacity", "1")
+                    .transition()
+                    .duration(500)
+            });
+
+        hist_bar.append("text").attr("dy", ".75em").attr("y", 6).attr("x", (hist_x(hist_bins[0].x1) - hist_x(hist_bins[0].x0)) / 2)
+            .attr("text-anchor", "middle").text(function(d) { return formatCount(d.length); });
+
+        hist_g.append("g").attr("class", "axis axis--x").attr("transform", "translate(0," + hist_height + ")").call(d3_4.axisBottom(hist_x));
+
+    }
+
+    //window.onresize = function(resize) {        resizeHisto()    };
+    d3.select(window).on(resize, resizeHisto);
+
+};
+function scatterChart(data, selector, home, resize, scatterSvgID){
+
+    // setup x
+    if(home == "in"){
+        var scatter_xValue = function(d) { return d["TUITIONFEE_IN"];};
+    }
+    else{
+        var scatter_xValue = function(d) { return d["TUITIONFEE_OUT"];};
+    }
+    var moneyFormat = d3.format(",.2f");
     var _data = []
     data.forEach(function(d){
         if(d["TUITIONFEE_IN"] < 55000 && d["TUITIONFEE_OUT"] < 55000 && d["TUITFTE"] < 200000){
@@ -640,68 +704,58 @@ function scatterChart(data, selector, home){
         }
     });
 
-    var margin = {top: 20, right: 20, bottom: 30, left: 80},
-        width = 600 - margin.left - margin.right,
-        height = 300 - margin.top - margin.bottom;
+    scatter_margin = {top: 20, right: 20, bottom: 30, left: 80}
+    scatter_width = parseInt(d3.select(selector).style("width"), 10) - scatter_margin.left - scatter_margin.right;
+    scatter_height = 300 - scatter_margin.top - scatter_margin.bottom;
 
-    // setup x
-    if(home == "in"){
-        var xValue = function(d) { return d["TUITIONFEE_IN"];};
-    }
-    else{
-        var xValue = function(d) { return d["TUITIONFEE_OUT"];};
-    }
-    var xScale = d3.scale.linear().range([0, width]); // value -> display
-    var xMap = function(d) { return xScale(xValue(d));}; // data -> display
-    var xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+    scatter_xScale = d3.scale.linear().range([0, scatter_width]);
+    scatter_xMap = function(d) { return scatter_xScale(scatter_xValue(d));}; // data -> display
+    scatter_numberOfXTicks = parseInt(Math.max(scatter_width / 100, 2));
+    scatter_xAxis = d3.svg.axis().scale(scatter_xScale)//.tickSize(-scatter_height)
+                                                        .tickSubdivide(false).ticks(scatter_numberOfXTicks)
+                                                        .tickFormat(function(d){return "$"+moneyFormat(d)})
+                                                        .orient("bottom");
 
-    // setup y
-    var yValue = function(d) { return d["TUITFTE"];}; // data -> value
-    var yScale = d3.scale.linear().range([height, 0]); // value -> display
-    var yMap = function(d) { return yScale(yValue(d));}; // data -> display
-    var yAxis = d3.svg.axis().scale(yScale).orient("left");
+    scatter_xScale.domain([d3.min(_data, scatter_xValue)-1, d3.max(_data, scatter_xValue)+1]);
 
-    // setup fill color
-    var cValue = function(d) { return d["AVGFACSAL"];};
-    var color =  d3.scale.pow().domain(
+
+    scatter_yValue = function(d) { return d["TUITFTE"];}; // data -> value
+    scatter_yScale = d3.scale.linear().range([scatter_height, 0]); // value -> display
+    scatter_yMap = function(d) { return scatter_yScale(scatter_yValue(d));}; // data -> display
+    scatter_yAxis = d3.svg.axis().scale(scatter_yScale).orient("left");
+
+    scatter_yScale.domain([d3.min(_data, scatter_yValue)-1, d3.max(_data, scatter_yValue)+1]);
+
+    scatter_cValue = function(d) { return d["AVGFACSAL"];};
+    scatter_color =  d3.scale.pow().domain(
         [
             d3.min(data, function(d) { return d["AVGFACSAL"]; }),
             d3.max(data, function(d) { return d["AVGFACSAL"]; })
         ]
     ).range(['red', 'blue']);
 
-    // add the graph canvas to the body of the webpage
-    var svg = d3.select(selector).append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
+    scatter_svg = d3.select(selector).append("svg").attr("id", scatterSvgID)
+        .attr("width", scatter_width + scatter_margin.left + scatter_margin.right)
+        .attr("height", scatter_height + scatter_margin.top + scatter_margin.bottom)
         .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        .attr("transform", "translate(" + scatter_margin.left + "," + scatter_margin.top + ")");
 
-    // add the tooltip area to the webpage
-    var tooltip = d3.select(selector).append("div")
-        .attr("class", "tooltip")
-        .style("opacity", 0);
+    scatter_tooltip = d3.select(selector).append("div").attr("class", "tooltip").style("opacity", 0);
 
-    //domains
-    xScale.domain([d3.min(_data, xValue)-1, d3.max(_data, xValue)+1]);
-    yScale.domain([d3.min(_data, yValue)-1, d3.max(_data, yValue)+1]);
-
-    // x-axis
-    svg.append("g")
+    scatter_svg.append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + ")")
-        .call(xAxis)
+        .attr("transform", "translate(0," + scatter_height + ")")
+        .call(scatter_xAxis)
         .append("text")
         .attr("class", "label")
-        .attr("x", width)
+        .attr("x", scatter_width)
         .attr("y", -6)
         .style("text-anchor", "end")
-        .text("Tuition");
+        .text("$ Tuition");
 
-    // y-axis
-    svg.append("g")
+    scatter_svg.append("g")
         .attr("class", "y axis")
-        .call(yAxis)
+        .call(scatter_yAxis)
         .append("text")
         .attr("class", "label")
         .attr("transform", "rotate(-90)")
@@ -710,29 +764,141 @@ function scatterChart(data, selector, home){
         .style("text-anchor", "end")
         .text("Average Revenue");
 
-    // draw dots
-    svg.selectAll(".dot")
+    scatter_svg.selectAll(".dot")
         .data(_data)
         .enter().append("circle")
         .attr("class", "dot")
         .attr("r", 3.5)
-        .attr("cx", xMap)
-        .attr("cy", yMap)
-        .style("fill", function(d) { return color(cValue(d));})
+        .attr("cx", scatter_xMap)
+        .attr("cy", scatter_yMap)
+        .style("fill", function(d) { return scatter_color(scatter_cValue(d));})
         .on("mouseover", function(d) {
-            tooltip.transition()
-                .duration(200)
-                .style("opacity", .9);
-            tooltip.html(d["INSTNM"] + "<br/> (" + xValue(d)
-                + ", " + yValue(d) + ")")
+           // console.log(JSON.stringify(d))
+            scatter_tooltip.transition().duration(200).style("opacity", .9);
+            scatter_tooltip.html(
+                d["INSTNM"] + "<br/> " +
+                "(" + scatter_xValue(d) + ", " + scatter_yValue(d) + ")")
                 .style("left", (d3.event.pageX + 5) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
         })
         .on("mouseout", function(d) {
-            tooltip.transition()
-                .duration(500)
-                .style("opacity", 0);
+            scatter_tooltip.transition().duration(500).style("opacity", 0);
         });
+
+    function resizeScatter(){
+        scatter_fullHeight = 300;
+
+        // setup x
+        if(home == "in"){
+            var scatter_xValue = function(d) { return d["TUITIONFEE_IN"];};
+        }
+        else{
+            var scatter_xValue = function(d) { return d["TUITIONFEE_OUT"];};
+        }
+
+        // add the graph canvas to the body of the webpage
+        d3.select("#"+scatterSvgID).selectAll("*").remove();
+
+        scatter_margin = {top: 20, right: 20, bottom: 30, left: 80};
+        scatter_width = parseInt(d3.select(selector).style("width"), 10) - scatter_margin.left - scatter_margin.right;
+        scatter_height = scatter_fullHeight - scatter_margin.top - scatter_margin.bottom;
+
+
+        //var xScale = d3.scale.linear().rangeRoundBands([0, width], .1, 1);
+        scatter_xScale.range([0, scatter_width]);
+        scatter_numberOfXTicks = parseInt(Math.max(scatter_width / 100, 2));
+       // console.log(scatter_numberOfXTicks);
+        scatter_xAxis.scale(scatter_xScale)//.tickSize()
+                                                .ticks(scatter_numberOfXTicks)
+                                                .tickFormat(function(d){return "$"+moneyFormat(d)})
+                                                .orient("bottom");
+
+        scatter_xMap = function(d) { return scatter_xScale(scatter_xValue(d));}; // data -> display
+        //scatter_xAxis = d3.svg.axis().scale(scatter_xScale).orient("bottom");
+
+        // setup y
+        scatter_yValue = function(d) { return d["TUITFTE"];}; // data -> value
+        scatter_yScale = d3.scale.linear().range([scatter_height, 0]); // value -> display
+        scatter_yMap = function(d) { return scatter_yScale(scatter_yValue(d));}; // data -> display
+        scatter_yAxis = d3.svg.axis().scale(scatter_yScale).orient("left");
+
+
+        //domains
+        scatter_xScale.domain([d3.min(_data, scatter_xValue)-1, d3.max(_data, scatter_xValue)+1]);
+        scatter_yScale.domain([d3.min(_data, scatter_yValue)-1, d3.max(_data, scatter_yValue)+1]);
+
+
+        // setup fill color
+        scatter_cValue = function(d) { return d["AVGFACSAL"];};
+        scatter_color =  d3.scale.pow().domain(
+            [
+                d3.min(data, function(d) { return d["AVGFACSAL"]; }),
+                d3.max(data, function(d) { return d["AVGFACSAL"]; })
+            ]
+        ).range(['red', 'blue']);
+
+
+        scatter_svg = d3.select("#"+scatterSvgID)
+            .attr("width", scatter_width + scatter_margin.left + scatter_margin.right)
+            .attr("height", scatter_height + scatter_margin.top + scatter_margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + scatter_margin.left + "," + scatter_margin.top + ")");
+
+        // add the tooltip area to the webpage
+        scatter_tooltip = d3.select("#"+scatterSvgID).append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+
+        // x-axis
+        scatter_svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + scatter_height + ")")
+            .call(scatter_xAxis)
+            .append("text")
+            .attr("class", "label")
+            .attr("x", scatter_width)
+            .attr("y", -6)
+            .style("text-anchor", "end")
+            .text("Tuition");
+
+        // y-axis
+        scatter_svg.append("g")
+            .attr("class", "y axis")
+            .call(scatter_yAxis)
+            .append("text")
+            .attr("class", "label")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 6)
+            .attr("dy", ".71em")
+            .style("text-anchor", "end")
+            .text("Average Revenue");
+
+        // draw dots
+        scatter_svg.selectAll(".dot")
+            .data(_data)
+            .enter().append("circle")
+            .attr("class", "dot")
+            .attr("r", 3.5)
+            .attr("cx", scatter_xMap)
+            .attr("cy", scatter_yMap)
+            .style("fill", function(d) { return scatter_color(scatter_cValue(d));})
+            .on("mouseover", function(d) {
+               // console.log(JSON.stringify(d))
+                scatter_tooltip.transition().duration(200).style("opacity", .9);
+                scatter_tooltip.html(
+                    d["INSTNM"] + "<br/> " +
+                    "(" + scatter_xValue(d) + ", " + scatter_yValue(d) + ")")
+                    .style("left", (d3.event.pageX + 5) + "px")
+                    .style("top", (d3.event.pageY - 28) + "px");
+            })
+            .on("mouseout", function(d) {
+                scatter_tooltip.transition().duration(500).style("opacity", 0);
+            });
+    }
+    //window.onresize = function(svgID) {        resizeScatter()    };
+
+    d3.select(window).on(resize, resizeScatter);
+
 /*
     // draw legend
     var legend = svg.selectAll(".legend")
@@ -756,7 +922,7 @@ function scatterChart(data, selector, home){
         .style("text-anchor", "end")
         .text(function(d) { return d;})
 */
-}
+};
 
 
 function draw(data){
@@ -764,9 +930,9 @@ function draw(data){
     var piechartData = formatData(data);
     piechart(piechartData, "#chartPie");
     mapchart(data, "mapID");
-    histogramChart(data, "#chartHisto");
-    scatterChart(data, "#scatterChartA", "in");
-    scatterChart(data, "#scatterChartB", "out");
+    histogramChart(data, "#chartHisto", "resize.one", "histSVG");
+    scatterChart(data, "#scatterChartA", "in", "resize.two", "scatterSVGA");
+    scatterChart(data, "#scatterChartB", "out", "resize.three", "scatterSVGB");
 }
 
 
