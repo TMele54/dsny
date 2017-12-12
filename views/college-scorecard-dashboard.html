@@ -87,20 +87,38 @@
 
         .axis path,
         .axis line {
-            fill: none;
+            fill: #b0b0b0;
             stroke: #000;
             shape-rendering: crispEdges;
         }
 
-        .dot {
-            stroke: #000;
+        .d3-tip {
+            line-height: 1;
+            font-weight: bold;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            border-radius: 2px;
         }
 
-        .tooltip {
+        /* Creates a small triangle extender for the tooltip */
+        .d3-tip:after {
+            box-sizing: border-box;
+            display: inline;
+            font-size: 10px;
+            width: 100%;
+            line-height: 1;
+            color: rgba(0, 0, 0, 0.8);
+            content: "\25BC";
             position: absolute;
-            width: 200px;
-            height: 28px;
-            pointer-events: none;
+            text-align: center;
+        }
+
+        /* Style northward tooltips differently */
+        .d3-tip.n:after {
+            margin: -1px 0 0 0;
+            top: 100%;
+            left: 0;
         }
     </style>
 </head>
@@ -304,7 +322,9 @@
 <script>d3_4 = d3;window.d3 = null;</script>
 <!-- Data Driven Documents D3 - Version 3-->
 <script src="/bower_components/d3/d3.min.js"></script>
-<!-- Data Driven Documents D3 - Version 3-->
+<!-- D3 Tooltip-->
+<script src="/bower_components/d3-tip/index.js"></script>
+<!-- Leaflet maps-->
 <script src="/bower_components/leaflet/dist/leaflet.js"></script>
 <!-- Visualization Script -->
 <script src="/public/portfolio/collegeScorecardDashboard/dashboard.js"></script>

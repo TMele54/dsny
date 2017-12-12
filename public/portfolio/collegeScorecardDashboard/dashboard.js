@@ -1,34 +1,34 @@
 var dictionarySample = {
-"ADM_RATE": 0.6538,                   // "Admission rate"
-"AGE_ENTRY": "20.277133825",          // "Average age of entry"
-"ALIAS": "AAMU",                      // "Institution name aliases"
-"AVGFACSAL": 7017.0,                  // "Average faculty salary"
-"CITY": "Normal",                     // "City"
-"COSTT4_A": 20809.0,                  // "Average cost of attendance (academic year institutions)"
-"COSTT4_P": "",                       // "Average cost of attendance (program-year institutions)"
-"CURROPER": 1,                        // "Flag for currently operating institution, 0=closed, 1=operating"
-"GRADS": 1123.0,                      // "Number of graduate students"
-"INSTNM": "Alabama A & M University", // "Institution name"
-"INSTURL": "www.aamu.edu/",           // "URL for institution's homepage"
-"LATITUDE": 34.783367999999996,       // "Latitude"
-"LOAN_EVER": "0.8963821567",          // "Share of students who received a federal loan while in school"
-"LONGITUDE": -86.568502,              // "Longitude"
-"MAIN": 1,                            // "Flag for main campus"
-"MENONLY": 0.0,                       // "Flag for men-only college"
-"NUMBRANCH": 1,                       // "Number of branch campuses"
-"PELL_EVER": "0.8609062171",          // "Share of students who received a Pell Grant while in school"
-"PFTFAC": 0.7096,                     // "Proportion of faculty that is full-time"
-"REGION": 5,                          // "Region (IPEDS)"
-"SAT_AVG": 850.0,                     // "Average SAT equivalent score of students admitted"
-"SCH_DEG": 3.0,                       // "Predominant degree awarded (recoded 0s and 4s)"
-"STABBR": "AL",                       // "State postcode"
-"TUITFTE": 9657.0,                    // "Net tuition revenue per full-time equivalent student"
-"TUITIONFEE_IN": 9366.0,              // "In-state tuition and fees"
-"TUITIONFEE_OUT": 17136.0,            // "Out-of-state tuition and fees"
-"UNITID": 100654,                     // "Unit ID for institution"
-"WOMENONLY": 0.0,                     // "Flag for women-only college"
-"ZIP": "35762"                        // "ZIP code"
-}; 
+    "ADM_RATE": 0.6538,                   // "Admission rate"
+    "AGE_ENTRY": "20.277133825",          // "Average age of entry"
+    "ALIAS": "AAMU",                      // "Institution name aliases"
+    "AVGFACSAL": 7017.0,                  // "Average faculty salary"
+    "CITY": "Normal",                     // "City"
+    "COSTT4_A": 20809.0,                  // "Average cost of attendance (academic year institutions)"
+    "COSTT4_P": "",                       // "Average cost of attendance (program-year institutions)"
+    "CURROPER": 1,                        // "Flag for currently operating institution, 0=closed, 1=operating"
+    "GRADS": 1123.0,                      // "Number of graduate students"
+    "INSTNM": "Alabama A & M University", // "Institution name"
+    "INSTURL": "www.aamu.edu/",           // "URL for institution's homepage"
+    "LATITUDE": 34.783367999999996,       // "Latitude"
+    "LOAN_EVER": "0.8963821567",          // "Share of students who received a federal loan while in school"
+    "LONGITUDE": -86.568502,              // "Longitude"
+    "MAIN": 1,                            // "Flag for main campus"
+    "MENONLY": 0.0,                       // "Flag for men-only college"
+    "NUMBRANCH": 1,                       // "Number of branch campuses"
+    "PELL_EVER": "0.8609062171",          // "Share of students who received a Pell Grant while in school"
+    "PFTFAC": 0.7096,                     // "Proportion of faculty that is full-time"
+    "REGION": 5,                          // "Region (IPEDS)"
+    "SAT_AVG": 850.0,                     // "Average SAT equivalent score of students admitted"
+    "SCH_DEG": 3.0,                       // "Predominant degree awarded (recoded 0s and 4s)"
+    "STABBR": "AL",                       // "State postcode"
+    "TUITFTE": 9657.0,                    // "Net tuition revenue per full-time equivalent student"
+    "TUITIONFEE_IN": 9366.0,              // "In-state tuition and fees"
+    "TUITIONFEE_OUT": 17136.0,            // "Out-of-state tuition and fees"
+    "UNITID": 100654,                     // "Unit ID for institution"
+    "WOMENONLY": 0.0,                     // "Flag for women-only college"
+    "ZIP": "35762"                        // "ZIP code"
+};
 
 function formatData(data){
     data.forEach(function(d){
@@ -73,12 +73,12 @@ function piechart(data, selector){
         radius_pie = Math.min(width_pie, height_pie) / 2;
 
     var svg_pie = d3.select(selector).append("svg")
-                                            .attr('width',width_pie)
-                                            .attr('height', height_pie)
-                                                .append("g")
-                                                .attr("transform",
-                                                        "translate(" + width_pie / 2 + "," + height_pie / 2 + ")"
-                                                );
+        .attr('width',width_pie)
+        .attr('height', height_pie)
+        .append("g")
+        .attr("transform",
+            "translate(" + width_pie / 2 + "," + height_pie / 2 + ")"
+        );
 
     svg_pie.append("g").attr("class", "slices");
     svg_pie.append("g").attr("class", "labels");
@@ -313,216 +313,216 @@ function piechart2(data, selector){
 function mapchart(mapData, selector){
 
 
-        function reformat(array) {
-            var data = [];
-            array.map(function (d, i) {
+    function reformat(array) {
+        var data = [];
+        array.map(function (d, i) {
 
-                data.push({
-                    id: i,
-                    type: "Feature",
-                    geometry: {
-                        coordinates: [+d["LONGITUDE"], +d["LATITUDE"]],
-                        type: "Point"
-                    }
-
-
-                });
-            });
-            return data;
-        }
-        var geoData = { type: "FeatureCollection", features: reformat(mapData) };
-
-        var qtree = d3.geom.quadtree(geoData.features.map(function (data, i) {
-                return {
-                    x: data.geometry.coordinates[0],
-                    y: data.geometry.coordinates[1],
-                    all: data
-                };
-            } ));
-
-        // Find the nodes within the specified rectangle.
-        function search(quadtree, x0, y0, x3, y3) {
-            var pts = [];
-            var subPixel = false;
-            var subPts = [];
-            var scale = getZoomScale();
-
-            var counter = 0;
-            quadtree.visit(function (node, x1, y1, x2, y2) {
-                var p = node.point;
-                var pwidth = node.width * scale;
-                var pheight = node.height * scale;
-
-                // -- if this is too small rectangle only count the branch and set opacity
-                if ((pwidth * pheight) <= 1) {
-                    // start collecting sub Pixel points
-                    subPixel = true;
+            data.push({
+                id: i,
+                type: "Feature",
+                geometry: {
+                    coordinates: [+d["LONGITUDE"], +d["LATITUDE"]],
+                    type: "Point"
                 }
-                // -- jumped to super node large than 1 pixel
+
+
+            });
+        });
+        return data;
+    }
+    var geoData = { type: "FeatureCollection", features: reformat(mapData) };
+
+    var qtree = d3.geom.quadtree(geoData.features.map(function (data, i) {
+        return {
+            x: data.geometry.coordinates[0],
+            y: data.geometry.coordinates[1],
+            all: data
+        };
+    } ));
+
+    // Find the nodes within the specified rectangle.
+    function search(quadtree, x0, y0, x3, y3) {
+        var pts = [];
+        var subPixel = false;
+        var subPts = [];
+        var scale = getZoomScale();
+
+        var counter = 0;
+        quadtree.visit(function (node, x1, y1, x2, y2) {
+            var p = node.point;
+            var pwidth = node.width * scale;
+            var pheight = node.height * scale;
+
+            // -- if this is too small rectangle only count the branch and set opacity
+            if ((pwidth * pheight) <= 1) {
+                // start collecting sub Pixel points
+                subPixel = true;
+            }
+            // -- jumped to super node large than 1 pixel
+            else {
+                // end collecting sub Pixel points
+                if (subPixel && subPts && subPts.length > 0) {
+
+                    subPts[0].group = subPts.length;
+                    pts.push(subPts[0]); // add only one todo calculate intensity
+                    counter += subPts.length - 1;
+                    subPts = [];
+                }
+                subPixel = false;
+            }
+
+            if ((p) && (p.x >= x0) && (p.x < x3) && (p.y >= y0) && (p.y < y3)) {
+
+                if (subPixel) {
+                    subPts.push(p.all);
+                }
                 else {
-                    // end collecting sub Pixel points
-                    if (subPixel && subPts && subPts.length > 0) {
-
-                        subPts[0].group = subPts.length;
-                        pts.push(subPts[0]); // add only one todo calculate intensity
-                        counter += subPts.length - 1;
-                        subPts = [];
+                    if (p.all.group) {
+                        delete (p.all.group);
                     }
-                    subPixel = false;
+                    pts.push(p.all);
                 }
 
-                if ((p) && (p.x >= x0) && (p.x < x3) && (p.y >= y0) && (p.y < y3)) {
+            }
+            // if quad rect is outside of the search rect do nto search in sub nodes (returns true)
+            return x1 >= x3 || y1 >= y3 || x2 < x0 || y2 < y0;
+        });
 
-                    if (subPixel) {
-                        subPts.push(p.all);
-                    }
-                    else {
-                        if (p.all.group) {
-                            delete (p.all.group);
-                        }
-                        pts.push(p.all);
-                    }
+        return pts;
 
-                }
-                // if quad rect is outside of the search rect do nto search in sub nodes (returns true)
-                return x1 >= x3 || y1 >= y3 || x2 < x0 || y2 < y0;
-            });
+    }
 
-            return pts;
+    function updateNodes(quadtree) {
+        var nodes = [];
+        quadtree.depth = 0; // root
 
-        }
+        quadtree.visit(function (node, x1, y1, x2, y2) {
+            var nodeRect = {
+                left: MercatorXofLongitude(x1),
+                right: MercatorXofLongitude(x2),
+                bottom: MercatorYofLatitude(y1),
+                top: MercatorYofLatitude(y2),
+            }
+            node.width = (nodeRect.right - nodeRect.left);
+            node.height = (nodeRect.top - nodeRect.bottom);
 
-        function updateNodes(quadtree) {
-            var nodes = [];
-            quadtree.depth = 0; // root
+            if (node.depth == 0) {
+                //console.log(" width: " + node.width + "height: " + node.height);
+            }
+            nodes.push(node);
+            for (var i = 0; i < 4; i++) {
+                if (node.nodes[i]) node.nodes[i].depth = node.depth + 1;
+            }
+        });
+        return nodes;
+    }
 
-            quadtree.visit(function (node, x1, y1, x2, y2) {
-                var nodeRect = {
-                    left: MercatorXofLongitude(x1),
-                    right: MercatorXofLongitude(x2),
-                    bottom: MercatorYofLatitude(y1),
-                    top: MercatorYofLatitude(y2),
-                }
-                node.width = (nodeRect.right - nodeRect.left);
-                node.height = (nodeRect.top - nodeRect.bottom);
+    //-------------------------------------------------------------------------------------
+    MercatorXofLongitude = function (lon) {
+        return lon * 20037508.34 / 180;
+    };
+    MercatorYofLatitude = function (lat) {
+        return (Math.log(Math.tan((90 + lat) * Math.PI / 360)) / (Math.PI / 180)) * 20037508.34 / 180;
+    };
 
-                if (node.depth == 0) {
-                    //console.log(" width: " + node.width + "height: " + node.height);
-                }
-                nodes.push(node);
-                for (var i = 0; i < 4; i++) {
-                    if (node.nodes[i]) node.nodes[i].depth = node.depth + 1;
-                }
-            });
-            return nodes;
-        }
+    var cscale = d3.scale.linear().domain([1, 3]).range(["#ff0000", "#ff6a00", "#ffd800", "#b6ff00", "#00ffff", "#0094ff"]);//"#00FF00","#FFA500"
 
-        //-------------------------------------------------------------------------------------
-        MercatorXofLongitude = function (lon) {
-            return lon * 20037508.34 / 180;
-        };
-        MercatorYofLatitude = function (lat) {
-            return (Math.log(Math.tan((90 + lat) * Math.PI / 360)) / (Math.PI / 180)) * 20037508.34 / 180;
-        };
+    var leafletMap = L.map(selector).setView([37,-97.380979], 3);
 
-        var cscale = d3.scale.linear().domain([1, 3]).range(["#ff0000", "#ff6a00", "#ffd800", "#b6ff00", "#00ffff", "#0094ff"]);//"#00FF00","#FFA500"
-
-        var leafletMap = L.map(selector).setView([37,-97.380979], 3);
-
-        L.tileLayer("http://{s}.sm.mapstack.stamen.com/(toner-lite,$fff[difference],$fff[@23],$fff[hsl-saturation@20])/{z}/{x}/{y}.png").addTo(leafletMap);
+    L.tileLayer("http://{s}.sm.mapstack.stamen.com/(toner-lite,$fff[difference],$fff[@23],$fff[hsl-saturation@20])/{z}/{x}/{y}.png").addTo(leafletMap);
 
 
-        var svg = d3.select(leafletMap.getPanes().overlayPane).append("svg");
-        var g = svg.append("g").attr("class", "leaflet-zoom-hide");
+    var svg = d3.select(leafletMap.getPanes().overlayPane).append("svg");
+    var g = svg.append("g").attr("class", "leaflet-zoom-hide");
 
 
-        // Use Leaflet to implement a D3 geometric transformation.
-        function projectPoint(x, y) {
-            var point = leafletMap.latLngToLayerPoint(new L.LatLng(y, x));
-            this.stream.point(point.x, point.y);
-        }
+    // Use Leaflet to implement a D3 geometric transformation.
+    function projectPoint(x, y) {
+        var point = leafletMap.latLngToLayerPoint(new L.LatLng(y, x));
+        this.stream.point(point.x, point.y);
+    }
 
-        var transform = d3.geo.transform({ point: projectPoint });
-        var path = d3.geo.path().projection(transform);
-
-
-        updateNodes(qtree);
-
-        leafletMap.on('moveend', mapmove);
-
-        mapmove();
-
-        function getZoomScale() {
-            var mapWidth = leafletMap.getSize().x;
-            var bounds = leafletMap.getBounds();
-            var planarWidth = MercatorXofLongitude(bounds.getEast()) - MercatorXofLongitude(bounds.getWest());
-            var zoomScale = mapWidth / planarWidth;
-            return zoomScale;
-
-        }
-        function redrawSubset(subset) {
-            path.pointRadius(3);// * scale);
-            var bounds = path.bounds({ type: "FeatureCollection", features: subset });
-            var topLeft = bounds[0];
-            var bottomRight = bounds[1];
+    var transform = d3.geo.transform({ point: projectPoint });
+    var path = d3.geo.path().projection(transform);
 
 
-            svg.attr("width", bottomRight[0] - topLeft[0])
-                .attr("height", bottomRight[1] - topLeft[1])
-                .style("left", topLeft[0] + "px")
-                .style("top", topLeft[1] + "px");
+    updateNodes(qtree);
+
+    leafletMap.on('moveend', mapmove);
+
+    mapmove();
+
+    function getZoomScale() {
+        var mapWidth = leafletMap.getSize().x;
+        var bounds = leafletMap.getBounds();
+        var planarWidth = MercatorXofLongitude(bounds.getEast()) - MercatorXofLongitude(bounds.getWest());
+        var zoomScale = mapWidth / planarWidth;
+        return zoomScale;
+
+    }
+    function redrawSubset(subset) {
+        path.pointRadius(3);// * scale);
+        var bounds = path.bounds({ type: "FeatureCollection", features: subset });
+        var topLeft = bounds[0];
+        var bottomRight = bounds[1];
 
 
-            g.attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
+        svg.attr("width", bottomRight[0] - topLeft[0])
+            .attr("height", bottomRight[1] - topLeft[1])
+            .style("left", topLeft[0] + "px")
+            .style("top", topLeft[1] + "px");
 
-            var start = new Date();
+
+        g.attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
+
+        var start = new Date();
 
 
-            var points = g.selectAll("path")
-                .data(subset, function (d) {
-                    return d.id;
-                })
-            points.enter().append("path").attr("pointer-events","visible")
-
-                .on("mouseover", function(d){
-                    alert(JSON.stringify(d))
-                });
-            points.exit().remove();
-            points.attr("d", path)
-                .on("mouseover", function(d){
-                    alert(JSON.stringify(d))
-                });;
-
-            points.style("fill-opacity", function (d) {
-                if (d.group) {
-                    return (d.group * 0.3) + 0.2;
-                }
-            }).style("z-index", function (d) {
-                return 10
+        var points = g.selectAll("path")
+            .data(subset, function (d) {
+                return d.id;
             })
-                .on("mouseover", function(d){
-                    alert(JSON.stringify(d))
-                });
+        points.enter().append("path").attr("pointer-events","visible")
+
+            .on("mouseover", function(d){
+                alert(JSON.stringify(d))
+            });
+        points.exit().remove();
+        points.attr("d", path)
+            .on("mouseover", function(d){
+                alert(JSON.stringify(d))
+            });;
+
+        points.style("fill-opacity", function (d) {
+            if (d.group) {
+                return (d.group * 0.3) + 0.2;
+            }
+        }).style("z-index", function (d) {
+            return 10
+        })
+            .on("mouseover", function(d){
+                alert(JSON.stringify(d))
+            });
 
 
-          //  console.log("updated at  " + new Date().setTime(new Date().getTime() - start.getTime()) + " ms ");
+        //  console.log("updated at  " + new Date().setTime(new Date().getTime() - start.getTime()) + " ms ");
 
-        }
-        function mapmove(e) {
-            var mapBounds = leafletMap.getBounds();
-            var subset = search(qtree, mapBounds.getWest(), mapBounds.getSouth(), mapBounds.getEast(), mapBounds.getNorth());
+    }
+    function mapmove(e) {
+        var mapBounds = leafletMap.getBounds();
+        var subset = search(qtree, mapBounds.getWest(), mapBounds.getSouth(), mapBounds.getEast(), mapBounds.getNorth());
 
-            //console.log("subset: " + subset.length);
+        //console.log("subset: " + subset.length);
 
-            redrawSubset(subset);
+        redrawSubset(subset);
 
-        }
+    }
 
 };
 function table(data, selector){
 
     var columnsData = [
-     // "FILTER",
+        // "FILTER",
         "INSTNM",
         "CURROPER",
         "MAIN",
@@ -538,7 +538,7 @@ function table(data, selector){
         "INSTURL"
     ]
     var columnsHead = [
-     // "Filter Dashboard",
+        // "Filter Dashboard",
         "Institution Name",
         "Operating",
         "Main Campus",
@@ -628,7 +628,7 @@ function histogramChart(data, selector, resize, histSvgID){
                 .attr("fill-opacity", ".5")
                 .transition()
                 .duration(500)
-            })
+        })
         .on("mouseout", function(d,i){
             d3.select(this)
                 .attr("fill-opacity", "1")
@@ -699,8 +699,13 @@ function scatterChart(data, selector, home, resize, scatterSvgID){
     var _data = []
     data.forEach(function(d){
         if(d["TUITIONFEE_IN"] < 55000 && d["TUITIONFEE_OUT"] < 55000 && d["TUITFTE"] < 200000){
-            if(d["TUITIONFEE_IN"] != d["TUITIONFEE_OUT"])
-                _data.push(d)
+            if(d["TUITIONFEE_IN"] != d["TUITIONFEE_OUT"]){
+                if(d["TUITFTE"] != "Data not reported"){
+                    if(d["TUITFTE"] != "") {
+                        _data.push(d)
+                    }
+                }
+            }
         }
     });
 
@@ -712,9 +717,9 @@ function scatterChart(data, selector, home, resize, scatterSvgID){
     scatter_xMap = function(d) { return scatter_xScale(scatter_xValue(d));}; // data -> display
     scatter_numberOfXTicks = parseInt(Math.max(scatter_width / 100, 2));
     scatter_xAxis = d3.svg.axis().scale(scatter_xScale)//.tickSize(-scatter_height)
-                                                        .tickSubdivide(false).ticks(scatter_numberOfXTicks)
-                                                        .tickFormat(function(d){return "$"+moneyFormat(d)})
-                                                        .orient("bottom");
+        .tickSubdivide(false).ticks(scatter_numberOfXTicks)
+        .tickFormat(function(d){return "$"+moneyFormat(d)})
+        .orient("bottom");
 
     scatter_xScale.domain([d3.min(_data, scatter_xValue)-1, d3.max(_data, scatter_xValue)+1]);
 
@@ -740,8 +745,6 @@ function scatterChart(data, selector, home, resize, scatterSvgID){
         .append("g")
         .attr("transform", "translate(" + scatter_margin.left + "," + scatter_margin.top + ")");
 
-    scatter_tooltip = d3.select(selector).append("div").attr("class", "tooltip").style("opacity", 0);
-
     scatter_svg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + scatter_height + ")")
@@ -764,6 +767,14 @@ function scatterChart(data, selector, home, resize, scatterSvgID){
         .style("text-anchor", "end")
         .text("Average Revenue");
 
+
+    var inst = function(d){return "<strong>Institution:</strong> <span style='color:red'>" + d["INSTNM"] + "</span>"}
+
+    tipBox = d3.tip().attr('class', 'd3-tip').offset([-10, 0])
+        .html("<strong>Institution:</strong> <span style='color:red'>" + inst + "</span>")
+
+    scatter_svg.call(tipBox);
+
     scatter_svg.selectAll(".dot")
         .data(_data)
         .enter().append("circle")
@@ -772,18 +783,9 @@ function scatterChart(data, selector, home, resize, scatterSvgID){
         .attr("cx", scatter_xMap)
         .attr("cy", scatter_yMap)
         .style("fill", function(d) { return scatter_color(scatter_cValue(d));})
-        .on("mouseover", function(d) {
-           // console.log(JSON.stringify(d))
-            scatter_tooltip.transition().duration(200).style("opacity", .9);
-            scatter_tooltip.html(
-                d["INSTNM"] + "<br/> " +
-                "(" + scatter_xValue(d) + ", " + scatter_yValue(d) + ")")
-                .style("left", (d3.event.pageX + 5) + "px")
-                .style("top", (d3.event.pageY - 28) + "px");
-        })
-        .on("mouseout", function(d) {
-            scatter_tooltip.transition().duration(500).style("opacity", 0);
-        });
+        .style("stroke", function(d) { return scatter_color(scatter_cValue(d));})
+        .on("mouseover", function(d) {tipBox.show()})
+        .on("mouseout",  function(d) {tipBox.hide()});
 
     function resizeScatter(){
         scatter_fullHeight = 300;
@@ -807,11 +809,11 @@ function scatterChart(data, selector, home, resize, scatterSvgID){
         //var xScale = d3.scale.linear().rangeRoundBands([0, width], .1, 1);
         scatter_xScale.range([0, scatter_width]);
         scatter_numberOfXTicks = parseInt(Math.max(scatter_width / 100, 2));
-       // console.log(scatter_numberOfXTicks);
+
         scatter_xAxis.scale(scatter_xScale)//.tickSize()
-                                                .ticks(scatter_numberOfXTicks)
-                                                .tickFormat(function(d){return "$"+moneyFormat(d)})
-                                                .orient("bottom");
+            .ticks(scatter_numberOfXTicks)
+            .tickFormat(function(d){return "$"+moneyFormat(d)})
+            .orient("bottom");
 
         scatter_xMap = function(d) { return scatter_xScale(scatter_xValue(d));}; // data -> display
         //scatter_xAxis = d3.svg.axis().scale(scatter_xScale).orient("bottom");
@@ -844,12 +846,10 @@ function scatterChart(data, selector, home, resize, scatterSvgID){
             .append("g")
             .attr("transform", "translate(" + scatter_margin.left + "," + scatter_margin.top + ")");
 
-        // add the tooltip area to the webpage
         scatter_tooltip = d3.select("#"+scatterSvgID).append("div")
             .attr("class", "tooltip")
             .style("opacity", 0);
 
-        // x-axis
         scatter_svg.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + scatter_height + ")")
@@ -861,7 +861,6 @@ function scatterChart(data, selector, home, resize, scatterSvgID){
             .style("text-anchor", "end")
             .text("Tuition");
 
-        // y-axis
         scatter_svg.append("g")
             .attr("class", "y axis")
             .call(scatter_yAxis)
@@ -873,7 +872,16 @@ function scatterChart(data, selector, home, resize, scatterSvgID){
             .style("text-anchor", "end")
             .text("Average Revenue");
 
-        // draw dots
+
+        tipBox = d3.tip()
+            .attr('class', 'd3-tip')
+            .offset([-10, 0])
+            .html(function(d,i){
+                return "<strong>Institution:</strong> <span style='color:red'>" + d["INSTNM"] + "</span>";
+            })
+
+        scatter_svg.call(tipBox);
+
         scatter_svg.selectAll(".dot")
             .data(_data)
             .enter().append("circle")
@@ -882,46 +890,37 @@ function scatterChart(data, selector, home, resize, scatterSvgID){
             .attr("cx", scatter_xMap)
             .attr("cy", scatter_yMap)
             .style("fill", function(d) { return scatter_color(scatter_cValue(d));})
-            .on("mouseover", function(d) {
-               // console.log(JSON.stringify(d))
-                scatter_tooltip.transition().duration(200).style("opacity", .9);
-                scatter_tooltip.html(
-                    d["INSTNM"] + "<br/> " +
-                    "(" + scatter_xValue(d) + ", " + scatter_yValue(d) + ")")
-                    .style("left", (d3.event.pageX + 5) + "px")
-                    .style("top", (d3.event.pageY - 28) + "px");
-            })
-            .on("mouseout", function(d) {
-                scatter_tooltip.transition().duration(500).style("opacity", 0);
-            });
+            .style("stroke", function(d) { return scatter_color(scatter_cValue(d));})
+            .on("mouseover", function(d) {tipBox.show()})
+            .on("mouseout",  function(d) {tipBox.hide()});
     }
     //window.onresize = function(svgID) {        resizeScatter()    };
 
     d3.select(window).on(resize, resizeScatter);
 
-/*
-    // draw legend
-    var legend = svg.selectAll(".legend")
-        .data(color.domain())
-        .enter().append("g")
-        .attr("class", "legend")
-        .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+    /*
+        // draw legend
+        var legend = svg.selectAll(".legend")
+            .data(color.domain())
+            .enter().append("g")
+            .attr("class", "legend")
+            .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
-    // draw legend colored rectangles
-    legend.append("rect")
-        .attr("x", width - 18)
-        .attr("width", 18)
-        .attr("height", 18)
-        .style("fill", color);
+        // draw legend colored rectangles
+        legend.append("rect")
+            .attr("x", width - 18)
+            .attr("width", 18)
+            .attr("height", 18)
+            .style("fill", color);
 
-    // draw legend text
-    legend.append("text")
-        .attr("x", width - 24)
-        .attr("y", 9)
-        .attr("dy", ".35em")
-        .style("text-anchor", "end")
-        .text(function(d) { return d;})
-*/
+        // draw legend text
+        legend.append("text")
+            .attr("x", width - 24)
+            .attr("y", 9)
+            .attr("dy", ".35em")
+            .style("text-anchor", "end")
+            .text(function(d) { return d;})
+    */
 };
 
 
@@ -937,5 +936,5 @@ function draw(data){
 
 
 d3_4.request("/college-scorecard-dashboard-data").response(function (xhr) {return xhr.responseText}).get(function(data) {
-        return draw(JSON.parse(data))
-    });
+    return draw(JSON.parse(data))
+});
