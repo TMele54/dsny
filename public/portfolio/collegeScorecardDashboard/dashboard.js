@@ -874,7 +874,7 @@ function scatterChart(data, selector, home, resize, scatterSvgID){
         tipBox = d3.tip().attr('class', 'd3-tip').offset([-10, 0])
             .html(function(d)
             {
-                return "<strong>Institution:</strong> <span style='color:red'>" +" $"+ d["INSTNM"]  + "</span><br>" +
+                return "<strong>Institution:</strong> <span style='color:red'>" +" "+ d["INSTNM"]  + "</span><br>" +
                     "<strong>Tuition FTE:</strong> <span style='color:red'>" +" $"+ moneyFormat(scatter_xValue(d))  + "</span><br>" +
                     "<strong>Revenue:</strong> <span style='color:red'>" +" $"+ moneyFormat(scatter_yValue(d))  + "</span>"
             })
