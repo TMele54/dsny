@@ -20,7 +20,7 @@
       <file leaf-file-name="dsny.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dsny.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1749">
+            <state relative-caret-position="0">
               <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
               <folding>
                 <element signature="e#1386#1544#0" expanded="false" />
@@ -290,6 +290,17 @@
               <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
               <item name="dsny" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dsny" type="462c0819:PsiDirectoryNode" />
+              <item name="bower_components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dsny" type="462c0819:PsiDirectoryNode" />
+              <item name="bower_components" type="462c0819:PsiDirectoryNode" />
+              <item name="d3-slider" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -376,12 +387,12 @@
       <workItem from="1513001081371" duration="5127000" />
       <workItem from="1513034005841" duration="17277000" />
       <workItem from="1513081926784" duration="13878000" />
-      <workItem from="1513118280485" duration="1262000" />
+      <workItem from="1513118280485" duration="1550000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115063000" />
+    <option name="totallyTimeSpent" value="115351000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="0" width="1522" height="1931" extended-state="0" />
@@ -419,13 +430,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2475">
-          <caret line="75" column="49" lean-forward="false" selection-start-line="75" selection-start-column="49" selection-end-line="75" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/business/mail/thank-you.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -575,7 +579,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dsny.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1749">
+        <state relative-caret-position="0">
           <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding>
             <element signature="e#1386#1544#0" expanded="false" />
@@ -803,6 +807,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower_components/d3-slider/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
