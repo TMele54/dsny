@@ -20,8 +20,14 @@
     <meta name="keywords" content="">
     <meta name="author" content="TonyMele.Rutgers@gmail.com">
 
-    <!-- External CSS -->
-    <link rel="stylesheet" type="text/css" href="/public/business/css/bootstrap.min.css">
+    <!-- Data Table -->
+    <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/dataTableSpecifics/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/dataTableSpecifics/responsive.bootstrap.min.css">
+
+
+    <!--External CSS -->
+    <link rel="stylesheet" type="text/css" href="/bower_components/leaflet/dist/leaflet.css">
     <link rel="stylesheet" type="text/css" href="/public/business/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/public/business/css/owl.carousel.min.css">
     <link rel="stylesheet" type="text/css" href="/public/business/css/owl.theme.default.min.css">
@@ -29,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="/public/business/css/magnific-popup.css">
     <link rel="stylesheet" type="text/css" href="/public/business/css/YTPlayer.css">
     <link rel="stylesheet" type="text/css" href="/public/business/css/animated-headlines.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/d3-slider/d3.slider.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="/public/business/css/style.css">
@@ -40,9 +47,9 @@
     <!-- Color Switcher -->
     <link href="/public/business/switcher/switcher.css" rel="stylesheet">
     <link href="/public/business/switcher/style1.css" rel="stylesheet" id="colors">
+    <link href="/public/portfolio/collegeScorecardDashboard/dashboard.css" rel="stylesheet">
 
     <!-- Favicon -->
-
     <link rel="icon" type="image/png" href="/public/business/images/header/favicon.ico" sizes="16x16" />
 
     <!--<link rel="apple-touch-icon" href="/public/business/img/template/apple-touch-icon.png">
@@ -58,7 +65,71 @@
             overflow-x: hidden !important;
         }
         ::-webkit-scrollbar {
-            display: none;
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+        }
+        .bar rect {
+            fill: steelblue;
+        }
+
+        .bar text {
+            fill: #fff;
+            font: 10px sans-serif;
+        }
+
+        .axis path,
+        .axis line {
+            fill: #b0b0b0;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+
+        .d3-tip {
+            line-height: 1;
+            font-weight: bold;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            border-radius: 2px;
+        }
+
+        /* Creates a small triangle extender for the tooltip */
+        .d3-tip:after {
+            box-sizing: border-box;
+            display: inline;
+            font-size: 10px;
+            width: 100%;
+            line-height: 1;
+            color: rgba(0, 0, 0, 0.8);
+            content: "\25BC";
+            position: absolute;
+            text-align: center;
+        }
+
+        /* Style northward tooltips differently */
+        .d3-tip.n:after {
+            margin: -1px 0 0 0;
+            top: 100%;
+            left: 0;
+        }
+
+        #sliderHisto{
+            width:100%;
+        }
+        .dataTables_length select {
+            background-color: #fafafa !important;
+        }
+        .dataTables_filter input {
+            background-color: #fafafa !important;
         }
     </style>
 </head>
@@ -91,143 +162,78 @@
         <div class="collapse navbar-collapse" id="main-nav-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="active" id="navHome"><a href="/">Home</a></li>
-                <!--<li><a href="#about-us">About Us</a></li>
-                <li><a href="#our-service">Services</a></li>
-                <li><a href="#price">Pricing</a></li>-->
                 <li class="active" id="navPortfolio"><a href="#our-portfolio">Portfolio</a></li>
                 <li class="active" id="navContact"><a href="#footer">Contact</a></li>
-                <!--<li><a href="#"><i class="fa fa-facebook"></i></a></li>-->
-                <!--<li><a href="#"><i class="fa fa-google-plus"></i></a></li>-->
-                <!--<li><a href="#"><i class="fa fa-twitter"></i></a></li>-->
-                <!--<li><a href="#our-blog">Blog</a></li>-->
-                <!--<li><a href="#our-skill">Skills</a></li>-->
-                <!--<li><a href="#our-team">Team</a></li>-->
-                <!--<li><a href="#testimonial">Testimonial</a></li>-->
             </ul>
         </div>
     </div>
 </nav>
-
 <!-- /End Navbar -->
-<div class="row" style="height:20px"></div>
 
+<div class="row" style="height:20px"></div>
 <!--Our Portfolio-->
 <section id="our-portfolio" class="portfolio section-padding">
-        <div class="container">
-
-
-            <div class="row">
-                <div class="col-sm-6 col-sm-offset-3 text-center">
-                    <div class="section-title wow fadeInDown">
-                        <h2>Data Science New York <span>Portfolio</span></h2>
-                        <div class="section-borders"> <span></span> <span></span> <span></span> </div>
-                        <p>Enjoy our Portfolio. If you find a project that interests you, please contact us below.</p>
+    <div class="container">
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <h3 class="widget-title" style="vertical-align: center;" align="left">Student Body</h3>
+                <h5 style="vertical-align: center;" align="left">Unisex or Coed</h5>
+                <div id="chartPie" style="margin-left:auto;margin-right:auto;display:block;;width:100%" align="center"></div>
+            </div>
+            <div class="col-md-4">
+                <h3 class="widget-title" style="vertical-align: center;" align="left">Locations</h3>
+                <h5 style="vertical-align: center;" align="left">Average Tuition Cost</h5>
+                <div id="mapID" style="height:300px;margin-left:auto;margin-right:auto;display:block;width:100%"></div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-12">
+                    <h3 class="widget-title" style="vertical-align: center;" align="left">Accepted SAT Scores</h3>
+                    <h5 style="vertical-align: center;" align="left">Percentage of 1600</h5>
+                    <div id="chartHisto" style="margin-left:auto;margin-right:auto;display:block;height:200px"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <strong>Bins:</strong>
+                    </div>
+                    <div class="col-md-10">
+                        <div id="sliderHisto" style="margin-left:auto;margin-right:auto;margin-top:10px;display:block;width:250px"></div>
                     </div>
                 </div>
             </div>
-
-
-            <div class="row">
-				<div class="col-xs-12">
-					<ul class="portfolio">
-						<li class="filter" data-filter="all">All Projects</li>
-						<li class="filter" data-filter=".datascience">data science</li>
-						<li class="filter" data-filter=".machinelearning">machine learning</li>
-                        <li class="filter" data-filter=".visualization">visualization</li>
-                        <li class="filter" data-filter=".dashboards">dashboards</li>
-					</ul>
-				</div>
-			</div>
-
-
-            <div class="portfolio-inner">
-				<div class="row portfolio-posts">
-
-                    <div class="mix dashboards col-sm-6 col-md-4">
-                        <div class="item">
-                            <img src="/public/business/images/portfolio/collegeScorecardScreenShot.jpg" height="294" width="360" alt="">
-                            <div class="portfolio-caption">
-                                <h3>College Scorecard Dashboard</h3>
-                                <p>The College Scorecard Dashboard is designed to increase transparency to demonstrate see how well different schools are serving their students.</p>
-                                <p>Simple dashboards:</p>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <a href="/portfolio/college-scorecard-dashboard" class="protfolio-link-bt">Large Data</a>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <a href="/portfolio/college-scorecard-dashboard-slim" class="protfolio-link-bt">Slim Data</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mix visualization machinelearning col-sm-6 col-md-4">
-						<div class="item">
-							<img src="/public/business/images/portfolio/coming-soon.jpg" alt="">
-							<div class="portfolio-caption">
-								<h3>Portfolio Item</h3>
-								<p>Description</p>
-								<a href="#" class="protfolio-link-bt">Read More</a>
-							</div>
-						</div>
-					</div>
-					<div class="mix datascience col-sm-6 col-md-4">
-						<div class="item">
-                            <img src="/public/business/images/portfolio/coming-soon.jpg" alt="">
-                            <div class="portfolio-caption">
-                                <h3>Portfolio Item</h3>
-                                <p>Description</p>
-                                <a href="#" class="protfolio-link-bt">Read More</a>
-                            </div>
-						</div>
-					</div>
-					<div class="mix datascience machinelearning col-sm-6 col-md-4">
-						<div class="item">
-                            <img src="/public/business/images/portfolio/coming-soon.jpg" alt="">
-                            <div class="portfolio-caption">
-                                <h3>Portfolio Item</h3>
-                                <p>Description</p>
-                                <a href="#" class="protfolio-link-bt">Read More</a>
-                            </div>
-						</div>
-					</div>
-					<div class="mix datascience visualization col-sm-6 col-md-4">
-						<div class="item">
-                            <img src="/public/business/images/portfolio/coming-soon.jpg" alt="">
-                            <div class="portfolio-caption">
-                                <h3>Portfolio Item</h3>
-                                <p>Description</p>
-                                <a href="#" class="protfolio-link-bt">Read More</a>
-                            </div>
-						</div>
-					</div>
-					<div class="mix datascience col-sm-6 col-md-4">
-						<div class="item">
-                            <img src="/public/business/images/portfolio/coming-soon.jpg" alt="">
-                            <div class="portfolio-caption">
-                                <h3>Portfolio Item</h3>
-                                <p>Description</p>
-                                <a href="#" class="protfolio-link-bt">Read More</a>
-                            </div>
-						</div>
-					</div>
-					<div class="mix visualization machinelearning col-sm-6 col-md-4">
-						<div class="item">
-                            <img src="/public/business/images/portfolio/coming-soon.jpg" alt="">
-                            <div class="portfolio-caption">
-                                <h3>Portfolio Item</h3>
-                                <p>Description</p>
-                                <a href="#" class="protfolio-link-bt">Read More</a>
-                            </div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-
         </div>
-    </section>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-5">
+                        <h3 class="widget-title" style="vertical-align: center;" align="left">In State Tuition</h3>
+                        <h5 style="vertical-align: center;" align="left">Cost vs. Revenue -</h5><h6>Certain Data Excluded</h6>
+                    </div>
+                    <div class="col-md-7" style="height:50px">
+                        <div id="scatterGradient" style="width:300px" align="center"></div>
+                    </div>
+                </div>
+                <div id="scatterChartA" style="height:300px"></div>
+            </div>
+            <div class="col-md-6">
+                <h3 class="widget-title" style="vertical-align: center;" align="left">Out of State Tuition</h3>
+                <h5 style="vertical-align: center;" align="left">Cost vs. Revenue -</h5><h6>Certain Data Excluded</h6>
+                <div id="scatterChartB" style="height:300px"></div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="widget-title" style="vertical-align: center" align="left">Data Table</h3>
+                <h5 style="vertical-align: center;" align="left">Reduced Data</h5>
+                <table id="tableID" class="tableClass table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%"></table>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- /End Our Portfolio -->
 
 <!-- Footer section -->
@@ -240,7 +246,7 @@
                     <div class="widget-newsletter widget widget-footer">
                         <h3 class="widget-title">About us</h3>
                         <div class="widget-content">
-                            <p>We are a Professional Services Company specializing in Data Science, Machine Learning, and Application machinelearning. Our /public/business is built around creative thinking and harmonious collaboration with our clients.</p>
+                            <p>We are a Professional Services Company specializing in Data Science, Machine Learning, and Application machinelearning. Our business is built around creative thinking and harmonious collaboration with our clients.</p>
                         </div>
                         <div class="social-link">
                             <ul>
@@ -322,16 +328,38 @@
             </div>
         </div>
 
-    </div>.
+    </div>
 </footer>
 <!-- /End Footer section -->
 
+
 <!-- /End Switcher Design Area -->
+
+
+<!-- Responsive Bootstrap4 Data Tables -->
+<script src="/bower_components/dataTableSpecifics/jquery-1.12.4.js"></script>
+<script src="/bower_components/dataTableSpecifics/jquery.dataTables.min.js"></script>
+<script src="/bower_components/dataTableSpecifics/dataTables.bootstrap.min.js"></script>
+<script src="/bower_components/dataTableSpecifics/dataTables.responsive.min.js"></script>
+<script src="/bower_components/dataTableSpecifics/responsive.bootstrap.min.js"></script>
 
 <!-- Script -->
 <script src="/public/business/js/jquery.min.js"></script>
+<!-- Data Driven Documents D3 - Version 4 as d3_4-->
+<script src="/bower_components/d3_4/d3.min.js"></script>
+<script>d3_4 = d3;window.d3 = null;</script>
+<!-- Data Driven Documents D3 - Version 3-->
+<script src="/bower_components/d3/d3.min.js"></script>
+<!-- D3 Tooltip-->
+<script src="/bower_components/d3-tip/index.js"></script>
+<!-- D3 Slider-->
+<script src="/bower_components/d3-slider/d3.slider.js"></script>
+<!-- Leaflet maps-->
+<script src="/bower_components/leaflet/dist/leaflet.js"></script>
+<!-- Visualization Script -->
+<script src="/public/portfolio/collegeScorecardDashboard/dashboardSlim.js"></script>
 <!-- Bootstrap JS -->
-<script src="/public/business/js/bootstrap.min.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Carousel JS -->
 <script src="/public/business/js/owl.carousel.min.js"></script>
 <!-- WOW JS -->
@@ -354,16 +382,22 @@
 <script src="/public/business/js/jquery.waypoints.min.js"></script>
 <!-- Color Switcher js -->
 <script src="/public/business/switcher/switcher.js"></script>
-<!-- particles JS -->
+<!-- particles JS
 <script src="/public/business/js/particles.min.js"></script>
-<script src="/public/business/js/app.js"></script>
+<script src="/public/business/js/app.js"></script>-->
 <!-- countdown -->
 <script src="/public/business/js/jquery.countdown.min.js"></script>
-<!-- YTplayer js -->
-<script src="/public/business/js/jquery.mb.YTPlayer.min.js"></script>
-<script type="text/javascript">
-    $('.video-active').mb_YTPlayer();
-</script>
+
+<!-- Custom JS -->
+<script src="/public/business/js/custom.js"></script>
+
+<!-- Responsive Bootstrap4 Data Tables -->
+<script src="/bower_components/dataTableSpecifics/jquery-1.12.4.js"></script>
+<script src="/bower_components/dataTableSpecifics/jquery.dataTables.min.js"></script>
+<script src="/bower_components/dataTableSpecifics/dataTables.bootstrap.min.js"></script>
+<script src="/bower_components/dataTableSpecifics/dataTables.responsive.min.js"></script>
+<script src="/bower_components/dataTableSpecifics/responsive.bootstrap.min.js"></script>
+
 <script>
     $(document).ready(function(){
         var from,to,subject,text;
@@ -386,6 +420,10 @@
         $('#navHome').addClass('active');
         $('#navPortfolio').addClass('active');
         $('#navContact').addClass('active');
+
+
+           // $('.tableClass').DataTable();
+
     });
     $(window).scroll(function (event) {
 
@@ -395,8 +433,6 @@
     });
 
 </script>
-<!-- Custom JS -->
-<script src="/public/business/js/custom.js"></script>
 </body>
 
 </html>

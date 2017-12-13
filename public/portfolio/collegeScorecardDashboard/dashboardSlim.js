@@ -984,6 +984,6 @@ function draw(data){
 }
 
 
-d3_4.request("/college-scorecard-dashboard-data").response(function (xhr) {return xhr.responseText}).get(function(data) {
+d3_4.request("/college-scorecard-dashboard-data-slim").response(function (xhr) {return xhr.responseText}).get(function(data) {
     return draw(JSON.parse(data))
 });

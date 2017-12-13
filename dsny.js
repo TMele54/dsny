@@ -80,9 +80,20 @@ app.get('/portfolio/college-scorecard-dashboard', function(req, res) {
     res.sendFile('college-scorecard-dashboard.html', { root: path.join(__dirname, '/views') });
 });
 
+
+app.get('/portfolio/college-scorecard-dashboard-slim', function(req, res) {
+    res.sendFile('college-scorecard-dashboard-slim.html', { root: path.join(__dirname, '/views') });
+});
+
 app.get('/college-scorecard-dashboard-data', function(req, res) {
     //var rawdata = fs.readFileSync('python_modules/data/collegeScorecard/filteredData.json');
     var data = require('./python_modules/data/collegeScorecard/filteredData.json');
+    res.send(JSON.stringify(data));
+});
+
+app.get('/college-scorecard-dashboard-data-slim', function(req, res) {
+    //var rawdata = fs.readFileSync('python_modules/data/collegeScorecard/filteredData.json');
+    var data = require('./python_modules/data/collegeScorecard/filteredDataSlim.json');
     res.send(JSON.stringify(data));
 });
 
