@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c4a06bca-a1a7-4992-a9b3-781de57732c5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/dsny.js" afterPath="$PROJECT_DIR$/dsny.js" />
       <change beforePath="$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboard.js" afterPath="$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboard.js" />
-      <change beforePath="$PROJECT_DIR$/views/college-scorecard-dashboard.html" afterPath="$PROJECT_DIR$/views/college-scorecard-dashboard.html" />
-      <change beforePath="$PROJECT_DIR$/views/portfolio.html" afterPath="$PROJECT_DIR$/views/portfolio.html" />
+      <change beforePath="$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboardSlim.js" afterPath="$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboardSlim.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,7 +18,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="dsny.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dsny.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dsny.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="260">
@@ -35,33 +33,50 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="college-scorecard-dashboard-slim.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/college-scorecard-dashboard-slim.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="359" column="67" lean-forward="false" selection-start-line="359" selection-start-column="67" selection-end-line="359" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboardSlim.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dashboardSlim.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboardSlim.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-20">
-              <caret line="946" column="0" lean-forward="false" selection-start-line="946" selection-start-column="0" selection-end-line="946" selection-end-column="0" />
+            <state relative-caret-position="660">
+              <caret line="984" column="0" lean-forward="true" selection-start-line="984" selection-start-column="0" selection-end-line="984" selection-end-column="0" />
               <folding>
-                <marker date="1513129028009" expanded="true" signature="2906:2912" ph=" " />
-                <marker date="1513129028009" expanded="true" signature="22496:22505" ph="..." />
-                <marker date="1513129028009" expanded="true" signature="24773:24782" ph="..." />
-                <marker date="1513129028009" expanded="true" signature="31555:31564" ph="..." />
-                <marker date="1513129028009" expanded="true" signature="31668:31677" ph="..." />
-                <marker date="1513129028009" expanded="true" signature="31801:31810" ph="..." />
-                <marker date="1513129028009" expanded="true" signature="31927:31936" ph="..." />
-                <marker date="1513129028009" expanded="true" signature="36045:36054" ph="..." />
-                <marker date="1513129028009" expanded="true" signature="36162:36171" ph="..." />
-                <marker date="1513129028009" expanded="true" signature="36296:36305" ph="..." />
-                <marker date="1513129028009" expanded="true" signature="36426:36435" ph="..." />
+                <element signature="e#23#2280#0" expanded="false" />
+                <element signature="n#!!block;n#formatData#0" expanded="false" />
+                <element signature="n#!!block;n#piechart#0" expanded="false" />
+                <element signature="n#!!block;n#piechart2#0" expanded="false" />
+                <element signature="e#7485#8134#0" expanded="false" />
+                <element signature="e#10277#10820#0" expanded="false" />
+                <element signature="n#!!block;n#mapchart#0" expanded="false" />
+                <element signature="n#!!block;n#reformat#0;n#!!block;n#mapchart#0" expanded="false" />
+                <element signature="e#13082#13229#0" expanded="false" />
+                <element signature="n#!!block;n#search#0;n#!!block;n#mapchart#0" expanded="false" />
+                <element signature="n#!!block;n#updateNodes#0;n#!!block;n#mapchart#0" expanded="false" />
+                <element signature="e#15917#15964#0" expanded="false" />
+                <element signature="e#16007#16117#0" expanded="false" />
+                <element signature="n#!!block;n#projectPoint#0;n#!!block;n#mapchart#0" expanded="false" />
+                <element signature="n#!!block;n#getZoomScale#0;n#!!block;n#mapchart#0" expanded="false" />
+                <element signature="n#!!block;n#mapmove#0;n#!!block;n#mapchart#0" expanded="false" />
+                <element signature="n#!!block;n#table#0" expanded="false" />
+                <element signature="e#19152#19445#0" expanded="false" />
+                <element signature="e#19468#19843#0" expanded="false" />
+                <element signature="n#!!block;n#histogramChart#0" expanded="false" />
+                <element signature="e#21233#21337#0" expanded="false" />
+                <element signature="n#!!block;n#resizeHisto#0;n#!!block;n#histogramChart#0" expanded="false" />
+                <element signature="n#!!block;n#scatterChart#0" expanded="false" />
+                <element signature="e#26080#26446#0" expanded="false" />
+                <element signature="e#26486#28368#0" expanded="false" />
+                <element signature="e#28377#28457#0" expanded="false" />
+                <element signature="e#36868#37584#0" expanded="false" />
+                <marker date="1513130039187" expanded="true" signature="2906:2912" ph=" " />
+                <marker date="1513130039187" expanded="true" signature="22499:22508" ph="..." />
+                <marker date="1513130039187" expanded="true" signature="24770:24779" ph="..." />
+                <marker date="1513130039187" expanded="true" signature="31218:31227" ph="..." />
+                <marker date="1513130039187" expanded="true" signature="31331:31340" ph="..." />
+                <marker date="1513130039187" expanded="true" signature="31461:31470" ph="..." />
+                <marker date="1513130039187" expanded="true" signature="31587:31596" ph="..." />
+                <marker date="1513130039187" expanded="true" signature="35705:35714" ph="..." />
+                <marker date="1513130039187" expanded="true" signature="35822:35831" ph="..." />
+                <marker date="1513130039187" expanded="true" signature="35956:35965" ph="..." />
+                <marker date="1513130039187" expanded="true" signature="36086:36095" ph="..." />
               </folding>
             </state>
           </provider>
@@ -70,36 +85,47 @@
       <file leaf-file-name="dashboard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="986" column="47" lean-forward="false" selection-start-line="986" selection-start-column="47" selection-end-line="986" selection-end-column="47" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="985" selection-end-column="0" />
               <folding>
                 <element signature="e#23#2280#0" expanded="false" />
                 <element signature="n#!!block;n#formatData#0" expanded="false" />
                 <element signature="n#!!block;n#piechart#0" expanded="false" />
                 <element signature="n#!!block;n#piechart2#0" expanded="false" />
-                <element signature="e#7482#8131#0" expanded="false" />
-                <element signature="e#10274#10817#0" expanded="false" />
+                <element signature="e#7485#8134#0" expanded="false" />
+                <element signature="e#10277#10820#0" expanded="false" />
                 <element signature="n#!!block;n#mapchart#0" expanded="false" />
                 <element signature="n#!!block;n#reformat#0;n#!!block;n#mapchart#0" expanded="false" />
-                <element signature="e#13079#13226#0" expanded="false" />
+                <element signature="e#13082#13229#0" expanded="false" />
                 <element signature="n#!!block;n#search#0;n#!!block;n#mapchart#0" expanded="false" />
                 <element signature="n#!!block;n#updateNodes#0;n#!!block;n#mapchart#0" expanded="false" />
-                <element signature="e#15914#15961#0" expanded="false" />
-                <element signature="e#16004#16114#0" expanded="false" />
+                <element signature="e#15917#15964#0" expanded="false" />
+                <element signature="e#16007#16117#0" expanded="false" />
                 <element signature="n#!!block;n#projectPoint#0;n#!!block;n#mapchart#0" expanded="false" />
                 <element signature="n#!!block;n#getZoomScale#0;n#!!block;n#mapchart#0" expanded="false" />
                 <element signature="n#!!block;n#mapmove#0;n#!!block;n#mapchart#0" expanded="false" />
                 <element signature="n#!!block;n#table#0" expanded="false" />
-                <element signature="e#19149#19442#0" expanded="false" />
-                <element signature="e#19465#19840#0" expanded="false" />
+                <element signature="e#19152#19445#0" expanded="false" />
+                <element signature="e#19468#19843#0" expanded="false" />
                 <element signature="n#!!block;n#histogramChart#0" expanded="false" />
-                <element signature="e#21230#21334#0" expanded="false" />
+                <element signature="e#21233#21337#0" expanded="false" />
                 <element signature="n#!!block;n#resizeHisto#0;n#!!block;n#histogramChart#0" expanded="false" />
                 <element signature="n#!!block;n#scatterChart#0" expanded="false" />
-                <element signature="e#26085#26451#0" expanded="false" />
-                <element signature="e#26491#28709#0" expanded="false" />
-                <element signature="e#28718#28798#0" expanded="false" />
-                <element signature="e#37208#37924#0" expanded="false" />
+                <element signature="e#26088#26454#0" expanded="false" />
+                <element signature="e#26494#28712#0" expanded="false" />
+                <element signature="e#28721#28801#0" expanded="false" />
+                <element signature="e#37211#37927#0" expanded="false" />
+                <marker date="1513130039230" expanded="true" signature="2906:2912" ph=" " />
+                <marker date="1513130039230" expanded="true" signature="22499:22508" ph="..." />
+                <marker date="1513130039230" expanded="true" signature="24776:24785" ph="..." />
+                <marker date="1513130039230" expanded="true" signature="31558:31567" ph="..." />
+                <marker date="1513130039230" expanded="true" signature="31671:31680" ph="..." />
+                <marker date="1513130039230" expanded="true" signature="31804:31813" ph="..." />
+                <marker date="1513130039230" expanded="true" signature="31930:31939" ph="..." />
+                <marker date="1513130039230" expanded="true" signature="36048:36057" ph="..." />
+                <marker date="1513130039230" expanded="true" signature="36165:36174" ph="..." />
+                <marker date="1513130039230" expanded="true" signature="36299:36308" ph="..." />
+                <marker date="1513130039230" expanded="true" signature="36429:36438" ph="..." />
               </folding>
             </state>
           </provider>
@@ -205,7 +231,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>colle</find>
       <find>size</find>
       <find>scatter</find>
       <find>range</find>
@@ -235,6 +260,7 @@
       <find>.show</find>
       <find>accepted</find>
       <find>dashboard</find>
+      <find>500</find>
     </findStrings>
     <replaceStrings>
       <replace>pub</replace>
@@ -287,8 +313,9 @@
         <option value="$PROJECT_DIR$/python_modules/data/collegeScorecard/filteredData.json" />
         <option value="$PROJECT_DIR$/views/portfolio.html" />
         <option value="$PROJECT_DIR$/views/college-scorecard-dashboard-slim.html" />
-        <option value="$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboard.js" />
         <option value="$PROJECT_DIR$/dsny.js" />
+        <option value="$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboard.js" />
+        <option value="$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboardSlim.js" />
       </list>
     </option>
   </component>
@@ -343,20 +370,20 @@
             <path>
               <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
               <item name="dsny" type="462c0819:PsiDirectoryNode" />
-              <item name="python_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
               <item name="dsny" type="462c0819:PsiDirectoryNode" />
-              <item name="python_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="portfolio" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
               <item name="dsny" type="462c0819:PsiDirectoryNode" />
-              <item name="python_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="collegeScorecard" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="collegeScorecardDashboard" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -444,12 +471,12 @@
       <workItem from="1513001081371" duration="5127000" />
       <workItem from="1513034005841" duration="17277000" />
       <workItem from="1513081926784" duration="13878000" />
-      <workItem from="1513118280485" duration="5808000" />
+      <workItem from="1513118280485" duration="6247000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119609000" />
+    <option name="totallyTimeSpent" value="120048000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3026" height="1946" extended-state="6" />
@@ -460,10 +487,10 @@
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6179441" sideWeight="0.21786198" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6179441" sideWeight="0.78213805" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6179441" sideWeight="0.78213805" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35828876" sideWeight="0.49864683" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35828876" sideWeight="0.49864683" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -830,62 +857,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboardSlim.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-20">
-          <caret line="946" column="0" lean-forward="false" selection-start-line="946" selection-start-column="0" selection-end-line="946" selection-end-column="0" />
-          <folding>
-            <marker date="1513129028009" expanded="true" signature="2906:2912" ph=" " />
-            <marker date="1513129028009" expanded="true" signature="22496:22505" ph="..." />
-            <marker date="1513129028009" expanded="true" signature="24773:24782" ph="..." />
-            <marker date="1513129028009" expanded="true" signature="31555:31564" ph="..." />
-            <marker date="1513129028009" expanded="true" signature="31668:31677" ph="..." />
-            <marker date="1513129028009" expanded="true" signature="31801:31810" ph="..." />
-            <marker date="1513129028009" expanded="true" signature="31927:31936" ph="..." />
-            <marker date="1513129028009" expanded="true" signature="36045:36054" ph="..." />
-            <marker date="1513129028009" expanded="true" signature="36162:36171" ph="..." />
-            <marker date="1513129028009" expanded="true" signature="36296:36305" ph="..." />
-            <marker date="1513129028009" expanded="true" signature="36426:36435" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="986" column="47" lean-forward="false" selection-start-line="986" selection-start-column="47" selection-end-line="986" selection-end-column="47" />
-          <folding>
-            <element signature="e#23#2280#0" expanded="false" />
-            <element signature="n#!!block;n#formatData#0" expanded="false" />
-            <element signature="n#!!block;n#piechart#0" expanded="false" />
-            <element signature="n#!!block;n#piechart2#0" expanded="false" />
-            <element signature="e#7482#8131#0" expanded="false" />
-            <element signature="e#10274#10817#0" expanded="false" />
-            <element signature="n#!!block;n#mapchart#0" expanded="false" />
-            <element signature="n#!!block;n#reformat#0;n#!!block;n#mapchart#0" expanded="false" />
-            <element signature="e#13079#13226#0" expanded="false" />
-            <element signature="n#!!block;n#search#0;n#!!block;n#mapchart#0" expanded="false" />
-            <element signature="n#!!block;n#updateNodes#0;n#!!block;n#mapchart#0" expanded="false" />
-            <element signature="e#15914#15961#0" expanded="false" />
-            <element signature="e#16004#16114#0" expanded="false" />
-            <element signature="n#!!block;n#projectPoint#0;n#!!block;n#mapchart#0" expanded="false" />
-            <element signature="n#!!block;n#getZoomScale#0;n#!!block;n#mapchart#0" expanded="false" />
-            <element signature="n#!!block;n#mapmove#0;n#!!block;n#mapchart#0" expanded="false" />
-            <element signature="n#!!block;n#table#0" expanded="false" />
-            <element signature="e#19149#19442#0" expanded="false" />
-            <element signature="e#19465#19840#0" expanded="false" />
-            <element signature="n#!!block;n#histogramChart#0" expanded="false" />
-            <element signature="e#21230#21334#0" expanded="false" />
-            <element signature="n#!!block;n#resizeHisto#0;n#!!block;n#histogramChart#0" expanded="false" />
-            <element signature="n#!!block;n#scatterChart#0" expanded="false" />
-            <element signature="e#26085#26451#0" expanded="false" />
-            <element signature="e#26491#28709#0" expanded="false" />
-            <element signature="e#28718#28798#0" expanded="false" />
-            <element signature="e#37208#37924#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/python_modules/data/collegeScorecard/filteredDataSlim.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -903,6 +874,100 @@
             <element signature="e#1580#2020#0" expanded="false" />
             <element signature="e#2260#2337#0" expanded="false" />
             <element signature="e#2586#2667#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="985" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#2280#0" expanded="false" />
+            <element signature="n#!!block;n#formatData#0" expanded="false" />
+            <element signature="n#!!block;n#piechart#0" expanded="false" />
+            <element signature="n#!!block;n#piechart2#0" expanded="false" />
+            <element signature="e#7485#8134#0" expanded="false" />
+            <element signature="e#10277#10820#0" expanded="false" />
+            <element signature="n#!!block;n#mapchart#0" expanded="false" />
+            <element signature="n#!!block;n#reformat#0;n#!!block;n#mapchart#0" expanded="false" />
+            <element signature="e#13082#13229#0" expanded="false" />
+            <element signature="n#!!block;n#search#0;n#!!block;n#mapchart#0" expanded="false" />
+            <element signature="n#!!block;n#updateNodes#0;n#!!block;n#mapchart#0" expanded="false" />
+            <element signature="e#15917#15964#0" expanded="false" />
+            <element signature="e#16007#16117#0" expanded="false" />
+            <element signature="n#!!block;n#projectPoint#0;n#!!block;n#mapchart#0" expanded="false" />
+            <element signature="n#!!block;n#getZoomScale#0;n#!!block;n#mapchart#0" expanded="false" />
+            <element signature="n#!!block;n#mapmove#0;n#!!block;n#mapchart#0" expanded="false" />
+            <element signature="n#!!block;n#table#0" expanded="false" />
+            <element signature="e#19152#19445#0" expanded="false" />
+            <element signature="e#19468#19843#0" expanded="false" />
+            <element signature="n#!!block;n#histogramChart#0" expanded="false" />
+            <element signature="e#21233#21337#0" expanded="false" />
+            <element signature="n#!!block;n#resizeHisto#0;n#!!block;n#histogramChart#0" expanded="false" />
+            <element signature="n#!!block;n#scatterChart#0" expanded="false" />
+            <element signature="e#26088#26454#0" expanded="false" />
+            <element signature="e#26494#28712#0" expanded="false" />
+            <element signature="e#28721#28801#0" expanded="false" />
+            <element signature="e#37211#37927#0" expanded="false" />
+            <marker date="1513130039230" expanded="true" signature="2906:2912" ph=" " />
+            <marker date="1513130039230" expanded="true" signature="22499:22508" ph="..." />
+            <marker date="1513130039230" expanded="true" signature="24776:24785" ph="..." />
+            <marker date="1513130039230" expanded="true" signature="31558:31567" ph="..." />
+            <marker date="1513130039230" expanded="true" signature="31671:31680" ph="..." />
+            <marker date="1513130039230" expanded="true" signature="31804:31813" ph="..." />
+            <marker date="1513130039230" expanded="true" signature="31930:31939" ph="..." />
+            <marker date="1513130039230" expanded="true" signature="36048:36057" ph="..." />
+            <marker date="1513130039230" expanded="true" signature="36165:36174" ph="..." />
+            <marker date="1513130039230" expanded="true" signature="36299:36308" ph="..." />
+            <marker date="1513130039230" expanded="true" signature="36429:36438" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboardSlim.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="984" column="0" lean-forward="true" selection-start-line="984" selection-start-column="0" selection-end-line="984" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#2280#0" expanded="false" />
+            <element signature="n#!!block;n#formatData#0" expanded="false" />
+            <element signature="n#!!block;n#piechart#0" expanded="false" />
+            <element signature="n#!!block;n#piechart2#0" expanded="false" />
+            <element signature="e#7485#8134#0" expanded="false" />
+            <element signature="e#10277#10820#0" expanded="false" />
+            <element signature="n#!!block;n#mapchart#0" expanded="false" />
+            <element signature="n#!!block;n#reformat#0;n#!!block;n#mapchart#0" expanded="false" />
+            <element signature="e#13082#13229#0" expanded="false" />
+            <element signature="n#!!block;n#search#0;n#!!block;n#mapchart#0" expanded="false" />
+            <element signature="n#!!block;n#updateNodes#0;n#!!block;n#mapchart#0" expanded="false" />
+            <element signature="e#15917#15964#0" expanded="false" />
+            <element signature="e#16007#16117#0" expanded="false" />
+            <element signature="n#!!block;n#projectPoint#0;n#!!block;n#mapchart#0" expanded="false" />
+            <element signature="n#!!block;n#getZoomScale#0;n#!!block;n#mapchart#0" expanded="false" />
+            <element signature="n#!!block;n#mapmove#0;n#!!block;n#mapchart#0" expanded="false" />
+            <element signature="n#!!block;n#table#0" expanded="false" />
+            <element signature="e#19152#19445#0" expanded="false" />
+            <element signature="e#19468#19843#0" expanded="false" />
+            <element signature="n#!!block;n#histogramChart#0" expanded="false" />
+            <element signature="e#21233#21337#0" expanded="false" />
+            <element signature="n#!!block;n#resizeHisto#0;n#!!block;n#histogramChart#0" expanded="false" />
+            <element signature="n#!!block;n#scatterChart#0" expanded="false" />
+            <element signature="e#26080#26446#0" expanded="false" />
+            <element signature="e#26486#28368#0" expanded="false" />
+            <element signature="e#28377#28457#0" expanded="false" />
+            <element signature="e#36868#37584#0" expanded="false" />
+            <marker date="1513130039187" expanded="true" signature="2906:2912" ph=" " />
+            <marker date="1513130039187" expanded="true" signature="22499:22508" ph="..." />
+            <marker date="1513130039187" expanded="true" signature="24770:24779" ph="..." />
+            <marker date="1513130039187" expanded="true" signature="31218:31227" ph="..." />
+            <marker date="1513130039187" expanded="true" signature="31331:31340" ph="..." />
+            <marker date="1513130039187" expanded="true" signature="31461:31470" ph="..." />
+            <marker date="1513130039187" expanded="true" signature="31587:31596" ph="..." />
+            <marker date="1513130039187" expanded="true" signature="35705:35714" ph="..." />
+            <marker date="1513130039187" expanded="true" signature="35822:35831" ph="..." />
+            <marker date="1513130039187" expanded="true" signature="35956:35965" ph="..." />
+            <marker date="1513130039187" expanded="true" signature="36086:36095" ph="..." />
           </folding>
         </state>
       </provider>

@@ -68,12 +68,12 @@ function piechart(data, selector){
     }  );
 
     var margin = {top: 20, right: 0, bottom: 20, left: 0};
-    var width_pie = 500 - margin.left - margin.right,
+    var width_pie = 450 - margin.left - margin.right,
         height_pie = 300 - margin.top - margin.bottom,
         radius_pie = Math.min(width_pie, height_pie) / 2;
 
     var svg_pie = d3.select(selector).append("svg")
-        .attr('width', "100%")
+        .attr('width', width_pie)
         .attr('height', height_pie)
         .append("g")
         .attr("transform",

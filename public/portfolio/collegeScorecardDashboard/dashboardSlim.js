@@ -68,12 +68,12 @@ function piechart(data, selector){
     }  );
 
     var margin = {top: 20, right: 0, bottom: 20, left: 0};
-    var width_pie = 500 - margin.left - margin.right,
+    var width_pie = 450 - margin.left - margin.right,
         height_pie = 300 - margin.top - margin.bottom,
         radius_pie = Math.min(width_pie, height_pie) / 2;
 
     var svg_pie = d3.select(selector).append("svg")
-        .attr('width', "100%")
+        .attr('width', width_pie)
         .attr('height', height_pie)
         .append("g")
         .attr("transform",
@@ -635,8 +635,8 @@ function histogramChart(data, selector, resize, histSvgID){
     hist_bar.append("rect").attr("x", function(d,i){return 2})
         .attr("width", hist_x(hist_bins[0].x1) - hist_x(hist_bins[0].x0) - 2).style("margin-top", "10px")
         .attr("height", function(d) { return hist_height - hist_y(d.length); })
-       // .on("mouseover",hist_tipBox.show)
-       // .on("mouseout",hist_tipBox.hide);
+    // .on("mouseover",hist_tipBox.show)
+    // .on("mouseout",hist_tipBox.hide);
 
 
     //d3.select(this).attr("fill-opacity", ".5").transition().duration(500);
@@ -678,8 +678,8 @@ function histogramChart(data, selector, resize, histSvgID){
         hist_bar.append("rect").attr("x", function(d,i){return 2})
             .attr("width", hist_x(hist_bins[0].x1) - hist_x(hist_bins[0].x0) - 2).style("margin-top", "10px")
             .attr("height", function(d) { return hist_height - hist_y(d.length); })
-         //   .on("mouseover",hist_tipBox.show)
-         //   .on("mouseout",hist_tipBox.hide);
+        //   .on("mouseover",hist_tipBox.show)
+        //   .on("mouseout",hist_tipBox.hide);
 
         //hist_bar.append("text").attr("dy", ".75em").attr("y", 6)
         //.attr("x", (hist_x(hist_bins[0].x1) - hist_x(hist_bins[0].x0)) / 2)
@@ -730,25 +730,25 @@ function scatterChart(data, selector, home, resize, scatterSvgID){
         scatterLegend.append("stop").attr("offset", "100%").attr("stop-color", salaryLow).attr("stop-opacity", 1);
 
         scatterKey.append("rect")
-                        .attr("transform", "translate("+scatterKey_margin.left+",0)")
-                        .attr("width", scatterKey_width)
-                        .attr("height", 25)
-                        .style("fill", "url(#gradient)");
+            .attr("transform", "translate("+scatterKey_margin.left+",0)")
+            .attr("width", scatterKey_width)
+            .attr("height", 25)
+            .style("fill", "url(#gradient)");
         gradientX = d3.scale.linear().range([0, scatterKey_width])
             .domain([0,d3.max(_data, function(d){return d["AVGFACSAL"]})+1]);
 
         gradientXAxis = d3.svg.axis().scale(gradientX).orient("bottom").tickFormat(function(d){return moneyFormat(d)}).ticks(5);
 
         scatterKey.append("g").attr("class", "x axis")
-                                            .attr("transform", "translate("+scatterKey_margin.left+",30)")
-                                            .call(gradientXAxis)
-                                            .append("text")
-                                            //.attr("transform", "rotate(-90)")
-                                            .attr("x", 85)
-                                            .attr("y", 32)
-                                            //.attr("dy", "1em")
-                                            .style("text-anchor", "end")
-                                            .text("Faculty Salary");
+            .attr("transform", "translate("+scatterKey_margin.left+",30)")
+            .call(gradientXAxis)
+            .append("text")
+            //.attr("transform", "rotate(-90)")
+            .attr("x", 85)
+            .attr("y", 32)
+            //.attr("dy", "1em")
+            .style("text-anchor", "end")
+            .text("Faculty Salary");
     }
     else{
         var scatter_xValue = function(d) { return d["TUITIONFEE_OUT"];};
@@ -813,11 +813,11 @@ function scatterChart(data, selector, home, resize, scatterSvgID){
         .text("Average Revenue");
 
     tipBox = d3.tip().attr('class', 'd3-tip').offset([-10, 0])
-    .html(function(d)
+        .html(function(d)
         {
             return "<strong>Institution:</strong> <span style='color:red'>" +" "+ d["INSTNM"]  + "</span><br>" +
                 "<strong>Faculty Salary:</strong> <span style='color:red'>" +" $"+ moneyFormat(scatter_cValue(d))  + "</span><br>" +
-                   "<strong>Tuition FTE:</strong> <span style='color:red'>" +" $"+ moneyFormat(scatter_xValue(d))  + "</span><br>" +
+                "<strong>Tuition FTE:</strong> <span style='color:red'>" +" $"+ moneyFormat(scatter_xValue(d))  + "</span><br>" +
                 "<strong>Revenue:</strong> <span style='color:red'>" +" $"+ moneyFormat(scatter_yValue(d))  + "</span>"
 
         })
