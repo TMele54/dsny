@@ -290,17 +290,6 @@
               <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
               <item name="dsny" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dsny" type="462c0819:PsiDirectoryNode" />
-              <item name="bower_components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dsny" type="462c0819:PsiDirectoryNode" />
-              <item name="bower_components" type="462c0819:PsiDirectoryNode" />
-              <item name="d3-slider" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -387,12 +376,12 @@
       <workItem from="1513001081371" duration="5127000" />
       <workItem from="1513034005841" duration="17277000" />
       <workItem from="1513081926784" duration="13878000" />
-      <workItem from="1513118280485" duration="1550000" />
+      <workItem from="1513118280485" duration="1730000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115351000" />
+    <option name="totallyTimeSpent" value="115531000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="0" width="1522" height="1931" extended-state="0" />
