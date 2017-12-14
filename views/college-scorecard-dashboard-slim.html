@@ -14,7 +14,7 @@
     <!-- Meta Tag -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" id="vp" content="width=device-width, initial-scale=1">
     <title>DSNY</title>
     <meta name="description" content="Data Science New York">
     <meta name="keywords" content="">
@@ -25,16 +25,10 @@
     <link rel="stylesheet" type="text/css" href="/bower_components/dataTableSpecifics/dataTables.bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/bower_components/dataTableSpecifics/responsive.bootstrap.min.css">
 
-
     <!--External CSS -->
     <link rel="stylesheet" type="text/css" href="/bower_components/leaflet/dist/leaflet.css">
     <link rel="stylesheet" type="text/css" href="/public/business/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/public/business/css/owl.carousel.min.css">
-    <link rel="stylesheet" type="text/css" href="/public/business/css/owl.theme.default.min.css">
-    <link rel="stylesheet" type="text/css" href="/public/business/css/animate.css">
     <link rel="stylesheet" type="text/css" href="/public/business/css/magnific-popup.css">
-    <link rel="stylesheet" type="text/css" href="/public/business/css/YTPlayer.css">
-    <link rel="stylesheet" type="text/css" href="/public/business/css/animated-headlines.css">
     <link rel="stylesheet" type="text/css" href="/bower_components/d3-slider/d3.slider.css">
 
     <!-- Custom CSS -->
@@ -43,94 +37,16 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet">
-
-    <!-- Color Switcher -->
-    <link href="/public/business/switcher/switcher.css" rel="stylesheet">
-    <link href="/public/business/switcher/style1.css" rel="stylesheet" id="colors">
     <link href="/public/portfolio/collegeScorecardDashboard/dashboard.css" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/public/business/images/header/favicon.ico" sizes="16x16" />
 
-    <!--<link rel="apple-touch-icon" href="/public/business/img/template/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/public/business/img/template/icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/public/business/img/template/icon-114x114.png">-->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
-        html {
-            overflow: scroll !important;
-            overflow-x: hidden !important;
-        }
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-
-        ::-webkit-scrollbar-track {
-            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            border-radius: 10px;
-            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-        }
-        .bar rect {
-            fill: steelblue;
-        }
-
-        .bar text {
-            fill: #fff;
-            font: 10px sans-serif;
-        }
-
-        .axis path,
-        .axis line {
-            fill: #b0b0b0;
-            stroke: #000;
-            shape-rendering: crispEdges;
-        }
-
-        .d3-tip {
-            line-height: 1;
-            font-weight: bold;
-            padding: 12px;
-            background: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            border-radius: 2px;
-        }
-
-        /* Creates a small triangle extender for the tooltip */
-        .d3-tip:after {
-            box-sizing: border-box;
-            display: inline;
-            font-size: 10px;
-            width: 100%;
-            line-height: 1;
-            color: rgba(0, 0, 0, 0.8);
-            content: "\25BC";
-            position: absolute;
-            text-align: center;
-        }
-
-        /* Style northward tooltips differently */
-        .d3-tip.n:after {
-            margin: -1px 0 0 0;
-            top: 100%;
-            left: 0;
-        }
-
-        #sliderHisto{
-            width:100%;
-        }
-        .dataTables_length select {
-            background-color: #fafafa !important;
-        }
-        .dataTables_filter input {
-            background-color: #fafafa !important;
-        }
     </style>
 </head>
 
@@ -156,7 +72,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-collapse" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <button type="button" id="navAct" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-collapse" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
             <a class="navbar-brand"><img src="/public/business/images/logo/logo.png" style="max-height: 40px" alt="logo"></a>
         </div>
         <div class="collapse navbar-collapse" id="main-nav-collapse">
@@ -189,9 +105,10 @@
             <div class="col-md-4">
                 <div class="row">
                     <div class="col-md-12">
-                    <h3 class="widget-title" style="vertical-align: center;" align="left">Accepted SAT Scores</h3>
-                    <h5 style="vertical-align: center;" align="left">Percentage of 1600</h5>
-                    <div id="chartHisto" style="margin-left:auto;margin-right:auto;display:block;height:200px"></div>
+                        <h3 class="widget-title" style="vertical-align: center;" align="left">Accepted SAT Scores</h3>
+                        <h5 style="vertical-align: center;" align="left">Percentage of 1600</h5>
+                        <div id="chartHisto" style="margin-left:auto;margin-right:auto;display:block;height:200px"></div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-2">
@@ -205,6 +122,7 @@
         </div>
         <hr>
         <div class="row">
+
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-5">
@@ -215,8 +133,11 @@
                         <div id="scatterGradient" style="width:300px" align="center"></div>
                     </div>
                 </div>
-                <div id="scatterChartA" style="height:300px"></div>
+                <div class="row">
+                    <div id="scatterChartA" style="height:300px"></div>
+                </div>
             </div>
+
             <div class="col-md-6">
                 <h3 class="widget-title" style="vertical-align: center;" align="left">Out of State Tuition</h3>
                 <h5 style="vertical-align: center;" align="left">Cost vs. Revenue -</h5><h6>Certain Data Excluded</h6>
@@ -356,40 +277,18 @@
 <script src="/bower_components/d3-slider/d3.slider.js"></script>
 <!-- Leaflet maps-->
 <script src="/bower_components/leaflet/dist/leaflet.js"></script>
+
 <!-- Visualization Script -->
 <script src="/public/portfolio/collegeScorecardDashboard/dashboardSlim.js"></script>
 <!-- Bootstrap JS -->
 <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Carousel JS -->
-<script src="/public/business/js/owl.carousel.min.js"></script>
-<!-- WOW JS -->
-<script src="/public/business/js/wow.min.js"></script>
+
 <!--SmoothScroll JS -->
 <script src="/public/business/js/SmoothScroll.js"></script>
-<!-- Easypiechart JS -->
-<script src="/public/business/js/jquery.easypiechart.min.js"></script>
-<!--Inview JS -->
-<script src="/public/business/js/jquery.inview.min.js"></script>
-<!-- Magnific Popup JS -->
-<script src="/public/business/js/jquery.magnific-popup.min.js"></script>
-<!-- Mixitup Js -->
-<script src="/public/business/js/jquery.mixitup.js"></script>
-<!-- counterup -->
-<script src="/public/business/js/jquery.counterup.min.js"></script>
-<!-- animated headlines JS -->
-<script src="/public/business/js/animated-headlines.js"></script>
-<!-- waypoints -->
-<script src="/public/business/js/jquery.waypoints.min.js"></script>
-<!-- Color Switcher js -->
-<script src="/public/business/switcher/switcher.js"></script>
-<!-- particles JS
-<script src="/public/business/js/particles.min.js"></script>
-<script src="/public/business/js/app.js"></script>-->
-<!-- countdown -->
 <script src="/public/business/js/jquery.countdown.min.js"></script>
 
 <!-- Custom JS -->
-<script src="/public/business/js/customPortfolio.js"></script>
+<script src="/public/business/js/custom.js"></script>
 
 <!-- Responsive Bootstrap4 Data Tables -->
 <script src="/bower_components/dataTableSpecifics/jquery-1.12.4.js"></script>
@@ -420,9 +319,15 @@
         $('#navHome').addClass('active');
         $('#navPortfolio').addClass('active');
         $('#navContact').addClass('active');
-
-
-           // $('.tableClass').DataTable();
+        $('#navAct').addClass('active');
+        /*
+                window.onload = function() {
+                    if (screen.width < 450) {
+                        var mvp = document.getElementById('vp');
+                        mvp.setAttribute('content','user-scalable=no,width=450');
+                    }
+                }*/
+        // $('.tableClass').DataTable();
 
     });
     $(window).scroll(function (event) {
@@ -430,6 +335,7 @@
         $('#navHome').addClass('active');
         $('#navPortfolio').addClass('active');
         $('#navContact').addClass('active');
+        $('#navAct').addClass('active');
     });
 
 </script>
