@@ -55,83 +55,86 @@ function formatData(data){
     return data
 
 };
-function piechart(data, selector){
+function piechart(data, selector, resize){
 
-    data_pie = d3.nest().key(function(d) { return d["Gender"]; }).sortKeys(d3.ascending)
+    pie_data = d3.nest().key(function(d) { return d["Gender"]; }).sortKeys(d3.ascending)
         .rollup(function(leaves) { return leaves.length; })
         .entries(data);
+
     var counter = 0;
-    data_pie.forEach(function(d){counter = counter + d.values});
-    data_pie.forEach(function(d) {
+    pie_data.forEach(function(d){counter = counter + d.values});
+    pie_data.forEach(function(d) {
         d.count = d.values;
         d.values = d.values / counter
     }  );
 
-    var margin = {top: 20, right: 0, bottom: 20, left: 0};
-    var width_pie = 450 - margin.left - margin.right,
-        height_pie = 300 - margin.top - margin.bottom,
-        radius_pie = Math.min(width_pie, height_pie) / 2;
+    pie_margin = {top: 20, right: 0, bottom: 20, left: 0};
 
-    var svg_pie = d3.select(selector).append("svg")
-        .attr('width', width_pie)
-        .attr('height', height_pie)
+    pie_width = parseInt(d3.select(selector).style("width"), 10) - pie_margin.left - pie_margin.right;
+    pie_height = 300 - pie_margin.top - pie_margin.bottom,
+        pie_radius = Math.min(pie_width, pie_height) / 2;
+
+    pie_svg = d3.select(selector).append("svg")
+        .attr('width', pie_width)
+        .attr('height', pie_height)
         .append("g")
         .attr("transform",
-            "translate(" + width_pie / 2 + "," + height_pie / 2 + ")"
+            "translate(" + pie_width / 2 + "," + pie_height / 2 + ")"
         );
 
-    svg_pie.append("g").attr("class", "slices");
-    svg_pie.append("g").attr("class", "labels");
-    svg_pie.append("g").attr("class", "lines");
+    pie_svg.append("g").attr("class", "slices");
+    pie_svg.append("g").attr("class", "labels");
+    pie_svg.append("g").attr("class", "lines");
 
-    var pie_pie = d3.layout.pie().sort(null).value(function(d) {return d.count;});
-    var arc_pie = d3.svg.arc().outerRadius(radius_pie * 0.8).innerRadius(radius_pie * 0.4);
-    var outerArc_pie = d3.svg.arc().innerRadius(radius_pie * 0.9).outerRadius(radius_pie * 0.9);
-    var key_pie = function(d){ return d.data.key; };
+    pie_pie = d3.layout.pie().sort(null).value(function(d) {return d.count;});
+    pie_arc = d3.svg.arc().outerRadius(pie_radius * 0.8).innerRadius(pie_radius * 0.4);
+    pie_outerArc = d3.svg.arc().innerRadius(pie_radius * 0.9).outerRadius(pie_radius * 0.9);
+    var pie_key = function(d){ return d.data.key; };
 
-    var color_pie = d3.scale.ordinal()
+    pie_color = d3.scale.ordinal()
         .domain(["Male or Female", "Coed"])
         .range(["#0059b3", "#3399ff", "#99ccff"]);
 
-    change_pie(data_pie);
-    function change_pie(data_pie) {
-
+    change_pie(pie_data);
+    function change_pie(pie_data) {
+        var pie_pie = d3.layout.pie().sort(null).value(function(d) {return d.count;});
         /* ------- PIE SLICES -------*/
-        var slice_pie = svg_pie.select(".slices").selectAll("path.slice").data(pie_pie(data_pie), key_pie);
+        pie_slice = pie_svg.select(".slices").selectAll("path.slice").data(pie_pie(pie_data), pie_key);
 
-        slice_pie.enter().insert("path")
-            .style("fill", function(d) { return color_pie(d.data.key); }).attr("class", "slice");
+        pie_slice.enter()
+            .insert("path").style("fill", function(d) { return pie_color(d.data.key); }).attr("class", "slice");
 
-        slice_pie
-            .transition().duration(1000)
+        pie_slice
+            .transition()
+            .duration(1000)
             .attrTween("d", function(d) {
                 this._current = this._current || d;
                 var interpolate = d3.interpolate(this._current, d);
                 this._current = interpolate(0);
                 return function(t) {
-                    return arc_pie(interpolate(t));
+                    return pie_arc(interpolate(t));
                 };
             })
 
-        slice_pie.exit().remove();
+        pie_slice.exit().remove();
 
         /* ------- TEXT LABELS -------*/
 
-        var text_pie = svg_pie.select(".labels").selectAll("text").data(pie_pie(data_pie), key_pie);
+        pie_text = pie_svg.select(".labels").selectAll("text").data(pie_pie(pie_data), pie_key);
 
-        text_pie.enter().append("text").attr("dy", ".35em").text(function(d) {return d.data.key;});
+        pie_text.enter().append("text").attr("dy", ".35em").text(function(d) {return d.data.key;});
 
-        function midAngle(d){ return d.startAngle + (d.endAngle - d.startAngle)/1;}
+        function midAngle(d){ return d.startAngle + (d.endAngle - d.startAngle);}
 
-        text_pie.transition().duration(1000)
+        pie_text.transition().duration(1000)
             .attrTween("transform", function(d) {
                 this._current = this._current || d;
                 var interpolate = d3.interpolate(this._current, d);
                 this._current = interpolate(0);
                 return function(t) {
                     var d2 = interpolate(t);
-                    var pos = outerArc_pie.centroid(d2);
-                    pos[0] = radius_pie * (midAngle(d2) < Math.PI ? 1 : -1);
+                    var pos = pie_outerArc.centroid(d2);
+                    pos[0] = pie_radius * 0.5 * (midAngle(d2) < Math.PI ? 1 : -1);
                     return "translate("+ pos +")";
                 };
             })
@@ -145,29 +148,76 @@ function piechart(data, selector){
                 };
             });
 
-        text_pie.exit().remove();
+        pie_text.exit().remove();
 
         /* ------- SLICE TO TEXT POLYLINES -------*/
 
-        var polyline_pie = svg_pie.select(".lines").selectAll("polyline").data(pie_pie(data_pie), key_pie);
+        pie_polyline = pie_svg.select(".lines").selectAll("polyline").data(pie_pie(pie_data), pie_key);
 
-        polyline_pie.enter().append("polyline");
+        pie_polyline.enter().append("polyline");
 
-        polyline_pie.transition().duration(1000)
+        pie_polyline.transition().duration(1000)
             .attrTween("points", function(d){
                 this._current = this._current || d;
                 var interpolate = d3.interpolate(this._current, d);
                 this._current = interpolate(0);
                 return function(t) {
                     var d2 = interpolate(t);
-                    var pos = outerArc_pie.centroid(d2);
-                    pos[0] = radius_pie * 0.95 * (midAngle(d2) < Math.PI ? 1 : -1);
-                    return [arc_pie.centroid(d2), outerArc_pie.centroid(d2), pos];
+                    var pos = pie_outerArc.centroid(d2);
+                    pos[0] = pie_radius * 0.5 * (midAngle(d2) < Math.PI ? 1 : -1);
+                    return [pie_arc.centroid(d2), pie_outerArc.centroid(d2), pos];
                 };
             });
 
-        polyline_pie.exit().remove();
+        pie_polyline.exit().remove();
     };
+
+
+    function resizePie(pie_data){
+        pie_data = d3.nest().key(function(d) { return d["Gender"]; }).sortKeys(d3.ascending)
+            .rollup(function(leaves) { return leaves.length; })
+            .entries(data);
+
+        var counter = 0;
+        pie_data.forEach(function(d){counter = counter + d.values});
+        pie_data.forEach(function(d) {
+            d.count = d.values;
+            d.values = d.values / counter
+        }  );
+
+        d3.select(selector).selectAll("*").remove();
+
+        pie_margin = {top: 20, right: 0, bottom: 20, left: 0};
+
+        pie_width = parseInt(d3.select(selector).style("width"), 10) - pie_margin.left - pie_margin.right;
+        pie_height = 300 - pie_margin.top - pie_margin.bottom,
+            pie_radius = Math.min(pie_width, pie_height) / 2;
+
+        pie_svg = d3.select(selector).append("svg")
+            .attr('width', pie_width)
+            .attr('height', pie_height)
+            .append("g")
+            .attr("transform",
+                "translate(" + pie_width / 2 + "," + pie_height / 2 + ")"
+            );
+
+        pie_svg.append("g").attr("class", "slices");
+        pie_svg.append("g").attr("class", "labels");
+        pie_svg.append("g").attr("class", "lines");
+
+        pie_pie = d3.layout.pie().sort(null).value(function(d) {return d.count;});
+        pie_arc = d3.svg.arc().outerRadius(pie_radius * 0.8).innerRadius(pie_radius * 0.4);
+        pie_outerArc = d3.svg.arc().innerRadius(pie_radius * 0.9).outerRadius(pie_radius * 0.9);
+        var pie_key = function(d){ return d.data.key; };
+
+        pie_color = d3.scale.ordinal()
+            .domain(["Male or Female", "Coed"])
+            .range(["#0059b3", "#3399ff", "#99ccff"]);
+
+        change_pie(pie_data);
+
+    }
+    d3.select(window).on(resize, resizePie);
 };
 function piechart2(data, selector){
     var st = {};
@@ -635,10 +685,12 @@ function histogramChart(data, selector, resize, histSvgID){
     hist_bar.append("rect").attr("x", function(d,i){return 2})
         .attr("width", hist_x(hist_bins[0].x1) - hist_x(hist_bins[0].x0) - 2).style("margin-top", "10px")
         .attr("height", function(d) { return hist_height - hist_y(d.length); })
-       // .on("mouseover",hist_tipBox.show)
-       // .on("mouseout",hist_tipBox.hide);
-
-
+        .on("mouseover", function(d){
+            d3.select(this).attr("fill-opacity", ".5").transition().duration(500)
+        })
+        .on("mouseout", function(d){
+            d3.select(this).attr("fill-opacity", "1").transition().duration(500)
+        })
     //d3.select(this).attr("fill-opacity", ".5").transition().duration(500);
     //d3.select(this).attr("fill-opacity", "1").transition().duration(500)
     //hist_bar.append("text").attr("dy", ".75em").attr("y", 6)
@@ -678,8 +730,12 @@ function histogramChart(data, selector, resize, histSvgID){
         hist_bar.append("rect").attr("x", function(d,i){return 2})
             .attr("width", hist_x(hist_bins[0].x1) - hist_x(hist_bins[0].x0) - 2).style("margin-top", "10px")
             .attr("height", function(d) { return hist_height - hist_y(d.length); })
-         //   .on("mouseover",hist_tipBox.show)
-         //   .on("mouseout",hist_tipBox.hide);
+            .on("mouseover", function(d){
+                d3.select(this).attr("fill-opacity", ".5").transition().duration(500)
+            })
+            .on("mouseout", function(d){
+                d3.select(this).attr("fill-opacity", "1").transition().duration(500)
+            });
 
         //hist_bar.append("text").attr("dy", ".75em").attr("y", 6)
         //.attr("x", (hist_x(hist_bins[0].x1) - hist_x(hist_bins[0].x0)) / 2)
@@ -976,11 +1032,11 @@ function scatterChart(data, selector, home, resize, scatterSvgID){
 function draw(data){
     var piechartData = formatData(data);
     table(data, "#tableID");
-    piechart(piechartData, "#chartPie");
     mapchart(data, "mapID");
     histogramChart(data, "#chartHisto", "resize.one", "histSVG");
     scatterChart(data, "#scatterChartA", "in", "resize.two", "scatterSVGA");
     scatterChart(data, "#scatterChartB", "out", "resize.three", "scatterSVGB");
+    piechart(piechartData, "#chartPie", "resize.four");
 }
 
 

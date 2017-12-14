@@ -6,7 +6,80 @@
 * Version: 1.0
 * Description: Templatename - Responsive Bootstrap 3 Templatename Page Template
 */
+/*ADDED STYLES*/
 
+
+html {
+    overflow: scroll !important;
+    overflow-x: hidden !important;
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+.bar rect {
+    fill: steelblue;
+}
+
+.bar text {
+    fill: #fff;
+    font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+    fill: #b0b0b0;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.d3-tip {
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+}
+
+#sliderHisto{
+    width:100%;
+}
+.dataTables_length select {
+    background-color: #fafafa !important;
+}
+.dataTables_filter input {
+    background-color: #fafafa !important;
+}
 
 /*
 ====================================

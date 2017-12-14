@@ -30,14 +30,14 @@ Version: 1.0
 		});
 	
 
-		/* -- Wow --
+		/* -- Wow -- */
 
 		var wow = new WOW({
 			mobile: false
 		});
-		wow.init();*/
+		wow.init();
 
-		/* -- Slider Carousel
+		/* -- Slider Carousel -- */
 
 
 		$(".slider-active").owlCarousel({
@@ -61,8 +61,8 @@ Version: 1.0
 				}
 			}
 		});
-        -- */
-		/* -- about Carousel
+
+		/* -- about Carousel -- */
 
 		$(".about-slider").owlCarousel({
         	items:1,
@@ -72,8 +72,8 @@ Version: 1.0
         	autoplay:false,
 
         });
-        -- */
-		/* -- testimonial Carousel
+
+		/* -- testimonial Carousel -- */
 		$("#testimonial-slider").owlCarousel({
 	        items:2,
 	        pagination:true,
@@ -92,7 +92,7 @@ Version: 1.0
 					}
 				}			
 	    });
-        -- */
+
 		/* -- Smoth Scrool Js -- */
 
 		$(".navbar-nav").on('click', 'a', function(e){
@@ -127,7 +127,7 @@ Version: 1.0
             }, 800);
             return false;
         });
-		
+
 
 
 
@@ -154,14 +154,14 @@ Version: 1.0
 			}
 		});
 
-		/* -- Portfolio mixitup Js
+		/* -- Portfolio mixitup Js -- */
+		
 
 		$('.portfolio-inner').mixItUp();
 
-        -- */
+		
 
-
-        /* -- Counter Down Js -- */
+		 /* -- Counter Down Js -- */
 			$('.coundown_res').countdown('2018/01/02', function(event) {
 				var $this = $(this);
 				$this.find('#day').html(event.strftime('<span>%D</span>'));
@@ -171,15 +171,15 @@ Version: 1.0
 			});
 		 /* -- End Counter Down Js -- */	
 		
-		/* -- Counter Up Js
+		/* -- Counter Up Js -- */
 		$('.counter').counterUp();
-        -- */
-		/* -- Magnific PopUp Js
+		
+		/* -- Magnific PopUp Js -- */
 		$(".video-play-btn").magnificPopup({
             type:'video',
         });
-        -- */
-		/* -- Magnific PopUp Js
+
+		/* -- Magnific PopUp Js -- */
 
 		$('.project-hover').magnificPopup({
 		  delegate: 'a', // child items selector, by clicking on it popup will open
@@ -213,7 +213,7 @@ Version: 1.0
 			});
 		};
 		// Call the functions 
-		magnifPopup();-- */
+		magnifPopup();
 		/*----- End ------------*/
 
 	});
