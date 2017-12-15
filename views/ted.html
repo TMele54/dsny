@@ -90,12 +90,14 @@
         <div class="row">
             <div class="col-md-3">
                 <h3 class="widget-title" style="vertical-align: center;" align="left">Speaker Occupation</h3>
-                <h5 style="vertical-align: center;" align="left">Select Multiple</h5>
+                <h5 style="vertical-align: center;" align="left">Select Multiple</h5><br>
             </div>
 
             <div class="col-md-6"><div id="chartSelect" style="margin-left:auto;margin-right:auto;display:block;width:100%" align="center"></div></div>
             <div class="col-md-3">
-                <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+                <div style="text-align: center;">
+                    <button class="btn btn-primary" onclick="javascript:dc.filterAll(); dc.renderAll();" style="justify-content: center">Reset All</button>
+                </div>
             </div>
 
         </div>

@@ -112,7 +112,7 @@ function draw(data){
         //Bar Chart for Published Date
 
         pubDate = function(d){return d["published_date"]}
-        pubDateChart = dc.barChart(selector);
+        pubDateChart = dc.lineChart(selector);
         pubDateDim = xf.dimension(function(d){return d["published_date"]})
         pubDateGroup = pubDateDim.group().reduceCount(function(d){return d["published_date"]})
 
@@ -123,16 +123,16 @@ function draw(data){
             .margins({top: 10, right: 10, bottom: 20, left: 40})
             .dimension(pubDateDim)
             .group(pubDateGroup)
-            .transitionDuration(500)
-            .centerBar(true)
-            .gap(65)
+            .transitionDuration(500).interpolate("basis")
+            //.centerBar(true)
+            //.gap(65)
             //.filter([3, 5])
             .elasticY(true)
             .xAxis()
             .tickFormat();
 
         pubDateChart.render();
-    }; /*Bar Chart - Count Data*/
+    }; /*Line Chart - Count Data*/
     function speakChart(xf, selector){
 
         d3.select(selector).selectAll("*").remove();
@@ -150,28 +150,29 @@ function draw(data){
         //Bar Chart for Number of Speakers
 
         numSpeak = function(d){return d["num_speaker"]}
-        numSpeakChart = dc.barChart(selector);
+        numSpeakChart = dc.pieChart(selector);
         numSpeakDim = xf.dimension(function(d){return +d["num_speaker"]})
         numSpeakGroup = numSpeakDim.group().reduceCount(function(d){return +d["num_speaker"]})
 
         numSpeakChart
             .width(parseInt(d3.select(selector).style("width"), 10))
             .height(150)
-            .x(d3.scale.linear().domain([d3.min(ref_data, numSpeak)-1, d3.max(ref_data, numSpeak)+1]))
-            .margins({top: 10, right: 10, bottom: 20, left: 40})
+            //.x(d3.scale.linear().domain([d3.min(ref_data, numSpeak)-1, d3.max(ref_data, numSpeak)+1]))
+           // .margins({top: 10, right: 10, bottom: 20, left: 40})
             .dimension(numSpeakDim)
-            .group(numSpeakGroup)
+            .group(numSpeakGroup).slicesCap(1)
+            .innerRadius(40)
+            .legend(dc.legend())
             .transitionDuration(500)
-            .centerBar(true)
-            .gap(65)
-            //.filter([3, 5])
-            .elasticY(true)
-            .xAxis()
-            .tickFormat();
+            .on('pretransition', function(chart) {
+                chart.selectAll('text.pie-slice').text(function(d) {
+                    return d.data.key + ' ' + dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100) + '%';
+                })
+            });
 
         numSpeakChart.render();
 
-    }; /*Bar Chart - Count Number*/
+    }; /*Pie Chart - Count Number*/
     function selectOc(xf, selector){
         //Speaker Occupation Select box
 
@@ -185,6 +186,77 @@ function draw(data){
     }; /*Select Box - Values*/
     function tableChart(xf, selector){
 
+
+
+
+
+
+        var chart = dc.dataTable("#test");
+        var ndx;
+        d3.csv("morley.csv", function(error, experiments) {
+            ndx              = crossfilter(experiments);
+            var fmt = d3.format('02d');
+            var runDimension    = ndx.dimension(function(d) {return [fmt(+d.Expt),fmt(+d.Run)];}),
+                grouping = function (d) { return d.Expt;};
+
+            chart
+                .width(768)
+                .height(480)
+                .dimension(runDimension)
+                .group(grouping)
+                .size(Infinity)
+                .columns(['Run', 'Speed'])
+                .sortBy(function (d) { return [fmt(+d.Expt),fmt(+d.Run)]; })
+                .order(d3.ascending);
+
+            update();
+            chart.render();
+        });
+        // use odd page size to show the effect better
+        var ofs = 0, pag = 17;
+        function display() {
+            d3.select('#begin')
+                .text(ofs);
+            d3.select('#end')
+                .text(ofs+pag-1);
+            d3.select('#last')
+                .attr('disabled', ofs-pag<0 ? 'true' : null);
+            d3.select('#next')
+                .attr('disabled', ofs+pag>=ndx.size() ? 'true' : null);
+            d3.select('#size').text(ndx.size());
+        }
+        function update() {
+            chart.beginSlice(ofs);
+            chart.endSlice(ofs+pag);
+            display();
+        }
+        function next() {
+            ofs += pag;
+            update();
+            chart.redraw();
+        }
+        function last() {
+            ofs -= pag;
+            update();
+            chart.redraw();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         tableChar = dc.dataTable(selector);
         tableChartDim = xf.dimension(function(d){return d["name"]});
         tableChartGroup = tableChartDim.group();
@@ -192,7 +264,7 @@ function draw(data){
         tableChar
             .dimension(tableChartDim)
             .group(tableChartGroup)
-            .size(17)
+            //.size(17)
             .order(d3.ascending)
             .columns([
                 {
