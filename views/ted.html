@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110971078-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-110971078-1');
+    </script>
+
+    <!-- Meta Tag -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" id="vp" content="width=device-width, initial-scale=1">
+    <title>DSNY</title>
+    <meta name="description" content="Data Science New York">
+    <meta name="keywords" content="">
+    <meta name="author" content="TonyMele.Rutgers@gmail.com">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/dcjs/dc.css">
+
+    <!--External CSS -->
+    <link rel="stylesheet" type="text/css" href="/public/business/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/public/business/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/business/css/responsive.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet">
+    <link href="/public/portfolio/ted/dashboard.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/public/business/images/header/favicon.ico" sizes="16x16" />
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar-fixed-top">
+
+<!-- Start Preloader Area-->
+<div class="preloader-area">
+    <div class="sk-cube-grid">
+        <div class="sk-cube sk-cube1"></div>
+        <div class="sk-cube sk-cube2"></div>
+        <div class="sk-cube sk-cube3"></div>
+        <div class="sk-cube sk-cube4"></div>
+        <div class="sk-cube sk-cube5"></div>
+        <div class="sk-cube sk-cube6"></div>
+        <div class="sk-cube sk-cube7"></div>
+        <div class="sk-cube sk-cube8"></div>
+        <div class="sk-cube sk-cube9"></div>
+    </div>
+</div>
+<!--/End Preloader Area-->
+
+<!-- Navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" id="navAct" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-collapse" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand"><img src="/public/business/images/logo/logo.png" style="max-height: 40px" alt="logo"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="main-nav-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active" id="navHome"><a href="/">Home</a></li>
+                <li class="active" id="navPortfolio"><a href="#our-portfolio">Portfolio</a></li>
+                <li class="active" id="navContact"><a href="#footer">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- /End Navbar -->
+
+<div class="row" style="height:20px"></div>
+<!--Our Portfolio-->
+<section id="our-portfolio" class="portfolio section-padding">
+    <div class="container">
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <h3 class="widget-title" style="vertical-align: center;" align="left">Speaker Occupation</h3>
+                <h5 style="vertical-align: center;" align="left">Select Multiple</h5>
+            </div>
+
+            <div class="col-md-6"><div id="chartSelect" style="margin-left:auto;margin-right:auto;display:block;width:100%" align="center"></div></div>
+            <div class="col-md-3">
+                <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+            </div>
+
+        </div>
+
+
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <div id="chartA" style="margin-left:auto;margin-right:auto;display:block;width:100%" align="center">
+                    <h3 class="widget-title" style="vertical-align: center;" align="left">Title</h3>
+                    <h5 style="vertical-align: center;" align="left">Tag</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div id="chartB" style="margin-left:auto;margin-right:auto;display:block;width:100%" align="center">
+                    <h3 class="widget-title" style="vertical-align: center;" align="left">Title</h3>
+                    <h5 style="vertical-align: center;" align="left">Tag</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div id="chartC" style="margin-left:auto;margin-right:auto;display:block;;width:100%" align="center">
+                    <h3 class="widget-title" style="vertical-align: center;" align="left">Title</h3>
+                    <h5 style="vertical-align: center;" align="left">Tag</h5>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="chartD" style="margin-left:auto;margin-right:auto;display:block;;width:100%" align="center">
+                    <h3 class="widget-title" style="vertical-align: center;" align="left">Title</h3>
+                    <h5 style="vertical-align: center;" align="left">Tag</h5>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="chartE" style="margin-left:auto;margin-right:auto;display:block;;width:100%" align="center">
+                    <h3 class="widget-title" style="vertical-align: center;" align="left">Title</h3>
+                    <h5 style="vertical-align: center;" align="left">Tag</h5>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="widget-title" style="vertical-align: center;" align="left">Title</h3>
+                <h5 style="vertical-align: center;" align="left">Tag</h5>
+                <div id="chartTable" style="margin-left:auto;margin-right:auto;display:block;;width:100%" align="center">
+                    <div class='header'>
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                        <span>10</span>
+                        <span>11</span>
+                        <span>12</span>
+                        <span>13</span>
+                        <span>14</span>
+                        <span>15</span>
+                        <span>16</span>
+                        <span>17</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- /End Our Portfolio -->
+
+<!-- Footer section -->
+<footer id="footer" class="footer">
+    <div class="footer-widgets">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <!-- Widget :: About us -->
+                    <div class="widget-newsletter widget widget-footer">
+                        <h3 class="widget-title">About us</h3>
+                        <div class="widget-content">
+                            <p>We are a Professional Services Company specializing in Data Science, Machine Learning, and Application machinelearning. Our business is built around creative thinking and harmonious collaboration with our clients.</p>
+                        </div>
+                        <div class="social-link">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /Widget :: About us -->
+                </div>
+                <div class="col-md-5">
+                    <!-- Widget :: Contact us -->
+                    <div class="latest-posts-widget widget widget-footer">
+                        <h3 class="widget-title">Contact us</h3>
+                        <!--<strong><a href="mailto:DataScienceNewYork@gmail.com">Email Here</a></strong>
+                        <br>
+                        <br>-->
+                        <div class="widget-content">
+                            <div class="contact">
+                                <div class="form-group">
+                                    <input type="text" name="fname" class="form-control name-field" required="required" placeholder="Name">
+                                </div>
+                                <div class="form-group">
+                                    <input id="subject" type="text" placeholder="Subject" required="required" class="form-control name-field"/>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email"  id="to" type="email" placeholder="Enter your E-mail" required="required"  name="email" class="form-control mail-field" />
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="message" id="content" required="required" class="form-control" rows="8" placeholder="Message"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="send message" name="submit" id="send_email" class="btn btn-lg contact-btn" title="Submit Your Message!">
+                                </div>
+                                <span id="message"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Widget :: Contact us -->
+                </div>
+                <div class="col-md-3">
+                    <!-- Widget :: Address Info -->
+                    <div class="contacts-widget widget widget-footer">
+                        <h3 class="widget-title">Address</h3>
+                        <div class="widget-content">
+                            <ul class="contacts-info-list">
+                                <li>
+                                    <i class="fa fa-map-marker"></i>
+                                    <div class="info-item"> <span>Address -</span>
+                                        <br> 300 Park Ave, Hoboken NJ 07030
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fa fa-mobile"></i>
+                                    <div class="info-item"> <span>Phone -</span>
+                                        <br> +1 973.978.5509
+                                    </div>
+                                </li>
+                                <li> <i class="fa fa-envelope"></i>
+                                    <div class="info-item"> <span>Email -</span>
+                                        <br> <a href="#">DataScienceNewYork@gmail.com</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /Widget :: Address Info -->
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12"> Copyright @ 2017 Power by <a href="http://themehappy.com/">Data Science New York</a> All Rights Reserved. </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<!-- /End Footer section -->
+
+
+<!-- /End Switcher Design Area -->
+
+
+<!-- Responsive Bootstrap4 Data Tables -->
+<script src="/bower_components/dataTableSpecifics/jquery-1.12.4.js"></script>
+<script src="/bower_components/dataTableSpecifics/jquery.dataTables.min.js"></script>
+<script src="/bower_components/dataTableSpecifics/dataTables.bootstrap.min.js"></script>
+<script src="/bower_components/dataTableSpecifics/dataTables.responsive.min.js"></script>
+<script src="/bower_components/dataTableSpecifics/responsive.bootstrap.min.js"></script>
+
+<!-- Script -->
+<script src="/public/business/js/jquery.min.js"></script>
+<!-- Data Driven Documents D3 - Version 4 as d3_4-->
+<script src="/bower_components/d3_4/d3.min.js"></script>
+<script>d3_4 = d3;window.d3 = null;</script>
+<!-- Data Driven Documents D3 - Version 3-->
+<script src="/bower_components/d3/d3.min.js"></script>
+<!-- Crossfilter -->
+<script src="/bower_components/crossfilter2/crossfilter.min.js"></script>
+
+<!-- DC.js -->
+<script src="/bower_components/dcjs/dc.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!--SmoothScroll JS -->
+<script src="/public/business/js/SmoothScroll.js"></script>
+<script src="/public/business/js/jquery.countdown.min.js"></script>
+
+<!-- Custom JS -->
+<script src="/public/business/js/custom.js"></script>
+
+
+<!-- Visualization Script -->
+<script src="/public/portfolio/ted/dashboard.js"></script>
+<script>
+    $(document).ready(function(){
+        var from,to,subject,text;
+        $("#send_email").click(function(){
+
+            to=$("#to").val();
+
+            subject=$("#subject").val();
+
+            text=$("#content").val();
+
+            $("#message").text("Email is been sent at "+to+" . Please check inbox!");
+
+            $.get("http://localhost:8054/send",
+                {to:to,subject:subject,text:text},
+                function(data){
+                    $("#message").empty().html("Email is been sent at "+to+" . Please check inbox!");
+                });
+        });
+        $('#navHome').addClass('active');
+        $('#navPortfolio').addClass('active');
+        $('#navContact').addClass('active');
+        $('#navAct').addClass('active');
+/*
+        window.onload = function() {
+            if (screen.width < 450) {
+                var mvp = document.getElementById('vp');
+                mvp.setAttribute('content','user-scalable=no,width=450');
+            }
+        }*/
+           // $('.tableClass').DataTable();
+
+    });
+    $(window).scroll(function (event) {
+
+        $('#navHome').addClass('active');
+        $('#navPortfolio').addClass('active');
+        $('#navContact').addClass('active');
+        $('#navAct').addClass('active');
+    });
+
+</script>
+</body>
+
+</html>

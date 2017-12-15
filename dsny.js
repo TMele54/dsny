@@ -97,6 +97,23 @@ app.get('/college-scorecard-dashboard-data-slim', function(req, res) {
     res.send(JSON.stringify(data));
 });
 
+//////////////////////////////////////////TED
+app.get('/portfolio/ted', function(req, res) {
+    res.sendFile('ted.html', { root: path.join(__dirname, '/views') });
+});
+
+app.get('/ted-data', function(req, res) {
+    var data = require('./python_modules/data/ted/ted.json');
+    res.send(JSON.stringify(data));
+});
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
