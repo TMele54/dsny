@@ -21,7 +21,7 @@
     <meta name="author" content="TonyMele.Rutgers@gmail.com">
 
     <!-- External CSS -->
-    <link rel="stylesheet" type="text/css" href="/public/business/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/public/business/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/public/business/css/owl.carousel.min.css">
     <link rel="stylesheet" type="text/css" href="/public/business/css/owl.theme.default.min.css">
@@ -91,18 +91,8 @@
         <div class="collapse navbar-collapse" id="main-nav-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="active" id="navHome"><a href="/">Home</a></li>
-                <!--<li><a href="#about-us">About Us</a></li>
-                <li><a href="#our-service">Services</a></li>
-                <li><a href="#price">Pricing</a></li>-->
                 <li class="active" id="navPortfolio"><a href="#our-portfolio">Portfolio</a></li>
                 <li class="active" id="navContact"><a href="#footer">Contact</a></li>
-                <!--<li><a href="#"><i class="fa fa-facebook"></i></a></li>-->
-                <!--<li><a href="#"><i class="fa fa-google-plus"></i></a></li>-->
-                <!--<li><a href="#"><i class="fa fa-twitter"></i></a></li>-->
-                <!--<li><a href="#our-blog">Blog</a></li>-->
-                <!--<li><a href="#our-skill">Skills</a></li>-->
-                <!--<li><a href="#our-team">Team</a></li>-->
-                <!--<li><a href="#testimonial">Testimonial</a></li>-->
             </ul>
         </div>
     </div>
@@ -383,17 +373,7 @@
                     $("#message").empty().html("Email is been sent at "+to+" . Please check inbox!");
                 });
         });
-        $('#navHome').addClass('active');
-        $('#navPortfolio').addClass('active');
-        $('#navContact').addClass('active');
     });
-    $(window).scroll(function (event) {
-
-        $('#navHome').addClass('active');
-        $('#navPortfolio').addClass('active');
-        $('#navContact').addClass('active');
-    });
-
 </script>
 <!-- Custom JS -->
 <script src="/public/business/js/custom.js"></script>

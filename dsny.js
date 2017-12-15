@@ -12,8 +12,6 @@ var users = require('./routes/users');
 
 var app = express();
 
-
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -30,8 +28,6 @@ app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 app.use('/python_modules',  express.static(__dirname + '/python_modules'));
 app.use('/public',  express.static(__dirname + '/public'));
 app.use('/users', users);
-
-var data = require('./python_modules/data/collegeScorecard/filteredData.json');
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////Email

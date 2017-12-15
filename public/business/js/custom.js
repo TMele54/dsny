@@ -30,14 +30,14 @@ Version: 1.0
 		});
 	
 
-		/* -- Wow --
+		/* -- Wow --*/
 
 		var wow = new WOW({
 			mobile: false
 		});
-		wow.init();*/
+		wow.init();
 
-		/* -- Slider Carousel
+		/* -- Slider Carousel--*/
 
 
 		$(".slider-active").owlCarousel({
@@ -61,8 +61,8 @@ Version: 1.0
 				}
 			}
 		});
-        -- */
-		/* -- about Carousel
+
+		/* -- about Carousel-- */
 
 		$(".about-slider").owlCarousel({
         	items:1,
@@ -72,8 +72,8 @@ Version: 1.0
         	autoplay:false,
 
         });
-        -- */
-		/* -- testimonial Carousel
+
+		/* -- testimonial Carousel-- */
 		$("#testimonial-slider").owlCarousel({
 	        items:2,
 	        pagination:true,
@@ -92,7 +92,7 @@ Version: 1.0
 					}
 				}			
 	    });
-        -- */
+
 		/* -- Smoth Scrool Js -- */
 
 		$(".navbar-nav").on('click', 'a', function(e){
@@ -155,10 +155,10 @@ Version: 1.0
 		});
 
 		/* -- Portfolio mixitup Js
+        -- */
 
 		$('.portfolio-inner').mixItUp();
 
-        -- */
 
 
         /* -- Counter Down Js -- */
@@ -172,13 +172,13 @@ Version: 1.0
 		 /* -- End Counter Down Js -- */	
 		
 		/* -- Counter Up Js
-		$('.counter').counterUp();
         -- */
+		$('.counter').counterUp();
 		/* -- Magnific PopUp Js
+        -- */
 		$(".video-play-btn").magnificPopup({
             type:'video',
         });
-        -- */
 		/* -- Magnific PopUp Js
 
 		$('.project-hover').magnificPopup({
