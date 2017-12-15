@@ -191,68 +191,6 @@ function draw(data){
 
 
 
-        var chart = dc.dataTable("#test");
-        var ndx;
-        d3.csv("morley.csv", function(error, experiments) {
-            ndx              = crossfilter(experiments);
-            var fmt = d3.format('02d');
-            var runDimension    = ndx.dimension(function(d) {return [fmt(+d.Expt),fmt(+d.Run)];}),
-                grouping = function (d) { return d.Expt;};
-
-            chart
-                .width(768)
-                .height(480)
-                .dimension(runDimension)
-                .group(grouping)
-                .size(Infinity)
-                .columns(['Run', 'Speed'])
-                .sortBy(function (d) { return [fmt(+d.Expt),fmt(+d.Run)]; })
-                .order(d3.ascending);
-
-            update();
-            chart.render();
-        });
-        // use odd page size to show the effect better
-        var ofs = 0, pag = 17;
-        function display() {
-            d3.select('#begin')
-                .text(ofs);
-            d3.select('#end')
-                .text(ofs+pag-1);
-            d3.select('#last')
-                .attr('disabled', ofs-pag<0 ? 'true' : null);
-            d3.select('#next')
-                .attr('disabled', ofs+pag>=ndx.size() ? 'true' : null);
-            d3.select('#size').text(ndx.size());
-        }
-        function update() {
-            chart.beginSlice(ofs);
-            chart.endSlice(ofs+pag);
-            display();
-        }
-        function next() {
-            ofs += pag;
-            update();
-            chart.redraw();
-        }
-        function last() {
-            ofs -= pag;
-            update();
-            chart.redraw();
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
