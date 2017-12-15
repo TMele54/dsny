@@ -37,14 +37,16 @@ function draw(data){
             if (seconds < 10) {seconds = "0"+seconds;}
             return hours+':'+minutes+':'+seconds;
         };
-
+        v = 0
+        c = 0
         data.forEach(function(d){
             d["durationFormatted"] = d["duration"].toString().toHHMMSS();
             d["film_date"] = new Date(d["film_date"] * 1000);
             d["published_date"] = new Date(d["published_date"] * 1000);
-
+            v = v + +d["views"]
+            c = c + +d["comments"]
         });
-
+        console.log([c/v*100.0])
         return data
     };
 
@@ -76,7 +78,7 @@ function draw(data){
 
         langsChart
             .width(width)
-            .height(150)
+            .height(200)
             .x(d3.scale.linear().domain([d3.min(ref_data, langs), d3.max(ref_data, langs)]))
             .margins({top: 10, right: 10, bottom: 20, left: 40})
             .dimension(langsDim)
@@ -86,7 +88,7 @@ function draw(data){
             .gap(65)
             //.filter([3, 5])
             .elasticY(true)
-            .xAxis()
+            .xAxis().ticks(5)
             .tickFormat()
         //.on("renderlet.b", function (chart) {
         // rotate x-axis labels
@@ -111,14 +113,14 @@ function draw(data){
             .text("Count of Publications");
         //Bar Chart for Published Date
 
-        pubDate = function(d){return d["published_date"]}
+        pubDate = function(d){return d["published_date"]};
         pubDateChart = dc.lineChart(selector);
-        pubDateDim = xf.dimension(function(d){return d["published_date"]})
-        pubDateGroup = pubDateDim.group().reduceCount(function(d){return d["published_date"]})
+        pubDateDim = xf.dimension(function(d){return d["published_date"]});
+        pubDateGroup = pubDateDim.group().reduceCount(function(d){return d["published_date"]});
 
         pubDateChart
             .width(parseInt(d3.select(selector).style("width"), 10))
-            .height(150)
+            .height(200)
             .x(d3.time.scale().domain([d3.min(ref_data, pubDate), d3.max(ref_data, pubDate)]))
             .margins({top: 10, right: 10, bottom: 20, left: 40})
             .dimension(pubDateDim)
@@ -128,7 +130,7 @@ function draw(data){
             //.gap(65)
             //.filter([3, 5])
             .elasticY(true)
-            .xAxis()
+            .xAxis().ticks(6)
             .tickFormat();
 
         pubDateChart.render();
@@ -156,7 +158,7 @@ function draw(data){
 
         numSpeakChart
             .width(parseInt(d3.select(selector).style("width"), 10))
-            .height(150)
+            .height(200)
             //.x(d3.scale.linear().domain([d3.min(ref_data, numSpeak)-1, d3.max(ref_data, numSpeak)+1]))
            // .margins({top: 10, right: 10, bottom: 20, left: 40})
             .dimension(numSpeakDim)
@@ -179,115 +181,191 @@ function draw(data){
         selectOccu = dc.selectMenu(selector);
         selectOccuDim = xf.dimension(function(d){return d["speaker_occupation"]});
         //selectOccuGroup = selectOccuDim.group();
-        selectOccu
-            .dimension(selectOccuDim).group(selectOccuDim.group()).multiple(true)
-            .numberVisible(3).controlsUseVisibility(true);
-        selectOccu.render()
+        selectOccu.width(150)
+            .dimension(selectOccuDim)
+            .group(selectOccuDim.group())
+            .multiple(true)
+            .numberVisible(5)
+            //.numberItems(10)
+            .order(function (a,b) {
+            return b.value > a.value ? 1 : a.value > b.value ? -1 : 0;
+        });
+
+        selectOccu.render().controlsUseVisibility(true)
     }; /*Select Box - Values*/
     function tableChart(xf, selector){
 
-
-
-
-
-
-
-
-
-
+        bigNum = d3.format(",")
         tableChar = dc.dataTable(selector);
         tableChartDim = xf.dimension(function(d){return d["name"]});
         tableChartGroup = tableChartDim.group();
 
         tableChar
             .dimension(tableChartDim)
-            .group(tableChartGroup)
+            .group(function(d){
+                return +d.value;
+            }).sortBy(function(d){return d["published_date"]})
             //.size(17)
-            .order(d3.ascending)
+            .order(d3.ascending).showGroups(false)
             .columns([
-                {
-                label: "1",
-                format: function (d) { return d["comments"]; }
-                },
-                {
-                label: "2",
-                format: function (d) { return d["description"]; }
-                },
-                {
-                label: "3",
-                format: function (d) { return d["duration"]; }
-                },
-                {
-                label: "4",
-                format: function (d) { return d["event"]; }
-                },
-                {
-                label: "5",
-                format: function (d) { return d["film_date"]; }
-                },
-                {
-                label: "6",
-                format: function (d) { return d["languages"]; }
-                },
-                {
-                label: "7",
-                format: function (d) { return d["main_speaker"]; }
-                },
-                {
-                label: "8",
-                format: function (d) { return d["name"]; }
-                },
-                {
-                label: "9",
-                format: function (d) { return d["num_speaker"]; }
-                },
-                {
-                label: "10",
-                format: function (d) { return d["published_date"]; }
-                },
-                {
-                label: "11",
-                format: function (d) { return d["ratings"]; }
-                },
-                {
-                label: "12",
-                format: function (d) { return d["related_talks"]; }
-                },
-                {
-                label: "13",
-                format: function (d) { return d["speaker_occupation"]; }
-                },
-                {
-                label: "14",
-                format: function (d) { return d["tags"]; }
-                },
-                {
-                label: "15",
-                format: function (d) { return d["title"]; }
-                },
-                {
-                label: "16",
-                format: function (d) { return d["url"]; }
-                },
-                {
-                label: "17",
-                format: function (d) { return d["views"]; }
-            }
-        ]).sortBy(function(d){return d["published_date"]});
+                        "Title",        {label: "",format: function (d) { return d["title"];}},
+                       // "Description",  {label: "",format: function (d) { return d["description"];}},
+                       // "Speaker",      {label: "",format: function (d) { return d["main_speaker"];}},
+                       // "Occupation",   {label: "",format: function (d) { return d["speaker_occupation"];}},
+                       // "Published",    {label: "",format: function (d) { return d["published_date"];}},
+                        "Duration",     {label: "",format: function (d) { return d["durationFormatted"];}},
+                        "URL",          {label: "",format: function (d) { return d["url"];}},
+                        "Views",        {label: "",format: function (d) { return bigNum(d["views"]);}}
+
+
+                        // "Comments", {label: "1",format: function (d) { return d["comments"]; }},
+                        // "Event",{label: "4",format: function (d) { return d["event"]; }},
+                        // "Film Date",{label: "5",format: function (d) { return d["film_date"]; }},
+                        // "Languages",{label: "6",format: function (d) { return d["languages"]; }},
+                        // "Name",{label: "8",format: function (d) { return d["name"]; }},
+                        // "Speakers",{label: "9",format: function (d) { return d["num_speaker"]; }},
+                        // "Ratings",{label: "11",format: function (d) { return d["ratings"]; }},
+                        // "Related",{label: "12",format: function (d) { return d["related_talks"]; }  },
+                        // "Tags",{label: "14",format: function (d) { return d["tags"]; }},
+
+                ]);
 
         tableChar.render();
-    };
+    };/*Table Chart - */
+    function numChart(xf, selector, field, title, tag){
+        if(selector != "#chartF"){
+            d3.select(selector).selectAll("*").remove();
+            $(selector).empty();
+            d3.select(selector)
+                .append("h3")
+                .attr("class", "widget-title")
+                .attr("align", "left")
+                .style("vertical-align", "center")
+                .text(title)
+                .append("h5")
+                .attr("align", "left")
+                .style("vertical-align", "center")
+                .text(tag);
+
+            width = parseInt(d3.select(selector).style("width"), 10);
+            $(selector).height(parseInt(width*0.750));
+
+            //Bar Chart for Published Date
+            items = function(d){return +d["name"]};
+            viewCommRat = dc.numberDisplay(selector);
+            viewCommRatDim = xf.dimension(items);
+            viewCommRatGroup = viewCommRatDim.groupAll().reduceSum(function(d){return d[field]});
+            average = function(d) {return d.n ? d.tot / d.n : 0;};
+
+            viewCommRat
+                .group(viewCommRatGroup)
+                .formatNumber(d3.format(".3s"))
+                .valueAccessor(function(d){return d})
+
+
+            viewCommRat.render();
+        }
+        else{
+            field1 = field.split(",")[0]
+            field2 = field.split(",")[1]
+
+            d3.select(selector).selectAll("*").remove();
+            $(selector).empty();
+            d3.select(selector)
+                .append("h3")
+                .attr("class", "widget-title")
+                .attr("align", "left")
+                .style("vertical-align", "center")
+                .text(title)
+                .append("h5")
+                .attr("align", "left")
+                .style("vertical-align", "center")
+                .text(tag);
+
+            width = parseInt(d3.select(selector).style("width"), 10);
+            //$(selector).height(width);
+
+            //Bar Chart for Published Date
+            items = function(d){return ["url"]};
+            viewCommRat = dc.numberDisplay(selector);
+            viewCommRatDim = xf.dimension(items);
+            viewCommRatGroup = viewCommRatDim.groupAll().reduceSum(function(d){return +d[field2]/+d[field1]});
+            average = function(d) {return d.n ? d.tot / d.n : 0;};
+
+            viewCommRat
+                .group(viewCommRatGroup)
+                .formatNumber(d3.format(".1%"))
+                .valueAccessor(function(d){return d});
+
+
+            viewCommRat.render();
+
+        }
+    }; /*Number Box - Count Data*/
+    function viewsCommsChart(xf, selector){
+
+
+        d3.select(selector).selectAll("*").remove();
+        $(selector).empty();
+        d3.select(selector)
+            .append("h3")
+            .attr("class", "widget-title")
+            .attr("align", "left")
+            .style("vertical-align", "center")
+            .text("Views (L) & Comments (R)")
+            .append("h5")
+            .attr("align", "left")
+            .style("vertical-align", "center")
+            .text("Over Time");
+        //Bar Chart for Published Date
+
+        viewCommDate = function(d){return d["published_date"]};
+        //viewCommDateChart = dc.lineChart(selector);
+        viewCommDateChart = dc.compositeChart(selector);
+        viewCommDateDim = xf.dimension(viewCommDate)
+        viewDateGroup = viewCommDateDim.group().reduceSum(function(d){return +d["views"]});
+        commDateGroup = viewCommDateDim.group().reduceSum(function(d){return +d["comments"]});
+
+        viewCommDateChart
+            .width(parseInt(d3.select(selector).style("width"), 10))
+            .height(270)
+            .margins({top: 10, right: 75, bottom: 50, left: 90})
+            .x(d3.time.scale().domain([d3.min(ref_data, viewCommDate), d3.max(ref_data, viewCommDate)]))
+            .legend(dc.legend().x(200).y(20).itemHeight(13).gap(5))
+            .yAxisLabel("Sum of Views")
+            .mouseZoomable(true)
+            .shareTitle(false)
+            .xUnits(d3.time.months)
+            .elasticY(true)
+            .compose([
+                dc.lineChart(viewCommDateChart).dimension(viewCommDateDim).colors('#5bf3f5')
+                    .group(viewDateGroup, "Views").dashStyle([2,2]),
+                dc.lineChart(viewCommDateChart).dimension(viewCommDateDim).colors('#d26b6c')
+                    .group(commDateGroup, "Comments").dashStyle([5,5]).useRightYAxis(true)
+            ])
+            .brushOn(false)
+            .rightYAxisLabel("Sum of Comments")
+            .renderHorizontalGridLines(true)
+            .render();
+        //viewCommDateChart.render();
+        
+    }
+
+
 
     selectOc(xf, "#chartSelect");
     langChart(xf, "#chartA");
     pubChart(xf, "#chartB");
     speakChart(xf, "#chartC");
     tableChart(xf, "#chartTable");
-
+    numChart(xf, "#chartD", "views", "Views", "View Count");
+    numChart(xf, "#chartE", "comments", "Comments", "Comment Count");
+    viewsCommsChart(xf, "#chartF")
 
     d3.select(window).on("resize.one",function(){
         langsChart.width(parseInt(d3.select("#chartA").style("width"), 10)).redraw();
         pubDateChart.width(parseInt(d3.select("#chartB").style("width"), 10)).redraw();
         numSpeakChart.width(parseInt(d3.select("#chartC").style("width"), 10)).redraw();
+        viewCommDateChart.width(parseInt(d3.select("#chartF").style("width"), 10)).redraw();
     });
 }
