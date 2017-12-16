@@ -447,7 +447,9 @@ function draw(data){
 
     dc.chartRegistry.list().forEach(function(chart) {
         chart.on('filtered', function() {
-            table(xf, format_data, "#new")
+            setTimeout(function(){
+                table(xf, format_data, "#new");
+            }, 1500);
         });
     });
     //.on("filtered", table(xf, format_data, "#tableID"));
