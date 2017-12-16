@@ -23,6 +23,8 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/bower_components/dcjs/dc.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/dataTableSpecifics/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/dataTableSpecifics/responsive.bootstrap.min.css">
 
     <!--External CSS -->
     <link rel="stylesheet" type="text/css" href="/public/business/css/font-awesome.min.css">
@@ -135,7 +137,11 @@
                 <h5 style="vertical-align: center;" align="left">Multi-Select</h5><br>
             </div>
 
-            <div class="col-md-6"><div id="chartSelect" style="margin-left:auto;margin-right:auto;display:block;width:100%" align="center"></div></div>
+            <div class="col-md-6">
+                <div style="width:100%;overflow-x: scroll;">
+                    <div id="chartSelect" style="margin-left:auto;margin-right:auto;display:block;width:100%" align="center"></div>
+                </div>
+            </div>
             <div class="col-md-3">
                 <div style="text-align: center;">
                     <button class="btn btn-primary" onclick="javascript:dc.filterAll(); dc.renderAll();" style="justify-content: center">Reset All</button>
@@ -167,24 +173,20 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-2" style="display:block;">
 
                 <div class="row">
-                    <div class="col-md-12">
                         <div id="chartD" style="margin-left:auto;margin-right:auto;display:block;;width:100%" align="center">
                             <h3 class="widget-title" style="vertical-align: center;" align="left">Title</h3>
                             <h5 style="vertical-align: center;" align="left">Tag</h5>
                         </div>
-                    </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-12">
                         <div id="chartE" style="margin-left:auto;margin-right:auto;display:block;;width:100%" align="center">
                             <h3 class="widget-title" style="vertical-align: center;" align="left">Title</h3>
                             <h5 style="vertical-align: center;" align="left">Tag</h5>
                         </div>
-                    </div>
                 </div>
 
             </div>
@@ -201,10 +203,9 @@
             <div class="col-md-12">
                 <h3 class="widget-title" style="vertical-align: center;" align="left">Additional Data</h3>
                 <h5 style="vertical-align: center;" align="left">Tag</h5>
-                <div id="chartTable" class="table striped" style="margin-left:auto;margin-right:auto;display:block;;width:100%" align="center">
-                    <div class='header'>
-                    </div>
-                </div>
+
+                <div id="new"></div>
+                <!--<div id="chartTable" class="table striped" style="margin-left:auto;margin-right:auto;display:block;;width:100%" align="center"></div>-->
             </div>
         </div>
     </div>
@@ -344,6 +345,16 @@
 
 <!-- Visualization Script -->
 <script src="/public/portfolio/ted/dashboard.js"></script>
+
+
+<!-- Responsive Bootstrap4 Data Tables -->
+<script src="/bower_components/dataTableSpecifics/jquery-1.12.4.js"></script>
+<script src="/bower_components/dataTableSpecifics/jquery.dataTables.min.js"></script>
+<script src="/bower_components/dataTableSpecifics/dataTables.bootstrap.min.js"></script>
+<script src="/bower_components/dataTableSpecifics/dataTables.responsive.min.js"></script>
+<script src="/bower_components/dataTableSpecifics/responsive.bootstrap.min.js"></script>
+
+
 <script>
     $(document).ready(function(){
         var from,to,subject,text;

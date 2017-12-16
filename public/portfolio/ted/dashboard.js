@@ -37,21 +37,18 @@ function draw(data){
             if (seconds < 10) {seconds = "0"+seconds;}
             return hours+':'+minutes+':'+seconds;
         };
-        v = 0
-        c = 0
-        data.forEach(function(d){
+        data.forEach(function(d,i){
             d["durationFormatted"] = d["duration"].toString().toHHMMSS();
             d["film_date"] = new Date(d["film_date"] * 1000);
             d["published_date"] = new Date(d["published_date"] * 1000);
-            v = v + +d["views"]
-            c = c + +d["comments"]
+            d["id"] = i;
         });
-        console.log([c/v*100.0])
         return data
     };
-
+    format_data = formatData(data)
     // Make xf object
-    xf = crossfilter(formatData(data));
+    xf = crossfilter(format_data);
+    dataDIM = xf.dimension(function(d){return d["id"]}); // I let you filter format_data from the xf obj
 
     function langChart(xf, selector){
 
@@ -262,6 +259,8 @@ function draw(data){
                 .formatNumber(d3.format(".3s"))
                 .valueAccessor(function(d){return d})
 
+                //.on("filtered", table(xf, format_data, "#tableID"));
+
 
             viewCommRat.render();
         }
@@ -295,8 +294,7 @@ function draw(data){
             viewCommRat
                 .group(viewCommRatGroup)
                 .formatNumber(d3.format(".1%"))
-                .valueAccessor(function(d){return d});
-
+                .valueAccessor(function(d){return d})
 
             viewCommRat.render();
 
@@ -350,22 +348,115 @@ function draw(data){
         //viewCommDateChart.render();
         
     }
+    function table(xf, data, selector){
 
+        d3.select(selector).selectAll("*").remove();
+        var good = []
+        for(var item in dataDIM.top(Infinity)){
+            good.push(item)
+        }
+
+        tableData = []
+        data.forEach(function(d){
+            if(d["id"] in good){
+                tableData.push(d)
+            }
+        })
+
+
+        var columnsData = [
+            // "FILTER",
+            "title",
+            "durationFormatted",
+            "url",
+            "views"
+        ]
+        var columnsHead = [
+            // "Filter Dashboard",
+            "Title",
+            "Duration",
+            "URL",
+            "Views"
+        ]
+
+        function tabulate(data, columnsHead, columnsData) {
+
+            var table = d3.select(selector)
+                .append("table")
+                .attr("id",'tableID')
+                .attr("class", 'tableClass table table-striped table-bordered dt-responsive nowrap')
+                .attr("callspacing", "0")
+                .attr("width", "100%");
+
+            var thead = table.append('thead');
+            var	tbody = table.append('tbody');
+
+            // append the header row
+            thead.append('tr')
+                .selectAll('th')
+                .data(columnsHead)
+                .enter()
+                .append('th')
+                .text(function (column) { return column; });
+
+            // create a row for each object in the data
+            var rows = tbody.selectAll('tr')
+                .data(data)
+                .enter()
+                .append('tr');
+
+            // create a cell in each row for each column
+            var cells = rows.selectAll('td')
+                .data(function (row) {
+                    return columnsData.map(function (column) {
+                        return {column: column, value: row[column]};
+                    });
+                })
+                .enter()
+                .append('td')
+                .html(function (d) {
+                    if(d.value == ""){
+                        return "Data not reported"
+                    }else{
+                        var item = d["value"]
+                        var tststr = d["value"].toString().substring(0,4)
+                        if(tststr === "http"){
+                            return "<a href="+ d.value+'">'+d.value+"</a>"
+                        }else{
+                            return item
+                        }
+
+                    }
+
+                });
+        }
+        tabulate(tableData, columnsHead, columnsData);
+        $(".tableClass").DataTable();
+    };
 
 
     selectOc(xf, "#chartSelect");
     langChart(xf, "#chartA");
     pubChart(xf, "#chartB");
     speakChart(xf, "#chartC");
-    tableChart(xf, "#chartTable");
+   // tableChart(xf, "#chartTable");
     numChart(xf, "#chartD", "views", "Views", "View Count");
     numChart(xf, "#chartE", "comments", "Comments", "Comment Count");
-    viewsCommsChart(xf, "#chartF")
+    viewsCommsChart(xf, "#chartF");
+    table(xf, format_data, "#new");
+
+    dc.chartRegistry.list().forEach(function(chart) {
+        chart.on('filtered', function() {
+            table(xf, format_data, "#new")
+        });
+    });
+    //.on("filtered", table(xf, format_data, "#tableID"));
 
     d3.select(window).on("resize.one",function(){
         langsChart.width(parseInt(d3.select("#chartA").style("width"), 10)).redraw();
         pubDateChart.width(parseInt(d3.select("#chartB").style("width"), 10)).redraw();
         numSpeakChart.width(parseInt(d3.select("#chartC").style("width"), 10)).redraw();
         viewCommDateChart.width(parseInt(d3.select("#chartF").style("width"), 10)).redraw();
+        selectOccu.width(parseInt(d3.select("#chartSelect").style("width"), 10)).redraw();
     });
 }
