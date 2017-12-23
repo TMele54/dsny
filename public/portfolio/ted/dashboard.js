@@ -452,13 +452,16 @@ function draw(data){
             }, 1500);
         });
     });
-    //.on("filtered", table(xf, format_data, "#tableID"));
 
-    d3.select(window).on("resize.one",function(){
-        langsChart.width(parseInt(d3.select("#chartA").style("width"), 10)).redraw();
-        pubDateChart.width(parseInt(d3.select("#chartB").style("width"), 10)).redraw();
-        numSpeakChart.width(parseInt(d3.select("#chartC").style("width"), 10)).redraw();
-        viewCommDateChart.width(parseInt(d3.select("#chartF").style("width"), 10)).redraw();
-        selectOccu.width(parseInt(d3.select("#chartSelect").style("width"), 10)).redraw();
-    });
+    d3.select(window)
+        .on("resize.one",
+            function()
+                {
+                    langsChart.width(parseInt(d3.select("#chartA").style("width"), 10)).redraw();
+                    pubDateChart.width(parseInt(d3.select("#chartB").style("width"), 10)).redraw();
+                    numSpeakChart.width(parseInt(d3.select("#chartC").style("width"), 10)).redraw();
+                    viewCommDateChart.width(parseInt(d3.select("#chartF").style("width"), 10)).redraw();
+                    selectOccu.width(parseInt(d3.select("#chartSelect").style("width"), 10)).redraw();
+                }
+            );
 }
