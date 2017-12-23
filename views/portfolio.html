@@ -41,6 +41,9 @@
     <link href="/public/business/switcher/switcher.css" rel="stylesheet">
     <link href="/public/business/switcher/style1.css" rel="stylesheet" id="colors">
 
+    <!-- FancyBox Lightbox-->
+    <link href="/bower_components/fancybox/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css" media="screen">
+
     <!-- Favicon -->
 
     <link rel="icon" type="image/png" href="/public/business/images/header/favicon.ico" sizes="16x16" />
@@ -142,10 +145,10 @@
                                 <p>Simple dashboards:</p>
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <a href="/portfolio/college-scorecard-dashboard" class="protfolio-link-bt">Large Data</a>
+                                        <a href="/portfolio/college-scorecard-dashboard" class="protfolio-link-bt iframe items">Large Data</a>
                                     </div>
                                     <div class="col-sm-6">
-                                        <a href="/portfolio/college-scorecard-dashboard-slim" class="protfolio-link-bt">Slim Data</a>
+                                        <a href="/portfolio/college-scorecard-dashboard-slim" class="protfolio-link-bt iframe items">Slim Data</a>
                                     </div>
                                 </div>
                             </div>
@@ -158,7 +161,7 @@
 							<div class="portfolio-caption">
 								<h3>TED Talks</h3>
 								<p>The TED talks module provides a synced filtering view allowing individuals to explore multidimensional data with ease.</p>
-								<a href="/portfolio/ted" class="protfolio-link-bt">Read More</a>
+								<a href="/portfolio/ted" class="protfolio-link-bt iframe items">View Dashboard</a>
 							</div>
 						</div>
 					</div>
@@ -351,11 +354,36 @@
 <script src="/public/business/js/jquery.countdown.min.js"></script>
 <!-- YTplayer js -->
 <script src="/public/business/js/jquery.mb.YTPlayer.min.js"></script>
+<!--LightBox-->
+<script src="/bower_components/fancybox/dist/jquery.fancybox.min.js"></script>
+
+
 <script type="text/javascript">
     $('.video-active').mb_YTPlayer();
 </script>
 <script>
     $(document).ready(function(){
+
+        $(document).ready(function() {
+
+            /* Apply fancybox to multiple items */
+
+            $("a.items").fancybox({
+                'type'          :   'iframe',
+                autoSize : false,
+                scrolling : 'auto',
+                fitToView : true,
+                width : 'auto',
+                maxWidth : '100%',
+                'transitionIn'	:	'elastic',
+                'transitionOut'	:	'elastic',
+                'speedIn'		:	600,
+                'speedOut'		:	200,
+                'overlayShow'	:	false
+            });
+
+        });
+
         var from,to,subject,text;
         $("#send_email").click(function(){
 

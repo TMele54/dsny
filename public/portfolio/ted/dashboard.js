@@ -212,7 +212,7 @@ function draw(data){
                        // "Published",    {label: "",format: function (d) { return d["published_date"];}},
                         "Duration",     {label: "",format: function (d) { return d["durationFormatted"];}},
                         "URL",          {label: "",format: function (d) { return d["url"];}},
-                        "Views",        {label: "",format: function (d) { return bigNum(d["views"]);}}
+                        "User Views",        {label: "",format: function (d) { return bigNum(d["views"]);}}
 
 
                         // "Comments", {label: "1",format: function (d) { return d["comments"]; }},
@@ -275,6 +275,8 @@ function draw(data){
                 .attr("class", "widget-title")
                 .attr("align", "left")
                 .style("vertical-align", "center")
+                .style("margin-left", "10px")
+                .style("margin-top", "5px")
                 .text(title)
                 .append("h5")
                 .attr("align", "left")
@@ -310,7 +312,7 @@ function draw(data){
             .attr("class", "widget-title")
             .attr("align", "left")
             .style("vertical-align", "center")
-            .text("Views (L) & Comments (R)")
+            .text("User Views (L) & Comments (R)")
             .append("h5")
             .attr("align", "left")
             .style("vertical-align", "center")
@@ -330,11 +332,11 @@ function draw(data){
             .margins({top: 10, right: 75, bottom: 50, left: 90})
             .x(d3.time.scale().domain([d3.min(ref_data, viewCommDate), d3.max(ref_data, viewCommDate)]))
             .legend(dc.legend().x(200).y(20).itemHeight(13).gap(5))
-            .yAxisLabel("Sum of Views")
+            .yAxisLabel("Sum of User Views")
             .mouseZoomable(true)
             .shareTitle(false)
             .xUnits(d3.time.months)
-            .elasticY(true)
+            .elasticY(true)//.yAxis().tickFormat(d3.format('.3s'))
             .compose([
                 dc.lineChart(viewCommDateChart).dimension(viewCommDateDim).colors('#5bf3f5')
                     .group(viewDateGroup, "Views").dashStyle([2,2]),
@@ -342,12 +344,12 @@ function draw(data){
                     .group(commDateGroup, "Comments").dashStyle([5,5]).useRightYAxis(true)
             ])
             .brushOn(false)
-            .rightYAxisLabel("Sum of Comments")
+            .rightYAxisLabel("Sum of User Comments")
             .renderHorizontalGridLines(true)
             .render();
         //viewCommDateChart.render();
         
-    }
+    } /*Composite Line - Average Monthly*/
     function table(xf, data, selector){
 
         d3.select(selector).selectAll("*").remove();
@@ -376,7 +378,7 @@ function draw(data){
             "Title",
             "Duration",
             "URL",
-            "Views"
+            "User Views"
         ]
 
         function tabulate(data, columnsHead, columnsData) {
@@ -415,13 +417,13 @@ function draw(data){
                 .enter()
                 .append('td')
                 .html(function (d) {
-                    if(d.value == ""){
+                    if(d.value === ""){
                         return "Data not reported"
                     }else{
                         var item = d["value"]
                         var tststr = d["value"].toString().substring(0,4)
                         if(tststr === "http"){
-                            return "<a href="+ d.value+'">'+d.value+"</a>"
+                            return "<a target='_blank' href="+ d.value+'">'+d.value+"</a>"
                         }else{
                             return item
                         }
@@ -432,7 +434,7 @@ function draw(data){
         }
         tabulate(tableData, columnsHead, columnsData);
         $(".tableClass").DataTable();
-    };
+    }; /*Data Table - Columns... */
 
 
     selectOc(xf, "#chartSelect");
@@ -440,8 +442,8 @@ function draw(data){
     pubChart(xf, "#chartB");
     speakChart(xf, "#chartC");
    // tableChart(xf, "#chartTable");
-    numChart(xf, "#chartD", "views", "Views", "View Count");
-    numChart(xf, "#chartE", "comments", "Comments", "Comment Count");
+    numChart(xf, "#chartD", "views", "User Views", "View Count");
+    numChart(xf, "#chartE", "comments", "User Comments", "Comment Count");
     viewsCommsChart(xf, "#chartF");
     table(xf, format_data, "#new");
 
