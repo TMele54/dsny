@@ -104,26 +104,68 @@ app.get('/ted-data', function(req, res) {
 });
 
 
+//////////////////////////////////////////Aspen
+app.get('/portfolio/aspen', function(req, res) {
+    res.sendFile('aspen.html', { root: path.join(__dirname, '/views') });
+});
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////Avid
+app.get('/portfolio/avid', function(req, res) {
+    res.sendFile('avid.html', { root: path.join(__dirname, '/views') });
+});
 
+//////////////////////////////////////////LG
+app.get('/portfolio/lg', function(req, res) {
+    res.sendFile('lifesgood.html', { root: path.join(__dirname, '/views') });
+});
 
+//////////////////////////////////////////mural
+app.get('/portfolio/microsoft', function(req, res) {
+    res.sendFile('microsoft.html', { root: path.join(__dirname, '/views') });
+});
 
+//////////////////////////////////////////mural
+app.get('/portfolio/mural', function(req, res) {
+    res.sendFile('mural.html', { root: path.join(__dirname, '/views') });
+});
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////nebula
+app.get('/portfolio/nebula', function(req, res) {
+    res.sendFile('nebula_graphic.html', { root: path.join(__dirname, '/views') });
+});
 
+//////////////////////////////////////////olympics
+app.get('/portfolio/olympics', function(req, res) {
+    res.sendFile('olympic_rings.html', { root: path.join(__dirname, '/views') });
+});
 
-var listener = app.listen(8054, function(){
-    console.log('Listening on port ' + listener.address().port); //Listening on port 8888
+//////////////////////////////////////////schools
+app.get('/portfolio/schools', function(req, res) {
+    res.sendFile('schools.html', { root: path.join(__dirname, '/views') });
+});
+
+//////////////////////////////////////////VW
+app.get('/portfolio/vw', function(req, res) {
+    res.sendFile('Volkswagon.html', { root: path.join(__dirname, '/views') });
+});
+
+//////////////////////////////////////////Wink
+app.get('/portfolio/wink', function(req, res) {
+    res.sendFile('wink.html', { root: path.join(__dirname, '/views') });
 });
 
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+var listener = app.listen(8054, function(){
+    console.log('Listening on port ' + listener.address().port); //Listening on port 8888
 
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -143,9 +185,5 @@ app.use(function(err, req, res, next) {
     res.render('error');
 });
 
-
-
-
-
-
 module.exports = router;
+module.exports = app;

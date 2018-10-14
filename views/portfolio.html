@@ -63,6 +63,27 @@
         ::-webkit-scrollbar {
             display: none;
         }
+        
+        .containerI {
+            height: 400px;
+            width: 100%;
+            background-color: white;
+            float: left;
+            overflow: hidden;
+            margin: 20px;
+        }
+        .containerI img {
+            display: block;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .bkg{
+            background-color: darkslategray;
+        }
     </style>
 </head>
 
@@ -108,18 +129,15 @@
 <section id="our-portfolio" class="portfolio section-padding">
         <div class="container">
 
-
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3 text-center">
                     <div class="section-title wow fadeInDown">
                         <h2>Data Science New York <span>Portfolio</span></h2>
                         <div class="section-borders"> <span></span> <span></span> <span></span> </div>
-                        <p>Enjoy our Portfolio. If you find a project that interests you, please contact us below.</p>
+                        <p>Enjoy our Portfolio. If you find projects or skills which interest you, please contact us below.</p>
                     </div>
                 </div>
             </div>
-
-
             <div class="row">
 				<div class="col-xs-12">
 					<ul class="portfolio">
@@ -132,12 +150,11 @@
 				</div>
 			</div>
 
-
             <div class="portfolio-inner">
 				<div class="row portfolio-posts">
 
-                    <div class="mix dashboards col-sm-6 col-md-4">
-                        <div class="item">
+                    <div class="mix datascience dashboards col-sm-6 col-md-4">
+                        <div class="item containerI">
                             <img src="/public/business/images/portfolio/collegeScorecardScreenShot.jpg" height="294" width="360" alt="">
                             <div class="portfolio-caption">
                                 <h3>College Scorecard Dashboard</h3>
@@ -155,8 +172,8 @@
                         </div>
                     </div>
 
-                    <div class="mix visualization machinelearning col-sm-6 col-md-4">
-						<div class="item">
+                    <div class="mix datascience dashboards  col-sm-6 col-md-4">
+						<div class="item containerI">
 							<img src="/public/business/images/portfolio/ted.png" alt="">
 							<div class="portfolio-caption">
 								<h3>TED Talks</h3>
@@ -165,28 +182,112 @@
 							</div>
 						</div>
 					</div>
-					<div class="mix datascience col-sm-6 col-md-4">
-						<div class="item">
-                            <img src="/public/business/images/portfolio/coming-soon.jpg" alt="">
-                            <div class="portfolio-caption">
-                                <h3>Portfolio Item</h3>
-                                <p>Description</p>
-                                <a href="#" class="protfolio-link-bt">Read More</a>
-                            </div>
+                    <div class="mix visualization col-sm-6 col-md-4">
+						<div class="item containerI">
+							<img src="/public/business/images/portfolio/avid.jpg" alt="" >
+							<div class="portfolio-caption">
+								<h3>AVID Handyman</h3>
+								<p>Logo Animation</p>
+								<a href="/portfolio/avid" class="protfolio-link-bt iframe items">View Visualization</a>
+							</div>
+						</div>
+					</div>
+                    <div class="mix visualization col-sm-6 col-md-4">
+						<div class="item containerI" >
+							<img src="/public/business/images/portfolio/aspen.jpg" alt="">
+							<div class="portfolio-caption" style="min-height:500px;">
+								<h3>Aspen Dental</h3>
+								<p>Logo Animation</p>
+								<a href="/portfolio/aspen" class="protfolio-link-bt iframe items">View Visualization</a>
+							</div>
+						</div>
+					</div>
+
+                    <!-- Removed, need to recreate data call in js from python
+                    <div class="mix dashboards col-sm-6 col-md-4">
+						<div class="item containerI">
+							<img src="/public/business/images/portfolio/bama.jpg" alt="">
+							<div class="portfolio-caption">
+								<h3>School Shootings</h3>
+								<p>Statistics</p>
+								<a href="/portfolio/schools" class="protfolio-link-bt iframe items">View Dashboard</a>
+							</div>
+						</div>
+					</div>
+                    -->
+
+                    <div class="mix visualization col-sm-6 col-md-4">
+						<div class="item containerI">
+							<img src="/public/business/images/portfolio/lglogo.png" alt="">
+							<div class="portfolio-caption">
+								<h3>Life's Good</h3>
+								<p>Logo Animation</p>
+								<a href="/portfolio/lg" class="protfolio-link-bt iframe items">View Visualization</a>
+							</div>
+						</div>
+					</div>
+                    <div class="mix visualization col-sm-6 col-md-4">
+						<div class="item containerI">
+							<img src="/public/business/images/portfolio/microsoft.png" alt="">
+							<div class="portfolio-caption">
+								<h3>Microsoft</h3>
+								<p>Logo Animation</p>
+								<a href="/portfolio/microsoft" class="protfolio-link-bt iframe items">View Visualization</a>
+							</div>
+						</div>
+					</div>
+                    <div class="mix visualization col-sm-6 col-md-4">
+						<div class="item containerI">
+							<img src="/public/business/images/portfolio/mural.png" alt="" >
+							<div class="portfolio-caption">
+								<h3>Mural Painter NYC</h3>
+								<p>Logo Animation</p>
+								<a href="/portfolio/mural" class="protfolio-link-bt iframe items">View Visualization</a>
+							</div>
+						</div>
+					</div>
+                    <div class="mix visualization col-sm-6 col-md-4">
+						<div class="item containerI">
+							<img src="/public/business/images/portfolio/NEBULA.png" alt="">
+							<div class="portfolio-caption">
+								<h3>Data Nebula</h3>
+								<p>Logo Animation</p>
+								<a href="/portfolio/nebula" class="protfolio-link-bt iframe items">View Visualization</a>
+							</div>
+						</div>
+					</div>
+                    <div class="mix visualization col-sm-6 col-md-4">
+						<div class="item containerI">
+							<img src="/public/business/images/portfolio/olympic.png" alt="">
+							<div class="portfolio-caption">
+								<h3>Olympics</h3>
+								<p>Rendering</p>
+								<a href="/portfolio/olympics" class="protfolio-link-bt iframe items">View Visualization</a>
+							</div>
+						</div>
+					</div>
+                    <div class="mix visualization col-sm-6 col-md-4">
+						<div class="item containerI">
+							<img src="/public/business/images/portfolio/vw.png" alt="">
+							<div class="portfolio-caption">
+								<h3>Volkswagen</h3>
+								<p>Logo Animation</p>
+								<a href="/portfolio/vw" class="protfolio-link-bt iframe items">View Visualization</a>
+							</div>
+						</div>
+					</div>
+                    <div class="mix visualization col-sm-6 col-md-4">
+						<div class="item containerI">
+							<img src="/public/business/images/portfolio/wink.png" alt="">
+							<div class="portfolio-caption">
+								<h3>Wink</h3>
+								<p>Logo Animation</p>
+								<a href="/portfolio/wink" class="protfolio-link-bt iframe items">View Visualization</a>
+							</div>
 						</div>
 					</div>
 					<div class="mix datascience machinelearning col-sm-6 col-md-4">
-						<div class="item">
-                            <img src="/public/business/images/portfolio/coming-soon.jpg" alt="">
-                            <div class="portfolio-caption">
-                                <h3>Portfolio Item</h3>
-                                <p>Description</p>
-                                <a href="#" class="protfolio-link-bt">Read More</a>
-                            </div>
-						</div>
-					</div>
-					<div class="mix datascience visualization col-sm-6 col-md-4">
-						<div class="item">
+						<div class="item containerI">
                             <img src="/public/business/images/portfolio/coming-soon.jpg" alt="">
                             <div class="portfolio-caption">
                                 <h3>Portfolio Item</h3>
@@ -196,7 +297,7 @@
 						</div>
 					</div>
 					<div class="mix datascience col-sm-6 col-md-4">
-						<div class="item">
+						<div class="item containerI">
                             <img src="/public/business/images/portfolio/coming-soon.jpg" alt="">
                             <div class="portfolio-caption">
                                 <h3>Portfolio Item</h3>
@@ -205,8 +306,8 @@
                             </div>
 						</div>
 					</div>
-					<div class="mix visualization machinelearning col-sm-6 col-md-4">
-						<div class="item">
+					<div class="mix datascience col-sm-6 col-md-4">
+						<div class="item containerI">
                             <img src="/public/business/images/portfolio/coming-soon.jpg" alt="">
                             <div class="portfolio-caption">
                                 <h3>Portfolio Item</h3>
@@ -215,6 +316,29 @@
                             </div>
 						</div>
 					</div>
+					<div class="mix datascience col-sm-6 col-md-4">
+						<div class="item containerI">
+                            <img src="/public/business/images/portfolio/coming-soon.jpg" alt="">
+                            <div class="portfolio-caption">
+                                <h3>Portfolio Item</h3>
+                                <p>Description</p>
+                                <a href="#" class="protfolio-link-bt">Read More</a>
+                            </div>
+						</div>
+					</div>
+					<div class="mix machinelearning col-sm-6 col-md-4">
+						<div class="item containerI">
+                            <img src="/public/business/images/portfolio/coming-soon.jpg" alt="">
+                            <div class="portfolio-caption">
+                                <h3>Portfolio Item</h3>
+                                <p>Description</p>
+                                <a href="#" class="protfolio-link-bt">Read More</a>
+                            </div>
+						</div>
+					</div>
+
+
+
 
 				</div>
 			</div>
@@ -233,7 +357,7 @@
                     <div class="widget-newsletter widget widget-footer">
                         <h3 class="widget-title">About us</h3>
                         <div class="widget-content">
-                            <p>We are a Professional Services Company specializing in Data Science, Machine Learning, and Application machinelearning. Our /public/business is built around creative thinking and harmonious collaboration with our clients.</p>
+                            <p>We are a Professional Services Company specializing in Data Science, Machine Learning, and Application Development. Our business is built around creative thinking and harmonious collaboration with our clients.</p>
                         </div>
                         <div class="social-link">
                             <ul>
@@ -286,7 +410,7 @@
                                 <li>
                                     <i class="fa fa-map-marker"></i>
                                     <div class="info-item"> <span>Address -</span>
-                                        <br> 300 Park Ave, Hoboken NJ 07030
+                                        <br> 375 Bloomfield Avenue, Montclair NJ 07042
                                     </div>
                                 </li>
                                 <li>
@@ -356,7 +480,6 @@
 <script src="/public/business/js/jquery.mb.YTPlayer.min.js"></script>
 <!--LightBox-->
 <script src="/bower_components/fancybox/dist/jquery.fancybox.min.js"></script>
-
 
 <script type="text/javascript">
     $('.video-active').mb_YTPlayer();

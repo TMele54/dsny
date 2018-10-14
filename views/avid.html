@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <!-- Global site tag (gtag.js) - Google Analytics-->
+  <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110971078-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-110971078-1');
+    </script>
+
+    <!-- Meta Tag -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" id="vp" content="width=device-width, initial-scale=1">
+    <title>DSNY</title>
+    <meta name="description" content="Data Science New York">
+    <meta name="keywords" content="">
+    <meta name="author" content="TonyMele.Rutgers@gmail.com">
+
+    <!-- Data Table -->
+    <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/dataTableSpecifics/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/dataTableSpecifics/responsive.bootstrap.min.css">
+
+    <!--External CSS -->
+    <link rel="stylesheet" type="text/css" href="/bower_components/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" type="text/css" href="/public/business/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/public/business/css/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/d3-slider/d3.slider.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/public/business/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/business/css/responsive.css">
+
+    <!-- Google Fonts
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet">
+    <link href="/public/portfolio/collegeScorecardDashboard/dashboard.css" rel="stylesheet">
+-->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/public/business/images/header/favicon.ico" sizes="16x16" />
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    </style>
+
+</head>
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" id="navAct" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-collapse" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand"><img src="/public/business/images/logo/logo.png" style="max-height: 40px" alt="logo"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="main-nav-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active" id="navHome"><a href="/">Home</a></li>
+                <li class="active" id="navPortfolio"><a href="/portfolio">Portfolio</a></li>
+                <li class="active" id="navContact"><a href="#footer">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- /End Navbar -->
+
+<style>
+    .centered{
+        position: fixed;
+        top: 25%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }​
+
+    @font-face {
+        font-family: Jersey;
+        src: url(../static/font/jersey/S54.ttf) format("truetype");
+    }
+    .customfont {
+        font-family: Jersey
+    }
+    body{
+
+    width:100%;
+    height: 100%
+    }
+    .arc{stroke-linecap: butt;
+    margin:0;
+    padding:0;}
+</style>
+
+<body>
+
+
+    <!--<img src="../static/layout/img/avid.jpg" style="max-width:500px" />​​​​​​​​​​​-->
+
+    <div class="centered" style="width: 100%;height: 100%;max-width: 800px;max-height: 600px;margin-top:200px;">
+
+        <div ng-app="companyLogo" ng-controller="Ctrl">
+            <logo chart-data="dots"></logo>
+        </div>
+
+    </div>
+
+        <!--OLD Data Nebula References-->
+        <script src="/public/static_oldSchema/js/jQuery/jquery.min.js"></script>
+        <script src="/public/static_oldSchema/js/d3/d3.min.js"></script>
+        <script src="//d3js.org/d3.v3.min.js"></script>
+        <script src="/public/static_oldSchema/js/angular/angular.min.js"></script>
+        <script src="/public/static_oldSchema/js/logos/avid.js"></script>
+
+</body>
+
+</html>
