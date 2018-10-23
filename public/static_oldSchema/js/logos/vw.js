@@ -169,10 +169,10 @@ angular.module('companyLogo', []).
             }
 
             //Data Elements
-            var ring = scope.data[0].ring
-            var circle = scope.data[0].circle
-            var lines = scope.data[0].lines
-            var treads = scope.data[0].treads
+            var ring = scope.data[0].ring;
+            var circle = scope.data[0].circle;
+            var lines = scope.data[0].lines;
+            var treads = scope.data[0].treads;
 
             drawLogo(ring,circle,lines,treads)
 
@@ -192,13 +192,10 @@ function Ctrl($scope) {
     }
 
     var circle = [{"dx":100, "dy":100, "or":70, "color": colors[0]}];
-
-    var ring = [{"or":97, "ir":89, "sa": rads(0), "ea": rads(360), "dx":100,
-                 "dy":100, "index": 0, "color": "black", "stroke": thick},                       {"or":88, "ir":69, "sa": rads(0), "ea": rads(360), "dx":100,
-                 "dy":100, "index": 1, "color": "red", "stroke": thick}]
-
-    //.attr("points", "100,50, 200,150, 300,50");  // x,y points
-
+    var ring = [
+    {"or":97, "ir":89, "sa": rads(0), "ea": rads(360), "dx":100, "dy":100, "index": 0, "color": "black", "stroke": thick},
+    {"or":88, "ir":69, "sa": rads(0), "ea": rads(360), "dx":100, "dy":100, "index": 1, "color": "red", "stroke": thick}
+                 ]
     var lines = [
                     [
                         {"p0y": 34, "p0x": 70},
@@ -214,7 +211,7 @@ function Ctrl($scope) {
                     ],
 
                  ];
-     var treads = [{"or":102, "ir":97, "sa": rads(0), "ea": rads(360), "dx":100,
+    var treads = [{"or":102, "ir":97, "sa": rads(0), "ea": rads(360), "dx":100,
                  "dy":100, "index": 2, "color": "black", "stroke": thick}]
 
     $scope.vw = [{"circle": circle, "ring": ring, "lines": lines, "treads": treads}];

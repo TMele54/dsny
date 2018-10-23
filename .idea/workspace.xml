@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c4a06bca-a1a7-4992-a9b3-781de57732c5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dsny.js" beforeDir="false" afterPath="$PROJECT_DIR$/dsny.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static_oldSchema/js/logos/vw.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static_oldSchema/js/logos/vw.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/portfolio.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/portfolio.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,32 +20,33 @@
     <session id="-1958868093">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Chiara" value="1" />
-          <entry key="html" value="30" />
+          <entry key="html" value="37" />
           <entry key="jpg" value="1" />
-          <entry key="js" value="18" />
+          <entry key="js" value="24" />
           <entry key="svg" value="1" />
           <entry key="www" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="30" />
+          <entry key="HTML" value="37" />
           <entry key="Image" value="1" />
-          <entry key="JavaScript" value="18" />
+          <entry key="JavaScript" value="24" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="SVG" value="1" />
         </counts>
@@ -50,14 +54,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Chiara" value="1" />
-          <entry key="html" value="1173" />
-          <entry key="js" value="203" />
+          <entry key="html" value="1758" />
+          <entry key="js" value="1574" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1173" />
-          <entry key="JavaScript" value="203" />
+          <entry key="HTML" value="1758" />
+          <entry key="JavaScript" value="1574" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -65,16 +69,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/portfolio.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1640">
-              <caret line="205" column="24" selection-start-line="205" selection-start-column="24" selection-end-line="205" selection-end-column="24" />
+            <state relative-caret-position="180">
+              <caret line="212" column="62" selection-start-line="212" selection-start-column="52" selection-end-line="212" selection-end-column="62" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#script#19;n#body#0;n#html#0;n#!!top" />
@@ -84,24 +89,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/ted.html">
+        <entry file="file://$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="109" selection-start-line="109" selection-end-line="126" selection-end-column="20" />
+            <state relative-caret-position="329">
+              <caret line="1030" lean-forward="true" selection-start-line="1030" selection-end-line="1033" selection-end-column="28" />
               <folding>
-                <element signature="n#head#0;n#html#0;n#!!top" />
-                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#script#21;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#!!block;n#table#0" />
+                <element signature="e#21070#21363#0" />
+                <element signature="e#21386#21761#0" />
+                <element signature="n#!!block;n#tabulate#0;n#!!block;n#table#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dsny.js">
+        <entry file="file://$PROJECT_DIR$/views/naiveBayes.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2516">
-              <caret line="148" column="28" selection-start-line="148" selection-start-column="28" selection-end-line="148" selection-end-column="28" />
+            <state relative-caret-position="619">
+              <caret line="57" selection-start-line="57" selection-end-line="57" />
+              <folding>
+                <element signature="n#script#1;n#head#0;n#html#0;n#!!top" />
+                <element signature="n#nav#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h5#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,28 +126,47 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/schools.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3502">
-              <caret line="293" column="7" selection-start-line="293" selection-start-column="7" selection-end-line="293" selection-end-column="7" />
+            <state relative-caret-position="160">
+              <caret line="8" column="38" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="38" />
               <folding>
-                <element signature="n#head#0;n#html#0;n#!!top" />
-                <element signature="n#script#1;n#head#0;n#html#0;n#!!top" />
                 <element signature="n#nav#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#2;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#3;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="e#6216#6841#0" />
+                <element signature="e#7314#8790#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/lifesgood.html">
+        <entry file="file://$PROJECT_DIR$/views/college-scorecard-dashboard-slim.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="114" column="26" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
+            <state relative-caret-position="499">
+              <caret line="300" column="32" selection-start-line="300" selection-start-column="32" selection-end-line="300" selection-end-column="32" />
               <folding>
-                <element signature="n#head#0;n#html#0;n#!!top" />
-                <element signature="n#script#1;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#nav#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#html#0;n#!!top" />
+                <element signature="e#14785#15843#0" />
+                <element signature="e#14862#15327#0" />
+                <element signature="e#15513#15795#0" />
+                <element signature="e#15884#16067#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/static_oldSchema/js/machine_learners/naive_bayes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="77" column="50" selection-start-line="77" selection-start-column="50" selection-end-line="77" selection-end-column="50" />
+              <folding>
+                <element signature="e#578#2572#0" />
+                <element signature="e#2044#2203#0" />
+                <element signature="e#2283#2457#0" />
               </folding>
             </state>
           </provider>
@@ -149,24 +185,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>multip</find>
-      <find>console.l</find>
-      <find>chartSel</find>
-      <find>.ico</find>
-      <find>View</find>
-      <find>views</find>
-      <find>Comments</find>
-      <find>umChart</find>
-      <find>Read</find>
-      <find>href</find>
-      <find>iframe&quot;</find>
-      <find>export</find>
-      <find>height</find>
-      <find>1780</find>
-      <find>coming soon</find>
-      <find>particles</find>
-      <find>Coming Soon</find>
-      <find>machinele</find>
       <find>300 Park Ave, Hoboken NJ 07030</find>
       <find>large</find>
       <find>bama</find>
@@ -179,6 +197,24 @@
       <find>data scien</find>
       <find>if you find</find>
       <find>scroll</find>
+      <find>vw</find>
+      <find>vwnb</find>
+      <find>ring</find>
+      <find>ring</find>
+      <find>element</find>
+      <find>chartData</find>
+      <find>chart</find>
+      <find>ratio</find>
+      <find>dc.</find>
+      <find>naiveBayes</find>
+      <find>data table</find>
+      <find>columnsData</find>
+      <find>logo</find>
+      <find>&quot;negative&quot;</find>
+      <find>.data</find>
+      <find>table</find>
+      <find>token:</find>
+      <find>console.log(&quot;1&quot;)</find>
     </findStrings>
     <replaceStrings>
       <replace>pub</replace>
@@ -205,6 +241,8 @@
       <replace>/static_oldSchema</replace>
       <replace>&quot;link&quot;:&quot;/public/static_oldSchema/</replace>
       <replace>&lt;div class=&quot;item containerI&quot;&gt;</replace>
+      <replace>Strength</replace>
+      <replace>&quot;Negative&quot;</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -213,9 +251,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/views/images.html" />
-        <option value="$PROJECT_DIR$/views/parallax.html" />
-        <option value="$PROJECT_DIR$/views/youtubevedio.html" />
         <option value="$PROJECT_DIR$/views/youtubevedio_particles.html" />
         <option value="$PROJECT_DIR$/bin/www" />
         <option value="$PROJECT_DIR$/views/animated-headline.html" />
@@ -251,7 +286,6 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.json" />
         <option value="$PROJECT_DIR$/Chiara" />
         <option value="$PROJECT_DIR$/views/index.html" />
-        <option value="$PROJECT_DIR$/dsny.js" />
         <option value="$PROJECT_DIR$/public/static_oldSchema/js/logos/wink.js" />
         <option value="$PROJECT_DIR$/views/mural.html" />
         <option value="$PROJECT_DIR$/views/aspen.html" />
@@ -263,7 +297,11 @@
         <option value="$PROJECT_DIR$/views/wink.html" />
         <option value="$PROJECT_DIR$/views/lifesgood.html" />
         <option value="$PROJECT_DIR$/views/schools.html" />
+        <option value="$PROJECT_DIR$/dsny.js" />
         <option value="$PROJECT_DIR$/views/portfolio.html" />
+        <option value="$PROJECT_DIR$/public/static_oldSchema/js/logos/vw.js" />
+        <option value="$PROJECT_DIR$/views/naiveBayes.html" />
+        <option value="$PROJECT_DIR$/public/static_oldSchema/js/machine_learners/naive_bayes.js" />
       </list>
     </option>
   </component>
@@ -284,11 +322,21 @@
     <handled-path value="$PROJECT_DIR$/bower_components/d3-tip/node_modules" />
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="472" />
-    <option name="y" value="618" />
-    <option name="width" value="762" />
-    <option name="height" value="966" />
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/bower_components/bootstrap/package.json" />
+      <path value="$PROJECT_DIR$/bower_components/bower_components/d3-tip/package.json" />
+      <path value="$PROJECT_DIR$/bower_components/d3-tip/package.json" />
+      <path value="$PROJECT_DIR$/bower_components/fancybox/package.json" />
+      <path value="$PROJECT_DIR$/bower_components/leaflet/package.json" />
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="534" />
+    <option name="y" value="910" />
+    <option name="width" value="1522" />
+    <option name="height" value="1932" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -298,7 +346,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -306,10 +353,60 @@
               <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
               <item name="dsny" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dsny" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dsny" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dsny" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dsny" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="portfolio" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dsny" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="collegeScorecardDashboard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dsny" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="ted" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dsny" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="static_oldSchema" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dsny" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dsny" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -325,19 +422,19 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\tonym\OneDrive\AAM_Portfolio\dsny\public" />
-      <recent name="C:\Users\tonym\OneDrive\AAM_Portfolio\dsny\public\business\images\portfolio" />
-      <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\public\business\images\header" />
-      <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\public\business\images\portfolio" />
-      <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\python_modules\data\collegeScorecard" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tonym\OneDrive\AAM_Portfolio\dsny\public\static_oldSchema\js\machine_learners" />
       <recent name="C:\Users\tonym\OneDrive\AAM_Portfolio\dsny\views" />
       <recent name="C:\Users\tonym\OneDrive\AAM_Portfolio\dsny" />
       <recent name="C:\Users\tonym\OneDrive\AAM_Portfolio\dsny\public\business\images\portfolio" />
       <recent name="C:\Users\tonym\OneDrive\AAM_Portfolio\dsny\public\portfolio\wink" />
-      <recent name="C:\Users\tonym\OneDrive\AAM_Portfolio\dsny\public\portfolio\volkeswagon" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tonym\OneDrive\AAM_Portfolio\dsny\public\business\images\portfolio" />
+      <recent name="C:\Users\tonym\OneDrive\AAM_Portfolio\dsny\public" />
+      <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\public\business\images\header" />
+      <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\public\business\images\portfolio" />
+      <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\python_modules\data\collegeScorecard" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -352,7 +449,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Unknown.bin\www812928685">
+  <component name="RunManager" selected="Unknown.bin\www297761525">
     <configuration name="app.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="$PROJECT_DIR$/dsny.js" working-dir="$PROJECT_DIR$" />
   </component>
   <component name="SvnConfiguration">
@@ -398,12 +495,14 @@
     <option name="totallyTimeSpent" value="188026000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1513" height="973" extended-state="7" />
+    <frame x="-6" y="-6" width="1513" height="973" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24742268" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17731959" />
       <window_info id="Structure" order="1" weight="0.19243987" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3267386" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.78213805" weight="0.23172906" />
@@ -413,9 +512,11 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49864683" visible="true" weight="0.43705463" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.21786198" side_tool="true" weight="0.6179441" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49864683" weight="0.26365796" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="10" sideWeight="0.21786198" side_tool="true" visible="true" weight="0.028503563" />
       <window_info anchor="bottom" id="Python Console" order="11" />
+      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -423,24 +524,30 @@
       <window_info anchor="right" id="R Packages" order="4" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27198917" />
-      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17731959" />
+      <window_info id="Structure" order="1" weight="0.19243987" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3267386" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.78213805" visible="true" weight="0.6179441" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.21786198" side_tool="true" visible="true" weight="0.6179441" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49864683" weight="0.35828876" />
-      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3267386" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.78213805" weight="0.23172906" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49864683" visible="true" weight="0.26365796" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.21786198" side_tool="true" weight="0.6179441" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="SciView" order="0" />
+      <window_info anchor="right" id="Database" order="1" />
+      <window_info anchor="right" id="Commander" order="2" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
+      <window_info anchor="right" id="R Graphics" order="5" />
+      <window_info anchor="right" id="R Packages" order="6" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,23 +557,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/python_modules/data/collegeScorecard/filteredData.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python_modules/data/collegeScorecard/filteredDataSlim.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/business/css/owl.carousel.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
@@ -521,13 +611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/college-scorecard-dashboard-slim.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2640">
-          <caret line="80" column="72" selection-start-line="80" selection-start-column="72" selection-end-line="80" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/portfolio/ted/dashboard.css">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -537,13 +620,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/business/images/logo/logo.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/portfolio/ted/dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="436" column="33" selection-start-line="436" selection-start-column="33" selection-end-line="436" selection-end-column="33" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.json" />
     <entry file="file://$PROJECT_DIR$/Chiara" />
@@ -561,13 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="748" selection-start-line="748" selection-end-line="748" />
         </state>
       </provider>
     </entry>
@@ -677,33 +746,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/Volkswagon.html">
+    <entry file="file://$PROJECT_DIR$/views/lifesgood.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        <state relative-caret-position="540">
+          <caret line="114" column="26" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" />
+            <element signature="n#script#1;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#nav#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#html#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/portfolio.html">
+    <entry file="file://$PROJECT_DIR$/public/static_oldSchema/js/logos/vw.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1640">
-          <caret line="205" column="24" selection-start-line="205" selection-start-column="24" selection-end-line="205" selection-end-column="24" />
+        <state relative-caret-position="180">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="34" />
           <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#script#19;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#425#7730#0" />
+            <element signature="n#!!block;n#Ctrl#0" />
+            <element signature="n#!!block;n#rads#0;n#!!block;n#Ctrl#0" />
+            <element signature="e#8306#8598#0" />
+            <element signature="e#8682#9183#0" />
+            <element signature="e#9204#9339#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/Volkswagon.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="103" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/portfolio/ted/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="438" lean-forward="true" selection-start-line="352" selection-start-column="3" selection-end-line="438" />
+          <folding>
+            <element signature="e#96#133#0" />
+            <element signature="e#142#3360#0" />
+            <element signature="n#!!block;n#formatData#0;n#!!block;n#draw#0" />
+            <element signature="n#!!block;n#langChart#0;n#!!block;n#draw#0" />
+            <element signature="n#!!block;n#pubChart#0;n#!!block;n#draw#0" />
+            <element signature="n#!!block;n#speakChart#0;n#!!block;n#draw#0" />
+            <element signature="n#!!block;n#selectOc#0;n#!!block;n#draw#0" />
+            <element signature="n#!!block;n#tableChart#0;n#!!block;n#draw#0" />
+            <element signature="n#!!block;n#numChart#0;n#!!block;n#draw#0" />
+            <element signature="n#!!block;n#viewsCommsChart#0;n#!!block;n#draw#0" />
+            <element signature="n#!!block;n#table#0;n#!!block;n#draw#0" />
+            <element signature="e#20065#20231#0" />
+            <element signature="e#20322#20848#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/ted.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="109" selection-start-line="109" selection-end-line="126" selection-end-column="20" />
+        <state relative-caret-position="323">
+          <caret line="345" lean-forward="true" selection-start-line="345" selection-end-line="345" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" />
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
@@ -712,35 +815,120 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/portfolio.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="212" column="62" selection-start-line="212" selection-start-column="52" selection-end-line="212" selection-end-column="62" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#script#19;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dsny.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2516">
-          <caret line="148" column="28" selection-start-line="148" selection-start-column="28" selection-end-line="148" selection-end-column="28" />
+        <state relative-caret-position="154">
+          <caret line="149" column="3" lean-forward="true" selection-start-line="149" selection-start-column="3" selection-end-line="149" selection-end-column="3" />
+          <folding>
+            <element signature="e#1303#1461#0" />
+            <element signature="e#1497#1937#0" />
+            <element signature="e#2177#2254#0" />
+            <element signature="e#2503#2584#0" />
+            <element signature="e#2717#2816#0" />
+            <element signature="e#2895#2999#0" />
+            <element signature="e#3067#3285#0" />
+            <element signature="e#3358#3580#0" />
+            <element signature="e#3675#3750#0" />
+            <element signature="e#3794#3895#0" />
+            <element signature="e#3995#4072#0" />
+            <element signature="e#4169#4245#0" />
+            <element signature="e#4338#4419#0" />
+            <element signature="e#4522#4603#0" />
+            <element signature="e#4702#4779#0" />
+            <element signature="e#5071#5156#0" />
+            <element signature="e#5259#5338#0" />
+            <element signature="e#5610#5686#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/portfolio/collegeScorecardDashboard/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="1030" lean-forward="true" selection-start-line="1030" selection-end-line="1033" selection-end-column="28" />
+          <folding>
+            <element signature="n#!!block;n#table#0" />
+            <element signature="e#21070#21363#0" />
+            <element signature="e#21386#21761#0" />
+            <element signature="n#!!block;n#tabulate#0;n#!!block;n#table#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/schools.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3502">
-          <caret line="293" column="7" selection-start-line="293" selection-start-column="7" selection-end-line="293" selection-end-column="7" />
+        <state relative-caret-position="160">
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="38" />
           <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" />
-            <element signature="n#script#1;n#head#0;n#html#0;n#!!top" />
             <element signature="n#nav#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#2;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#6216#6841#0" />
+            <element signature="e#7314#8790#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/lifesgood.html">
+    <entry file="file://$PROJECT_DIR$/views/college-scorecard-dashboard-slim.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="114" column="26" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
+        <state relative-caret-position="499">
+          <caret line="300" column="32" selection-start-line="300" selection-start-column="32" selection-end-line="300" selection-end-column="32" />
           <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" />
+            <element signature="e#14785#15843#0" />
+            <element signature="e#14862#15327#0" />
+            <element signature="e#15513#15795#0" />
+            <element signature="e#15884#16067#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/naiveBayes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+          <folding>
             <element signature="n#script#1;n#head#0;n#html#0;n#!!top" />
             <element signature="n#nav#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static_oldSchema/js/machine_learners/naive_bayes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="77" column="50" selection-start-line="77" selection-start-column="50" selection-end-line="77" selection-end-column="50" />
+          <folding>
+            <element signature="e#578#2572#0" />
+            <element signature="e#2044#2203#0" />
+            <element signature="e#2283#2457#0" />
           </folding>
         </state>
       </provider>
