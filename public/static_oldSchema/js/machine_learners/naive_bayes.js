@@ -68,7 +68,7 @@ angular.module('machineLearner', []).
                     }
                     tabulate(data, columnsHead, columnsData)
                 };
-                function get_polarity(word){
+                scope.get_polarity = function(word){
                     var request = new XMLHttpRequest();
                     var request_string = 'http://54.156.184.49:5000/mele/api/naiveBayes?word='+word;
                     console.log(request_string)

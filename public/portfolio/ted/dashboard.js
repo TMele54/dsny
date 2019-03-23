@@ -24,6 +24,7 @@ EX =[{
 
 function draw(data){
     ref_data = data;
+    console.log(ref_data)
     //Setup Data
     function formatData(data){
         String.prototype.toHHMMSS = function () {
@@ -42,6 +43,7 @@ function draw(data){
             d["film_date"] = new Date(d["film_date"] * 1000);
             d["published_date"] = new Date(d["published_date"] * 1000);
             d["id"] = i;
+            console.log(d["languages"])
         });
         return data
     };
@@ -70,8 +72,8 @@ function draw(data){
 
         langs = function(d){return d["languages"]};
         langsChart = dc.barChart(selector);
-        langsDim = xf.dimension(function(d){return d["languages"]})
-        langsGroup = langsDim.group().reduceCount(function(d){return d["languages"]})
+        langsDim = xf.dimension(function(d){return d["languages"]});
+        langsGroup = langsDim.group().reduceCount(function(d){return d["languages"]});
 
         langsChart
             .width(width)
@@ -86,7 +88,7 @@ function draw(data){
             //.filter([3, 5])
             .elasticY(true)
             .xAxis().ticks(5)
-            .tickFormat()
+            .tickFormat();
         //.on("renderlet.b", function (chart) {
         // rotate x-axis labels
         //  chart.selectAll('g.x text').attr('transform', 'translate(-10,10) rotate(315)')

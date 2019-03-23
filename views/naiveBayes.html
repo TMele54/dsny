@@ -77,6 +77,7 @@
 <!-- /End Navbar -->
 
 <style>
+    html{overflow-y: auto; !important;}
 .centered{
     position: fixed;
     top: 30%;
@@ -139,12 +140,13 @@ tr:nth-child(even) {
                 <h3 class="widget-title" style="vertical-align: center" align="left">Bayes Classifier</h3>
                 <h5 style="vertical-align: center;" align="left">Enter a word to determine if it is positive or negative</h5>
 
-                <form align="center">
+                <div align="center">
                     Please Enter a word and press submit<br>
-                    <input type="text" name="word" value="Amazing">
+                    <input type="text" name="word" value="Amazing" class="unigram_token">
                     <br>
-                    <input type="submit" value="Submit">
-                </form>
+                    <button style="height:50px;width:100px" type="button" value="Submit" onclick="get_polarity()">Submit</button>
+                </div>
+
             </div>
 
             <div class="col-md-4">

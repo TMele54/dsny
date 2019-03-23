@@ -1,4 +1,5 @@
 var express = require('express');
+
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -6,11 +7,20 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var fs = require('fs');
 var router = express.Router();
-
+var mysql = require('mysql');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
-var app = express();
+var connection = mysql.createConnection({
+        host     : 'localhost',
+        user     : 'root',
+        password : 'tony',
+        port: '3307',
+        database: 'cb'
+    });
+
+var app = express(); 
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -75,7 +85,6 @@ app.get('/portfolio', function(req, res) {
 app.get('/portfolio/college-scorecard-dashboard', function(req, res) {
     res.sendFile('college-scorecard-dashboard.html', { root: path.join(__dirname, '/views') });
 });
-
 
 app.get('/portfolio/college-scorecard-dashboard-slim', function(req, res) {
     res.sendFile('college-scorecard-dashboard-slim.html', { root: path.join(__dirname, '/views') });
@@ -163,13 +172,36 @@ app.get('/portfolio/wink', function(req, res) {
 // MACHINE LEARNING SOLUTIONS ///////////////////////////////////////////////////////////////////////
 
 
-//////////////////////////////////////////VW
+//////////////////////////////////////////Naive Bayes - Incomplete
 app.get('/portfolio/naiveBayes', function(req, res) {
     res.sendFile('naiveBayes.html', { root: path.join(__dirname, '/views') });
 });
 
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+// ROIVANT WORK PRODUCT /////////////////////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////Work Product
+app.get('/portfolio/workProduct', function(req, res) {
+    res.sendFile('workProduct.html', { root: path.join(__dirname, '/views') });
+});
+
+app.get('/portfolio/wp-investor-query', function(req, res) {
+    connection.query('SELECT * FROM investor_profile_visual', req.body,
+        function (err, data) {
+            if (err) throw err;
+            res.send(JSON.stringify(data));
+        }
+    );
+});
+
+
+///SELECT * FROM investor_profile WHERE pre_money_valuation IS NOT NULL
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////
