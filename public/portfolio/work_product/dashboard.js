@@ -58,9 +58,6 @@ function draw(data){
             if (seconds < 10) {seconds = "0"+seconds;}
             return hours+':'+minutes+':'+seconds;
     };
-        //d["durationFormatted"] = d["duration"].toString().toHHMMSS();
-        //d["film_date"] = new Date(d["film_date"] * 1000);
-        //d["published_date"] = new Date(d["published_date"] * 1000);
         data.forEach(function(d,i){
             d["name"] = [d["last_name"]+", "+d["first_name"]];
             d["num_invests"] = numberOf(d["raised_amount"], ":");
@@ -1202,9 +1199,6 @@ function draw(data){
          //                   "2017-07", "2013-02", "2012-07", "2016-03", "2017-06", "2018-07", "2014-10", "2013-01", "2013-10", "2017-11", "2014-05", "2012-11", "2015-01", "2018-03", "2015-12", "2015-08", "2016-08", "2014-11", "2014-01",
          //                   "2013-06", "2012-08", "2015-09", "2016-07", "2013-03", "2012-09", "2016-05"];
 
-
-
-
         var optwidth        = 1000;
         var optheight       = 370;
 
@@ -1241,7 +1235,7 @@ function draw(data){
 
         /* === Focus chart === */
 
-        var margin	= {top: 20, right: 30, bottom: 100, left: 20},
+        var margin	= {top: 20, right: 100, bottom: 100, left: 20},
             width	= optwidth - margin.left - margin.right,
             height	= optheight - margin.top - margin.bottom;
 
