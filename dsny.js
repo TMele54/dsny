@@ -11,6 +11,23 @@ var mysql = require('mysql');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
+var pg = require('pg');
+
+/*
+
+host        =   34.239.219.172
+database    =   blockfi
+user        =   datascience
+password    =   data
+port        =   5432
+
+* */
+var connectionString = "postgres://datascience:data@34.239.219.172:5432/blockfi";
+
+var pgClient = new pg.Client(connectionString);
+pgClient.connect();
+
+/*
 var connection = mysql.createConnection({
         host     : 'localhost',
         user     : 'root',
@@ -18,7 +35,7 @@ var connection = mysql.createConnection({
         port: '3306',
         database: 'cb'
     });
-
+*/
 var app = express(); 
 
 
@@ -190,14 +207,50 @@ app.get('/portfolio/naiveBayes', function(req, res) {
 app.get('/portfolio/workProduct', function(req, res) {
     res.sendFile('workProduct.html', { root: path.join(__dirname, '/views') });
 });
-
 app.get('/portfolio/wp-investor-query', function(req, res) {
-    connection.query('SELECT * FROM investor_profile_visual', req.body,
+    /*connection.query('SELECT * FROM investor_profile_visual', req.body,
         function (err, data) {
             if (err) throw err;
             res.send(JSON.stringify(data));
         }
-    );
+    );*/
+});
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+// ROIVANT WORK PRODUCT /////////////////////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////Work Product
+app.get('/portfolio/blockfi', function(req, res) {
+    res.sendFile('blockFi.html', { root: path.join(__dirname, '/views') });
+});
+
+app.get('/portfolio/crypto', function(req, res) {
+    try {
+        pgClient.query("SELECT * from crypto LIMIT 10;", (err, result) => {
+            if (err) throw err
+            res.send(JSON.stringify(result));
+            //pgClient.end()
+        })
+    }
+    catch(error) { console.error("ERRRORRR",error); }
+
+/*
+
+
+, req.body,
+        function (err, data) {
+            if (err) throw err;
+
+    }
+
+* */
+
+
 });
 
 
