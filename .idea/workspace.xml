@@ -1,143 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4a06bca-a1a7-4992-a9b3-781de57732c5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.html" afterDir="false" />
+    <list default="true" id="d5891e20-dd71-427f-9e1b-b733e2da0f92" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dsny.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/bin_www.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-        <option value="CSS File" />
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JsBowerSettings">
-    <node-interpreter value="project" />
-    <bower-package value="$USER_HOME$/AppData/Roaming/npm/node_modules/bower" />
-    <bower.json value="$PROJECT_DIR$/bower.json" />
-  </component>
-  <component name="ProjectId" id="1VIDiIvaCUjx148dWutvvVeKJzA" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectId" id="1y1nEDszfXD2G4RzrKVIUcuNJ9u" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="JSON" />
-    <property name="javascript.nodejs.core.library.configured.version" value="6.9.1" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.stylelint" value="" />
-    <property name="nodejs_interpreter_path" value="node" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\tony\Documents\projects\dsny\public\business\images\logo" />
-      <recent name="C:\Users\tonym\OneDrive\AAM_Portfolio\dsny\public\business\images\logo" />
-      <recent name="C:\Users\tonym\OneDrive\AAM_Portfolio\dsny\public\business\images\portfolio" />
-      <recent name="C:\Users\tonym\OneDrive\AAM_Portfolio\dsny\public" />
-      <recent name="C:\Users\TonyM\OneDrive\Documents\Projects\AnthonyMelePortfolio\dsny\public\business\images\header" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\tony\Documents\projects\dsny\public\portfolio" />
-      <recent name="C:\Users\tony\Documents\projects\dsny\views" />
-      <recent name="C:\Users\tonym\OneDrive\AAM_Portfolio\dsny\public\portfolio\work_product" />
-      <recent name="C:\Users\tonym\OneDrive\AAM_Portfolio\dsny\views" />
-      <recent name="C:\Users\tonym\OneDrive\AAM_Portfolio\dsny\public\business\images\portfolio" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="app.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="$PROJECT_DIR$/dsny.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration">
-    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c4a06bca-a1a7-4992-a9b3-781de57732c5" name="Default" comment="" />
-      <created>1512687722453</created>
+      <changelist id="d5891e20-dd71-427f-9e1b-b733e2da0f92" name="Default Changelist" comment="" />
+      <created>1631427852944</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1512687722453</updated>
-      <workItem from="1512687742856" duration="13691000" />
-      <workItem from="1512735300810" duration="6964000" />
-      <workItem from="1512761595161" duration="16000" />
-      <workItem from="1512783858116" duration="1022000" />
-      <workItem from="1512824722398" duration="193000" />
-      <workItem from="1512831836071" duration="8390000" />
-      <workItem from="1512840323006" duration="9562000" />
-      <workItem from="1512850960301" duration="1335000" />
-      <workItem from="1512852909854" duration="4075000" />
-      <workItem from="1512869493068" duration="670000" />
-      <workItem from="1512909453138" duration="12226000" />
-      <workItem from="1512946146959" duration="2473000" />
-      <workItem from="1512954543707" duration="16359000" />
-      <workItem from="1513001081371" duration="5127000" />
-      <workItem from="1513034005841" duration="17277000" />
-      <workItem from="1513081926784" duration="13878000" />
-      <workItem from="1513118280485" duration="11484000" />
-      <workItem from="1513289748941" duration="18038000" />
-      <workItem from="1513327612082" duration="8549000" />
-      <workItem from="1513355392791" duration="88000" />
-      <workItem from="1513361062017" duration="1484000" />
-      <workItem from="1513371975498" duration="10836000" />
-      <workItem from="1513434202320" duration="12299000" />
-      <workItem from="1514032090852" duration="5814000" />
-      <workItem from="1514073845937" duration="5007000" />
-      <workItem from="1514306074620" duration="626000" />
-      <workItem from="1576931842379" duration="7857000" />
-      <workItem from="1631378510322" duration="874000" />
+      <updated>1631427852944</updated>
+      <workItem from="1631427856267" duration="15000" />
     </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="461" y="162" key="SettingsEditor" timestamp="1576941479116">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1576941479116" />
   </component>
 </project>
