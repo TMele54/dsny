@@ -1,0 +1,33 @@
+server {
+    listen 80;
+    server_name www.dsny.io dsny.io;
+    return 301 https://dsny.io$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name www.dsny.io;
+    return 301 https://dsny.io$request_uri;
+}
+
+server {
+    listen 443 ssl default_server;
+
+    ssl on;
+    ssl_certificate /home/ubuntu/dsny/ssl/dsny_io.crt;
+    ssl_certificate_key /home/ubuntu/dsny/ssl/dsny.key;
+
+    server_name dsny.io;
+
+    access_log /var/log/nginx/nginx.vhost.access.log;
+    error_log /var/log/nginx/nginx.vhost.error.log;
+
+    location / {
+        proxy_pass http://172.31.68.189:8054;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
