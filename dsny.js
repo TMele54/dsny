@@ -204,6 +204,7 @@ app.get('/portfolio/naiveBayes', function(req, res) {
 
 
 //////////////////////////////////////////Work Product
+/*
 app.get('/portfolio/workProduct', function(req, res) {
     res.sendFile('workProduct.html', { root: path.join(__dirname, '/views') });
 });
@@ -213,9 +214,9 @@ app.get('/portfolio/wp-investor-query', function(req, res) {
             if (err) throw err;
             res.send(JSON.stringify(data));
         }
-    );*/
+    );
 });
-
+*/
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -280,7 +281,8 @@ app.use(function(err, req, res, next) {
 
     // render the error page
     res.status(err.status || 500);
-    res.render('error');
+    res.sendFile('error.html', { root: path.join(__dirname, '/views') });
+    //res.render(err);
 });
 
 module.exports = router;
